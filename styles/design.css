@@ -1,0 +1,16 @@
+#header {
+}
+
+#main {
+    float: left;
+    width: 600px;
+}
+
+#container {
+    float: left;
+    width: 200px;
+}
+
+#footer {
+    clear: both;
+}
