@@ -1,11 +1,21 @@
 body {
-    width: 680px;
+    width: 1024px;
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
+    font-family: serif;
 }
 
 h1 {
     padding: 3px;
-    border-bottom: 3px solid #aa0000;
+    color: #121621;
+}
+
+a:link, a:hover, a:visited {
+    color: #6d6d6d;
+}
+
+ul li {
+    list-style: none;
+    padding: 2px;
 }
