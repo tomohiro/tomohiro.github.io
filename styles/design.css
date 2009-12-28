@@ -1,4 +1,11 @@
 #header {
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
+#header p#description {
+    text-indent: 5em;
+    text-align: left;
 }
 
 #main {
@@ -10,7 +17,39 @@
     float: left;
     width: 200px;
 }
+#container h2 {
+    width: 100%;
+    text-align: center;
+}
+
+#container ul {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#container ul.end {
+    border: none;
+}
+
+#container ul li {
+    list-style: none;
+    padding: 2px;
+}
 
 #footer {
     clear: both;
+    margin-top: 500px;
+    margin-bottom: 200px;
+    border-top: solid 1px #ccc;
+    font-size: small;
+}
+
+#footer ul {
+    clear: both;
+}
+
+#footer ul li {
+    float: left;    
+    padding-left: 20px;
+    list-style: none;
 }

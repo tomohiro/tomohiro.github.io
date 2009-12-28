@@ -7,6 +7,7 @@ body {
 }
 
 h1 {
+    margin-bottom: 0px;
     font-size: 400%;
     color: #121621;
 }
@@ -15,20 +16,18 @@ h2 {
     font-size: medium;
 }
 
+h3 {
+    font-size: medium;
+    font-weight: normal;
+}
+
+p {
+    font-size: small;
+}
 a:link, a:hover, a:visited {
     text-decoration: none;
     color: #6d6d6d;
 }
 a:hover {
     text-decoration: underline;
-}
-
-ul li {
-    list-style: none;
-    padding: 2px;
-}
-
-ul {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
 }
