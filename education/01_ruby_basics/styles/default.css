@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+html {
+    background-color: #f8f8ff;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    border-left: thin solid #ccc;
+    border-right: thin solid #ccc;
+    background-color: #fff;
+    color: #2f4f4f;
+}
+
+h1 {
+    margin: 1px;
+    padding: 25px;
+    height: 40px;
+    background-color: #800;
+    border-bottom: thin solid #ccc;
+    color: #fff;
+}
+h2 {
+    margin: 15px;
+    margin-top: 35px;
+    padding: 5px;
+    padding-left: 25px;
+    border-left: thick solid #b22;
+    background-color: #fffaf0;
+    color: #4682b4;
+}
+
+h3 {
+    margin-right: 100px;
+    padding-left: 15px;
+    border-bottom: thin dotted #b22;
+    color: #800;
+}
+
+h4 {
+    color: #4383db;
+}
+
+a:hover,
+a:link,
+a:visited {
+    color: #0000ff;
+}
+
+hr {
+    margin: 5px;
+    border: 0px;
+    border-bottom: medium double #f08080;
+}
+
+p {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+ol, dl, ul {
+    margin: 10px;
+    margin-left: 15px;
+    margin-right: 30px;
+}
+ol li {
+    color: #800;
+}
+ol li p,
+ol li ol li {
+    margin-left: 5px;
+    color: #2f4f4f;
+}
+
+ul li {
+    color: #2f4f4f;
+}
+
+dl dt {
+    margin: 15px;
+    border-bottom: medium solid #cd5ccd;
+    color: #800;
+}
+
+code {
+    width: 100%;
+    border-bottom: thin dashed #000;
+    background-color: #fff;
+    color: #191970;
+}
+pre {
+    padding: 10px;
+    border: thin solid #b22;
+    background-color: #faf0e6;
+    color: #00008b;
+}
+pre code {
+    background-color: #faf0e6;
+    border: none;
+}
+
+blockquote {
+    padding: 10px;
+    background-color: #f0f8ff;
+    border: thin solid #696969;
+}
+
+strong {
+    color: #ff1493;
+}
+em {
+    color: #ff1493;
+}
+
+samp {
+    color: #00008b;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: thin solid #2f4f4f;
+    color: #2f4f4f;
+}
+thead {
+    text-align: center;
+    font-weight: bold;
+}
+thead td {
+    padding: 5px;
+    background-color: #add8e6;
+}
+td, th {
+    padding: 3px;
+    border: thin solid #2f4f4f;
+}
+th {
+    white-space: nowrap;
+    background-color: #f0fff0;
+    text-align: center;
+}
+
+#hidden {
+    color: #faf0e6;
+}
+
+#copyright {
+    padding: 10px;
+    text-align: center;
+    color: #ccc;
+}

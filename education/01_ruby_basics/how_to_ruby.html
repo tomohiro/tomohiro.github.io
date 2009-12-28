@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta name="robots" content="nofollow" />
+        <link rel="stylesheet" type="text/css" href="styles/default.css" media="screen" />
+        <title>Ruby 基礎 - Ruby とは</title>
+    </head>
+    <body>
+        <h1>Ruby 基礎 - Ruby とは</h1>
+
+        <h2>はじめに</h2>
+        <p>ここでは，Ruby がどういうプログラミング言語なのかを学んでいく。</p>
+
+        <h2>Agenda</h2>
+        <ol>
+            <li><a href="#history_of_ruby">Ruby の歴史</a></li>
+            <li><a href="#philosophy_of_ruby">Ruby の哲学</a></li>
+            <li><a href="#base_of_ruby">Ruby の基本</a></li>
+            <li><a href="#ruby_is_oop_language">Ruby はオブジェクト指向言語である</a></li>
+            <li><a href="#hello_world">Hello, World!</a></li>
+            <li><a href="#syntax_of_ruby">Ruby のシンタックス</a></li>
+        </ol>
+
+        <hr />
+
+        <ol>
+            <li id="history_of_ruby">
+            <h3>Ruby の歴史</h3>
+            <p>ここ数年世界でも注目を浴びている Ruby の歴史は以下の通り。</p>
+            <blockquote cite="http://ja.wikipedia.org/wiki/Ruby">
+                <p><a href="http://ja.wikipedia.org/wiki/Ruby">Ruby</a>（ルビー）は，<a href="http://ja.wikipedia.org/wiki/%E3%81%BE%E3%81%A4%E3%82%82%E3%81%A8%E3%82%86%E3%81%8D%E3%81%B2%E3%82%8D">まつもとゆきひろ</a>（通称 Matz）により開発されたオブジェクト指向スクリプト言語であり，従来 Perl などのスクリプト言語が用いられてきた領域でのオブジェクト指向プログラミングを実現する。</p>
+                <p>Ruby は1995年12月にインターネットのニュースグループ上で発表された。</p>
+                <p>名称の Ruby は，プログラミング言語 Perl が6月の誕生石である Pearl（真珠）とほぼ同じ発音をすることから，まつもとの同僚の誕生石（7月）のルビーを取って名付けられた。 </p>
+                <p><cite>via <a href="http://ja.wikipedia.org/wiki/Ruby">Ruby - Wikipedia</a></cite></p>
+            </blockquote>
+            </li>
+
+            <li id="philosophy_of_ruby">
+            <h3>Ruby の哲学</h3>
+            <p>Ruby は開発者のまつもとゆきひろの思想が色濃く反映された言語である。</p>
+            <blockquote cite="http://ja.wikipedia.org/wiki/Ruby">
+                <p>Ruby の言語仕様策定において最も重視しているのはストレスなくプログラミングを楽しむこと (<strong>Enjoy programming</strong>) である。</p>
+                <p><cite>via <a href="http://ja.wikipedia.org/wiki/Ruby">Ruby -Wikipedia</a></cite></p>
+            </blockquote>
+            </li>
+
+            <li id="base_of_ruby">
+            <h3>Ruby の基本</h3>
+            <p>Ruby の処理系は<a href="http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF">インタプリタ</a>で実装されている。</p>
+            <p>またインタプリタ言語であるとともに，<a href="http://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E8%A8%80%E8%AA%9E">スクリプト言語</a>であり，<a href="http://ja.wikipedia.org/wiki/%E9%9D%99%E7%9A%84%E5%9E%8B%E4%BB%98%E3%81%91">静的型付け言語</a>として知られる C言語 や Java と異なり<a href="http://ja.wikipedia.org/wiki/%E5%8B%95%E7%9A%84%E5%9E%8B%E4%BB%98%E3%81%91">動的型付け言語</a>という特性がある。
+            <br/>（他のそのようなインタプリタ言語としては，Perl/Python/PHP などが有名）</p>
+            </li>
+
+            <li id="ruby_is_oop_language">
+            <h3>Ruby はオブジェクト指向言語である</h3>
+            <blockquote cite="http://www.amazon.co.jp/dp/4274066428/" title="プログラミング言語 Ruby 第二版 言語編 P.9">
+                <p>Ruby は純粋なオブジェクト指向言語です。操作の対象になるのはすべてオブジェクトであり、<strong>操作の結果得られるものもまたオブジェクト</strong>です。</p>
+                <p><cite>via <a href="http://www.amazon.co.jp/dp/4274066428/">プログラミング言語 Ruby 第二版 言語編 P.9</a></cite></p>
+            </blockquote>
+            </li>
+
+            <li id="hello_world">
+            <h3>Hello, World!</h3>
+            <p>新しい言語に触れるときのお約束，「Hello World!」と画面に表示するプログラムを Ruby で書くとこうなる。</p>
+            <ol>
+                <li>
+                <p>Linux シェル上から vi で hello_world.rb を新規作成</p>
+                <code>$ vi hello_world.rb</code>
+                </li>
+                <li>
+                <p>vi の編集モードで下記のように入力</p>
+                <pre><code>puts "Hello, World!"</code></pre>
+                </li>
+                <li>
+                <p>Linux のシェル上から ruby インタプリタで hello_world.rb を実行</p>
+                <code>$ ruby hello_world.rb</code>
+                <br />
+                <samp>Hello, World!</samp>
+                </li>
+            </ol>
+            </li>
+
+            <li id="syntax_of_ruby">
+            <h3>Ruby のシンタックス</h3>
+            <p>これから Ruby の機能を学ぶにあたり，サンプルプログラムを見たり，実際にコーディングしながら進めていく。</p>
+            <p>その前に，より理解を深めるため，ここでは Ruby の基本的な文法（シンタックス）や書き方・しきたりを簡単に解説する。</p>
+            <ol>
+                <li>
+                <h4>1行に1文ずつ書く限り，文末に ;（セミコロン）は必要ない</h4>
+                <code>hello = "Hello, World!"</code>
+                </li>
+
+                <li>
+                <h4>コメントは #（ハッシュ）で始まり，その行の最後まで続く</h4>
+                <code># hello = "Hello, World!" ← コメントなので実行されない</code>
+                </li>
+
+                <li>
+                <h4>Ruby では定義と本文の区切りに { } （ブレース）を利用しない</h4>
+<pre><code>class Foo
+  def bar
+    if a &lt; b
+    end  # if の end
+  end # def （メソッド定義) の end
+end # class（クラス定義）の end</code></pre>
+                <p>クラス定義やメソッド定義，if / for / while 文など，全て <em>end</em> で終わる。 </p>
+                </li>
+
+                <li>
+                <h4>画面への出力には puts メソッドが使える</h4>
+<pre><code>hello = "Hello, World!"
+puts hello</code></pre>
+                </li>
+
+
+                <li>
+                <h4>メソッド呼び出しの際，引数に（）を付けなくても良い</h4>
+                <pre><code>puts("Hello, World!")
+puts "Hello, World!"</code></pre>
+                <p>どちらも結果は一緒になる。</p>
+                <p>例のような単純なメソッド呼び出しの場合は ( ) を付けなくても良いが，引数が複数の場合や，メソッド中で別のメソッドを呼び出している場合などは，処理の順番がわかりづらくなるので，( ) を付けたほうが良い。</p>
+                </li>
+
+                <li>
+                <h4>文字列の扱い方</h4>
+                <dl>
+                    <dt>' (シングルクォート）を用いた場合</dt>
+                    <dd>
+                    <pre><code>puts 'Hello, World!'</code></pre>
+                    <p>
+                    結果： <samp>Hello, World</samp><br />
+                    説明：' ... ' で囲った文字がそのまま表示される
+                    </p>
+                    </dd>
+                    <dt>"（ダブルクォート）を用いた場合</dt>
+                    <dd>
+<pre><code>name = 'イチロー'
+puts "先頭打者は #{hello} です。"</code></pre>
+                    <p>
+                    結果：<samp>先頭打者はイチローです。</samp><br />
+                    説明：" ... " の中に #{} で囲まれた文字があると，Ruby はこれを式とみなし，評価し，展開して返す。
+                    </p>
+                    </dd>
+                    <dt>これと同じ文字列をシングルクォートで書くとどうなるか？</dt>
+                    <dd>
+                    <pre><code>puts '先頭打者は #{hello} です。'</code></pre>
+                    <p>
+                    結果：<samp>先頭打者は #{hello} です。</samp><br />
+                    説明：書いた文字のまま表示されて #{} の中も評価されない。
+                    </p>
+                    </dd>
+                </dl>
+                </li>
+
+                <li>
+                <h4>メソッド中の return 文は省略できる</h4>
+                <em>※Ruby ではメソッドの戻り値は，そのメソッド内で最後に評価された式の値になる）</em>
+<pre><code>def hello
+  "Hello, World!"
+end
+
+def thankyou
+  message = "Thank You!"
+  reutn message
+end
+
+puts hello 
+puts thankyou</code></pre>
+                </li>
+
+                <li>
+                <h4>命名規則</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>種類</td>
+                            <td>説明</td>
+                            <td>例</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ローカル変数・メソッド名・メソッドの引数</td>
+                            <td>すべて小文字，複数の単語が組み合わさっている場合は単語の間に， _（アンダースコア）を挿入する</td>
+                            <td>name / age / address_book</td>
+                        </tr>
+                        <tr>
+                            <td>グローバル変数</td>
+                            <td>変数名の先頭に $（ドル）を付ける</td>
+                            <td>$name / $age / $address_book</td>
+                        </tr>
+                        <tr>
+                            <td>インスタンス変数</td>
+                            <td>変数名の先頭に @（アットマーク）を付ける。</td>
+                            <td>@name / @age / @address_book</td>
+                        </tr>
+                        <tr>
+                            <td>クラス変数</td>
+                            <td>変数名の先頭に @@（アットマーク2つ）を付ける</td>
+                            <td>@@name / @@age / @@address_book</td>
+                        </tr>
+                        <tr>
+                            <td>クラス・モジュール名</td>
+                            <td>クラス・モジュール名は各単語の一文字目を大文字にし， _（アンダースコア）などの区切文字は使用しない。</td>
+                            <td>Name / Age / AddressBook</td>
+                        </tr>
+                        <tr>
+                            <td>定数</td>
+                            <td>すべて大文字とする。複数の単語が組み合わさっている場合は単語の間に， _（アンダースコア）を挿入する</td>
+                            <td>NAME / AGE / ADDRESS_BOOK</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </li>
+
+                <li>
+                <h4>配列とハッシュ</h4>
+                <p>Ruby の配列とハッシュは添字（キー）付きのコレクションである。どちらもオブジェクトの集まりである。</p>
+                <ol>
+                    <li>
+                    <p>配列：キーが整数（ [ .. ]（ブラケット）で囲む）</p>
+<pre><code>leader = [ 'suzuki', 30 ] 
+member = [ leader, 'sato', 'tanaka' ]</code></pre>
+                    <p>配列の中身：</p>
+<pre>leader =&gt; ["suzuki", 30]
+member =&gt; [["suzuki", 30],
+            "sato",
+            "tanaka"]
+</pre>
+                    <p>キーを指定して，以下のように特定の要素にアクセスできる</p>
+<pre><code>puts member[0]</code>
+結果：<samp>suzuki</samp>
+      <samp>30</samp>
+<code>puts member[0][0]</code>
+結果：<samp>suzuki</samp>
+</pre>
+                    </li>
+
+                    <li>
+                    <p>ハッシュ：キーがオブジェクト（ { .. }（ブレース）で囲む）</p>
+<pre><code>leader = {
+  'name'    =&gt; 'suzuki',
+  'age'     =&gt; 30,
+  'address' =&gt; 'Okinawa'
+}</code></pre>
+                    <p>左側の 'name' , 'age', 'address' がキー<br />
+                    右側の 'suzuki', 30, 'Okinawa' が値</p>
+
+                    <p>キーに任意の値（オブジェクト）を指定できるので，整数しか指定できない配列よりも各要素へのアクセスが簡単である</p>
+                    <dl>
+                        <dt>年齢 age にアクセスしたい時</dt>
+                        <dd>
+<pre><code>puts leader['age']</code>
+結果：<samp>30</samp></pre>
+                        </dd>
+                        <dt>名前 name にアクセスしたい時</dt>
+                        <dd>
+<pre><code>puts leader['name']</code>
+結果：<samp>suzuki</samp></pre>
+                        </dd>
+                    </dl>
+                    </li>
+                </ol>
+                </li>
+            </ol>
+            </li>
+        </ol>
+    </body>
+</html>

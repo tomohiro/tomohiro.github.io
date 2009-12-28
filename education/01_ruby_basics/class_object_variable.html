@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta name="robots" content="nofollow" />
+        <link rel="stylesheet" type="text/css" href="styles/default.css" media="screen" />
+        <title>Ruby 基礎 - クラス，オブジェクト，変数</title>
+    </head>
+    <body>
+        <h1>Ruby 基礎 - クラス，オブジェクト，変数</h1>
+
+        <h2>はじめに</h2>
+        <p>ここでは，Ruby でクラスとオブジェクトを作成する方法，また Ruby が他のオブジェクト指向言語に比べて強力ないくつかの点について説明する。</p>
+
+        <h2>Agenda</h2>
+        <ol>
+            <li><a href="#class">クラス</a></li>
+            <li><a href="#extend_and_message">継承とメッセージ</a></li>
+            <li><a href="#object_and_attribute">オブジェクトと属性</a></li>
+            <li><a href="#class_variable_and_class_method">クラス変数とクラスメソッド</a></li>
+            <li><a href="#access_control">アクセス制御</a></li>
+        </ol>
+
+        <hr />
+
+        <ol>
+            <li id="class">
+            <h3>クラス</h3>
+            <p>Ruby のクラスは下記のように記述できる。</p>
+            <code>$ vi artist.rb</code>
+            <pre><code>class Artist
+  def initialize(name)
+    @name = name
+  end
+end</code></pre>
+            <p>これで，Artist クラスが一つ出来たことになる。</p>
+            <p>Artist クラスプログラムの中身を利用して Ruby のクラスの基本的な文法について解説する。</p>
+            <ol>
+                <li>class Artist ～ end までがクラス (1から5行目)</li>
+                <li>def initialize(※) ～ end までがメソッド (2から4行目)</li>
+                <li> @マークはインスタンス変数であることを表している (3行目)</li>
+            </ol>
+            <em>※ initilize は Ruby の特殊メソッドでコンストラクタとして使われる。</em>
+            <p>1 ～ 3 を踏まえ Artist クラスを再度見てみると，Artist クラスがインスタンス化された場合，まず最初にコンストラクタとして initialize メソッドが呼ばれ，メソッド中で引数 name をインスタンス変数 @name へ代入する，という機能を持っていることがわかる。</p>
+            <p>
+            では，実際に Artist クラスをインスタンス化してみよう。<br />
+            一時的にテスト用の Ruby プログラム test.rb を作成してインスタンス化を試してみる。
+            </p>
+            <code>$ vi test.rb</code>
+            <pre><code>require 'artist' # Artist クラスを読み込む(require)命令
+
+leonard = Artist.new('Leonard Da Vinci')
+puts leonard.to_s</code></pre>
+            <code>$ ruby test.rb</code>
+            <samp>#&lt;Artist:0xb7c6d95c&gt;</samp> <em>← 実行結果</em>
+            <p>実行結果をみると， "0xb7c6d95c" という意味不明な文字列が表示されているが，これは Ruby 内部で持っているオブジェクトID である。インスタンス（オブジェクト）に対して，to_s （文字列に変換）メソッドを実行した場合このような表示になり，エラーになっているわけではない。</p>
+            <p>このままの to_s メソッドの動作ではわかりにくいので，今度は，最初に作成した artist.rb を再び編集し，Ruby 標準のメソッド to_s を変更して，オブジェクトID ではなくアーティスト名を表示するように機能変更を行う。</p>
+            <p>標準のメソッドでも簡単に再定義できるのが Ruby の一つの特徴でもある。</p>
+            <code>$ vi artist.rb</code>
+            <pre><code>class Artist
+  def initialize(name)
+    @name = name
+  end
+
+  def to_s
+    "アーティスト名は #@name です。"
+  end
+end</code></pre>
+            <code>$ ruby test.rb</code>
+            <br />
+            <samp>アーティスト名は Leonard Da Vinci です。</samp>
+            <p>to_s メソッドを再定義した結果，オブジェクトID を表示していた当初よりは格段に見やすさが増したことがわかるだろう。</p>
+            </li>
+
+            <li id="extend_and_message">
+            <h3>継承とメッセージ</h3>
+            <p>Ruby はオブジェクト指向言語なので，もちろん継承やオーバライドといった機能も存在する。</p>
+            <p>今回は継承を学ぶため，最初に作成した Artist クラスをスーパークラスとして，サブクラス Singer を作成することにする。</p>
+            <code>$ vi singer.rb</code>
+            <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  def initialize(name, song)
+    @name = name
+    @song = song
+  end
+end</code></pre>
+            <p>これで Singer サブクラスが完成した。</p>
+            <p>
+            Ruby では スーパクラスを継承してサブクラスを作成する際に， &lt; （アングル）を使用してクラス宣言を行う（3行目）。<br />
+            （Java だと extends が使用されている ⇒ class SubClass extends SuperClass ）
+            </p>
+            <p>今回作成した Singer クラスでは，コンストラクタ：initialize を再定義して，@name 以外に持ち歌を格納する変数 @song も増やしている。</p>
+            <p>では実際に，Singer クラスをインスタンス化して実行してみよう。</p>
+            <code>$ vi test.rb</code>
+            <pre><code>require 'singer'
+
+utada = Singer.new('宇多田ヒカル', 'Automatic')
+puts utada.to_s</code></pre>
+            <code>$ ruby test.rb</code>
+            <br />
+            <samp>アーティスト名は 宇多田ヒカル です。</samp>
+            <p>Singer クラスでは，to_s メソッドが定義されていないのに，実行するとちゃんと「アーティスト名は...」というメッセージが表示される。</p>
+            <p>なぜ定義していないのに，ちゃんと表示されるのか？</p>
+            <p>Singer クラスが Artist クラスのサブクラスであることを踏まえて，to_s メソッドが呼び出された際の Ruby の動きを簡単に見てみよう。</p>
+            <ol>
+                <li>utada.to_s （Singer クラスの to_s メソッドを実行）</li>
+                <li>Ruby は Singer クラスの to_s メソッドを探す → 定義していないので見つからない</li>
+                <li>さらに Ruby は Singer クラスのスーパークラスである Artist クラスから to_s メソッドを探す → 見つかった！</li>
+                <li>Artist クラスの to_s メソッドを実行する → めでたく「アーティスト名は...」というメッセージが表示される</li>
+            </ol>
+            <p>
+            このように，メソッドがなければスーパークラスを探す，それでもなければ，スーパークラスのスーパークラスから探す，というようにRuby ではメソッドを階層を上向きに探索していく。
+            <br />
+            （一番上の階層まで探索して見つからなかった場合はエラーになる）
+            </p>
+            <p>Artist クラスの to_s メソッドを利用できたおかげで，Singer クラスの実行はエラーにはならなかったが，initialize 時に宣言した変数 song を画面に表示したいので，次は to_s メソッドをオーバライドして持ち歌も表示できるように変更してみよう。</p>
+            <code>$ vi singer.rb</code>
+            <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  def initialize(name, song)
+    @name = name
+    @song = song
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+end</code></pre>
+            <code>$ ruby test.rb</code>
+            <br />
+            <samp>アーティスト名は 宇多田ヒカル です。持ち歌は Automatic です。</samp>
+            </li>
+
+            <li id="object_and_attribute">
+            <h3>オブジェクトと属性</h3>
+            <p>
+            これまでに作成してきたオブジェクトは内部状態を持っていた（アーティスト名や曲のタイトル）。<br />
+            これらの状態はオブジェクト内で”閉じている”と表現できる<br />
+            Singer クラスの中で曲名を保持しているインスタンス変数 @song には外部（他のオブジェクト）からアクセスすることはできない。
+            </p>
+            <p>
+            しかし，他からのアクセスが一切できないオブジェクトはとても扱いづらい。<br />
+            なぜなら，それはオブジェクトを作成しても，それを使って何もできないからである。<br />
+            そこで通常は，オブジェクトの状態をアクセスおよび操作するためのメソッドを定義し，外部からオブジェクトとやり取りできるようにする。<br />
+            </p>
+            <p>外部から見える側面を属性（attribute）と呼び，属性を操作するためのメソッドをアクセサと呼ぶ。</p>
+            <p>ではさっそく， Singer クラスのインスタンス変数 @name と @song を外部から操作できるようにしてみよう。</p>
+            <dl>
+                <dt>読み取り可能な属性を定義</dt>
+                <dd>
+                <code>$ vi singer.rb</code>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  def initialize(name, song)
+    @name = name
+    @song = song
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+
+  # @name を読み取りさせるメソッド
+  def name
+    @name
+  end
+
+  # @song を読み取りさせるメソッド
+  def song
+    @song
+  end
+end</code></pre>
+                <code>$ vi test.rb</code>
+                <pre><code>require 'singer'
+
+utada = Singer.new('宇多田ヒカル', 'Automatic')
+puts utada.name
+puts utada.song</code></pre>
+                <code>$ ruby test.rb</code>
+                </dd>
+                <dt>書き換え可能な属性を定義</dt>
+                <dd>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  def initialize(name, song)
+    @name = name
+    @song = song
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+
+  # @name を読み取りさせるメソッド
+  def name
+    @name
+  end
+
+  # @song を読み取りさせるメソッド
+  def song
+    @song
+  end
+
+  # @name を書き換えるメソッド
+  def name=(new_name)
+    @name = new_name
+  end
+
+  # @song を書き換えるメソッド
+  def song=(new_song)
+    @song = new_song
+  end
+end</code></pre>
+                <code>$ vi test.rb</code>
+                <pre><code>require 'singer'
+
+utada = Singer.new('宇多田ヒカル', 'Automatic')
+utada.name = "Hikaru Utada"
+utada.song = "Heat Station"
+
+puts utada.name
+puts utada.song
+
+puts utada.to_s</code></pre>
+                <code>$ ruby test.rb</code>
+                </dd>
+                <dt>attr_reader, attr_writer, attr_accessor</dt>
+                <dd>
+                <p>実は，読み取り可能な属性と書き換え可能な属性へのアクセサは頻繁に定義されるため Ruby では便利なショートカットを用意している。</p>
+                <code>$ vi singer.rb</code>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  attr_reader :name, :song # 読み取り可能なアクセサを定義
+  attr_writer :name, :song # 書き込み可能なアクセサを定義
+
+  def initialize(name, song)
+    @name = name
+    @song = song
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+end</code></pre>
+                <code>$ ruby test.rb</code>
+                <p>attr_reader, attr_writer を使用することで，これまで手作業で作成したメソッドと全く同じものが自動的に生成される。</p>
+                <p>
+                ここでは新しい構文 :name, :song が使用されている。<br />
+                :name という構文は， name に対応する Symbol オブジェクトを返す式である。
+                つまり :name は変数 name の名前を意味し，コロンなしの name は変数 name の値を意味する 。
+                </p>
+                <p>
+                attr_reader, attr_writer を使用してコロン付きの変数を定義すると，その名前と対応するインスタンス変数とアクセサが自動生成される。<br />
+                試しに，Singer クラスに年齢を表す属性 age を追加してみよう。
+                </p>
+                <code>$ vi singer.rb</code>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  attr_reader :name, :song, :age # 読み取り可能なアクセサを定義
+  attr_writer :name, :song, :age # 書き込み可能なアクセサを定義
+
+  def initialize(name, song)
+    @name = name
+    @song = song
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+end</code></pre>
+                <code>$ vi test.rb</code>
+                <pre><code>require 'singer'
+
+utada = Singer.new('宇多田ヒカル', 'Automatic')
+utada.name = "Hikaru Utada"
+utada.song = "Heat Station"
+utada.age  = 25
+
+puts utada.name
+puts utada.song
+puts utada.age</code></pre>
+                <code>$ ruby test.rb</code>
+                <p>さらに，attr_accessor を用いると，読み書き両方が可能になる定義が可能になる。</p>
+                <code>$ vi singer.rb</code>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  attr_accessor :name, :song, :age # 読み書き可能なアクセサを定義
+
+  def initialize(name, song)
+    @name = name
+    @song = song
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+end</code></pre>
+                <code>$ ruby test.rb</code>
+                </dd>
+            </dl>
+            </li>
+
+            <li id="class_variable_and_class_method">
+            <h3>クラス変数とクラスメソッド</h3>
+            <ol>
+                <li>
+                <h4>クラス変数</h4>
+                <p>ここまで作成したすべてのクラスは，インスタンス変数を持っていた。</p>
+                <p>
+                インスタンス変数はインスタンスの状態を表す属性だが，クラスも自分の状態を持つ必要がある場合もある。<br />
+                そこで登場するのがクラス変数である。
+                </p>
+                <p>クラス変数は，クラスをインスタンス化したすべてのオブジェクトで共有される。</p>
+                <p>
+                クラス変数名には，@@count のように，先頭に2つの @ を付ける。<br />
+                また，使用する際には必ず初期化しなければいけないという制限もある。
+                </p>
+                <code>$ vi singer.rb</code>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  attr_accessor :name, :song, :age
+  @@sing_count = 0
+
+  def initialize(name, song)
+    @name = name
+    @song = song
+    @sing_count = 0
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+
+  def sing
+    @sing_count  += 1
+    @@sing_count += 1
+    "#@name は #@song を歌っている。#@sing_count 回目（累計 #@@sing_count 回目）"
+  end
+end</code></pre>
+                <code>$ vi sing.rb</code>
+                <pre><code>require 'singer'
+
+utada = Singer.new('宇多田ヒカル', 'Automatic')
+amuro = Singer.new('安室奈美恵', 'CAN YOU CELEBRATE?')
+
+puts utada.sing
+puts amuro.sing
+puts utada.sing
+puts amuro.sing
+puts amuro.sing</code></pre>
+                <code>$ ruby sing.rb</code>
+                <p>
+                ここまで見てきたように，クラス変数はクラスとそのインスタンスに閉じた変数となっている。<br />
+                クラス変数に外部からアクセスしたい場合は，アクセサメソッドを定義する必要がある。
+                アクセサメソッドにはインスタンスメソッドか次に説明するクラスメソッドのどちらかが使われる。
+                </p>
+                </li>
+                <li>
+                <h4>クラスメソッド</h4>
+                <p>
+                クラスには，特定のオブジェクトに関連付けられていないメソッドが必要になる場合もある。<br />
+                その際に，クラスメソッドが定義されるわけだが，実はここまでクラスメソッドを何度も使っている。
+                </p>
+                <p>
+                new メソッドがそれである。new メソッドは新しい Singer オブジェクトを作成するが，それ自身は特定の歌手インスタンスに関連付けられているわけではない。<br />
+                クラスメソッドは，メソッド名の前にクラス名とピリオドを付けて定義する。
+                </p>
+                <code>$ vi singer.rb</code>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  attr_accessor :name, :song, :age, :sing_count
+  @@sing_count = 0;
+
+  def initialize(name, song)
+    @name = name
+    @song = song
+    @sing_count = 0;
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+
+  def sing
+    @sing_count  += 1
+    @@sing_count += 1
+    "#@name は #@song を歌っている。#@sing_count 回目（累計 #@@sing_count 回目）"
+  end
+
+  def Singer.sing_count
+    @@sing_count
+  end
+end</code></pre>
+                <code>$ vi sing.rb</code>
+                <pre><code>require 'singer'
+
+utada = Singer.new('宇多田ヒカル', 'Automatic')
+amuro = Singer.new('安室奈美恵', 'CAN YOU CELEBRATE?')
+
+puts utada.sing
+puts amuro.sing
+puts utada.sing
+puts amuro.sing
+puts amuro.sing
+         
+puts "#{utada.name} が歌った回数：#{utada.sing_count}"
+puts "#{amuro.name} が歌った回数：#{amuro.sing_count}"
+puts "累計：#{Singer.sing_count}"</code></pre>
+                <code>$ ruby sing.rb</code>
+                </li>
+            </ol>
+            </li>
+
+            <li id="access_control">
+            <h3>アクセス制御</h3>
+            <p>
+            クラスインタフェースを設計するときには，外部からクラスに対するアクセスをどの程度許すかを考慮することが重要となる。<br />
+            あまり自由なアクセスを許すと，クラスとアプリケーションが癒着してしまう危険性が大きくなる。<br />
+            つまり，クラスの利用者がクラスの論理的なインタフェースよりも，実装の詳細に依存してしまう可能性が高くなってしまう。（結合度が高い状態）<br />
+            </p>
+            <p>
+            その問題を解決するために，Ruby のアクセス制御を用いて，オブジェクトへのアクセスを制限することができる。<br />
+            </p>
+            <p>アクセス制御においては，オブジェクトの状態を不自然な状態に変更する可能性のあるメソッドは公開しないことが肝心である。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <td>制御レベル</td>
+                        <td>意味</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>public</th>
+                        <td>
+                            誰でも呼び出せるメソッドでアクセス制御は行われない。<br />
+                            デフォルトのメソッド保護方式
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>protected</th>
+                        <td>
+                            定義元クラス及びそのサブクラスのオブジェクトだけが呼び出せる。<br />
+                            それ以外のオブジェクトによるアクセスは禁止される。
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>private</th>
+                        <td>呼び出し元オブジェクトのコンテキスト内からしか呼び出すことができない。</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4>アクセス制御の指定方法</h4>
+            <dl>
+                <dt>引数なしで使う方法</dt>
+                <dd>
+                <pre><code>class MyClass
+  def method1 #デフォルトは 'public'
+    # ...
+  end
+
+  protected   # これ以降のメソッドは 'protected'
+
+  def method2 # このメソッドは 'protected'
+    # ...
+  end
+
+  private     # これ以降のメソッドは 'private'
+
+  def method3 # このメソッドは 'private'
+    # ...
+  end
+
+  public      # これ以降のメソッドは 'public'
+
+  def method4 # このメソッドは 'public'
+    # ...
+  end
+end</code></pre>
+                </dd>
+                <dt>引数にメソッド（のリスト）を指定する方法</dt>
+                <dd>
+                <pre><code>class MyClass
+  def method1
+  end
+
+  # ... 以下同様に method2 ～ method4 のメソッド定義
+
+  public    :method1, :method4
+  protected :method2
+  private   :method3
+end</code></pre>
+                </dd>
+                <dt>試してみよう</dt>
+                <dd>
+                <p>実際に Singer クラスのインスタンス変数 name のスコープを private に変更して，外部から名前を変更できないようにしてみよう</p>
+                <code>$ vi singer.rb</code>
+                <pre><code>require 'artist'
+
+class Singer &lt; Artist
+  attr_accessor :name, :song, :age, :sing_count
+  @@sing_count = 0;
+
+  def initialize(name, song)
+    @name = name
+    @song = song
+    @sing_count = 0;
+  end
+
+  def to_s
+    "アーティスト名は #@name です。持ち歌は #@song です。"
+  end
+
+  def sing
+    @sing_count  += 1
+    @@sing_count += 1
+    "#@name は #@song を歌っている。#@sing_count 回目（累計 #@@sing_count 回目）"
+  end
+
+  def Singer.sing_count
+    @@sing_count
+  end
+
+  private
+
+  def name=(new_name)
+    name = new_name
+  end
+end</code></pre>
+                <code>$ vi sing.rb</code>
+                <pre><code>require 'singer'
+
+utada = Singer.new('宇多田ヒカル', 'Automatic')
+amuro = Singer.new('安室奈美恵', 'CAN YOU CELEBRATE?')
+
+utada.name = 'Hikaru Utada'
+
+puts utada.sing
+puts amuro.sing
+puts utada.sing
+puts amuro.sing
+puts amuro.sing
+
+puts "#{utada.name} が歌った回数：#{utada.sing_count}"
+puts "#{amuro.name} が歌った回数：#{amuro.sing_count}"
+puts "累計：#{Singer.sing_count}"</code></pre>
+                <code>$ ruby sing.rb</code>
+                </dd>
+            </dl>
+            </li>
+        </ol>
+    </body>
+</html>
