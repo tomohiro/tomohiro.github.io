@@ -14,7 +14,7 @@
 
         <h2>はじめに</h2>
         <p>ここでは，Ruby 言語についての説明をはじめる前に，まず自分のコンピュータ上で Ruby を動かすための手順について学んでいく。</p>
-        <p>それでは，各自 VMware の中にある Debian を起動してログオンしてみよう。 </p>
+        <p>それでは，各自 VMware の中にある Debian etch を起動してログオンしてみよう。 </p>
 
         <h2>インストールの流れ</h2>
         <ol>
@@ -23,7 +23,6 @@
             <li><a href="#logon_from_putty">PuTTY から自分のサーバにログオンする</a></li>
             <li><a href="#installation_of_ruby">Ruby のインストール</a></li>
             <li><a href="#installation_of_vim">Ruby 開発用の Vim をインストール</a></li>
-            <li><a href="#setting_of_vim">Vim の設定を行う</a></li>
         </ol>
 
         <hr />
@@ -63,7 +62,7 @@ eth0      Link encap:Ethernet  HWaddr 00:0C:29:69:FC:64
                 </li>
 
                 <li>
-                <p><a href="http://moodle.es.occ.co.jp/moodle/file.php/10/putty-0.60-jp20070603.zip">PuTTY のダウンロード</a></p>
+                <p><a href="http://yebisuya.dip.jp/DL/putty-0.60-JP_Y-2007-08-06.exe">PuTTY のダウンロード</a></p>
                 </li>
                 <li>
                 <p>PuTTY を起動し，左側の「外観」をクリックして，フォントを MS ゴシックへ「変更」する</p>
@@ -97,21 +96,6 @@ eth0      Link encap:Ethernet  HWaddr 00:0C:29:69:FC:64
             <li id="installation_of_vim">
             <h3>Ruby 用の Vim をインストール</h3>
             <code># aptitude install vim-ruby -y</code>
-            </li>
-
-            <li id="setting_of_vim">
-            <h3>Vim の設定を行う（Debian の Iceweasel にて）</h3>
-            <p><a href="http://moodle.es.occ.co.jp/moodle/file.php/10/edu-ruby/ruby-vimrc">Vim の設定ファイルをダウンロード</a>（右クリック =&gt; 「名前を付けてリンク先を保存」）</p>
-            <table>
-                <tr>
-                    <th>名前</th>
-                    <td>.vimrc</td>
-                </tr>
-                <tr>
-                    <th>保存先</th>
-                    <td>debianXXX</td>
-                </tr>
-            </table>
             </li>
         </ol>
     </body>
