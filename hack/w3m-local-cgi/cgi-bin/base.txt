@@ -1,0 +1,36 @@
+#!/usr/bin/perl
+
+# $Id: base.txt 198 2009-12-25 01:56:47Z dot $
+
+use strict;
+use warnings;
+
+my $zcat = '/bin/zcat';
+my $type = $ENV{W3M_TYPE};
+my $charset = $ENV{W3M_CHARSET};
+my $url = $ENV{W3M_URL};
+my $file = $ENV{W3M_SOURCEFILE};
+exit if !-f $file;
+$| = 1;
+
+print <<EOF;
+Content-Type: $type; charset=$charset
+
+EOF
+
+if ($type =~ /^text\/html/i && $url){
+    print "<base href=\"$url\">\n";
+}
+
+if ($file =~ /\.gz$/i ){
+    open(IN, "$zcat $file |");
+} else {
+    open(IN, "< $file");
+}
+
+# 以下のwhileでHTMLを一行づつ表示する。
+# フィルタリングしたり何かしたい場合はwhileの中で $_ の値を見れば良い。
+while (<IN>){
+    print $_;
+}
+close(IN);
