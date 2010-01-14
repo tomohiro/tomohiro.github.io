@@ -5,14 +5,18 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Verdana, sans-serif;
+    font-family: Times, serif;
     width: 320px;
 }
 
 a {
     text-decoration: none;
-    color: #5b0;
+    color: #06b;
     border-bottom: 1px dotted;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, sans-serif;
 }
 
 h1 {
