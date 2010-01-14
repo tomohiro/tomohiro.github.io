@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
     <head>
-        <title>Ruby on Rails と PostgreSQL を連携させる - Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</title>
+        <title>Ruby on Rails でプラグインを利用してみる - Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</title>
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.0.0/build/cssreset/reset-min.css" />
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.0.0/build/cssfonts/fonts-min.css" />
         <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 481px)" href="styles/default.css" />
@@ -14,55 +14,15 @@
         <div id="container">
             <h1>Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</h1>
 
-<h2>Ruby on Rails と PostgreSQL を連携させる</h2>
+<h2>Ruby on Rails でプラグインを利用してみる</h2>
 
 <h3>目次</h3>
 
 <ol>
 <li>はじめに</li>
-<li>PostgreSQL のインストールと設定</li>
-<li>Ruby on Rails のデータベース設定</li>
 </ol>
 
 <h3>はじめに</h3>
-
-<p>ここでは Mac OS X 上に PostgreSQL 8.4 をインストールする方法と，
-Ruby on Rails から PostgreSQL を利用するための設定方法を学んでいく．</p>
-
-<h3>PostgreSQL のインストールと設定</h3>
-
-<ol>
-<li><p>PostgreSQL のインストール</p>
-
-<pre><code>$ sudo port install postgresql84 postgresql84-server
-$ sudo mkdir -p /opt/local/var/db/postgresql84/defaultdb
-$ sudo chown postgres:postgres /opt/local/var/db/postgresql84/defaultdb
-$ sudo su postgres -c '/opt/local/lib/postgresql84/bin/initdb -D /opt/local/var/db/postgresql84/defaultdb'
-</code></pre></li>
-<li><p>データベースの作成</p>
-
-<pre><code>$ sudo su postgres
-$ whoami
-postgres
-$ createdb mydb -E UTF8
-$ exit
-</code></pre></li>
-<li><p>パスの設定</p>
-
-<pre><code>$ vi .zshrc
-</code></pre>
-
-<blockquote>
-<pre><code>  export PATH=/opt/local/lib/postgresql84/bin:$PATH
-</code></pre>
-</blockquote></li>
-<li><p>データベースへ接続</p>
-
-<pre><code>$ psql mydb -U postgres
-</code></pre></li>
-</ol>
-
-<h3>Ruby on Rails のデータベース設定</h3>
 
             <div id="menu">
                 <ul>

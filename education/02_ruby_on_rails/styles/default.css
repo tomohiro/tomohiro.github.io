@@ -122,17 +122,25 @@ hr {
 
 blockquote {
     margin-top: 1em;
+    border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    background-color: #ccc;
+}
+
+blockquote p {
+    margin-left: 20px;
+    line-height: 2em;
+    text-align: left;
 }
 
 blockquote pre {
-    border-radius: 0.4em;
-    -moz-border-radius: 0.4em;
     background-color: #000;
-    color: #fff;
+    border: none;
 }
 
 blockquote pre code {
     background: none;
+    color: #fff;
 }
 
 #menu {
