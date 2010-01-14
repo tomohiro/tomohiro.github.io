@@ -1,0 +1,67 @@
+Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
+================================================================================
+
+Web アプリケーションとは - Ruby on Rails 基礎
+--------------------------------------------------------------------------------
+
+
+### 目次
+
+1. はじめに
+2. WWW の基礎知識
+3. HTML 構文
+4. Web アプリケーション
+5. アプリケーションフレームワーク
+
+
+### はじめに
+
+ここでは，Ruby on Rails の使い方を学ぶ前に，前提となる知識の理解を深める。
+
+インターネットの仕組みや，Web サイトを作成する上で必要となる HTML の技術，Web 上
+で動くソフトウェアに関する基礎知識を学ぶ。
+
+
+### WWW の基礎知識
+
+【参考リンク】
+
+*   [World Wide Web - Wikipedia](http://ja.wikipedia.org/wiki/World_Wide_Web)
+*   [ネットワークとインターネット | ネット解説](http://y-kit.jp/inet/page/network.htm)
+
+WWW (ワールドワイドウェブのイメージ)
+
+![WWW (ワールドワイドウェブのイメージ)](images/www_image.png "WWW (ワールドワイドウェブのイメージ)")
+
+WWW のしくみ
+
+![WWW のしくみ](images/www_mechanism.png "WWW のしくみ")
+
+Web サイト作成に関する技術
+
+*   HTML/XHTML
+*   JavaScript
+*   CSS
+
+
+### HTML 構文
+
+【参考リンク】
+
+*   [HTML/XHTML](http://w-d-l.net/introduction/)
+
+
+### Web アプリケーション
+
+【参考リンク】
+
+*   [ウェブアプリケーション - Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)
+*   [Web プログラミング - Wikipedia](http://ja.wikipedia.org/wiki/Web%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)
+
+
+### アプリケーションフレームワーク
+
+【参考リンク】
+
+*   [アプリケーションフレームワーク - Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF)
+*   [Web アプリケーションフレームワーク - Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF)

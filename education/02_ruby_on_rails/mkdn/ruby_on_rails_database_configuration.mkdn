@@ -1,0 +1,49 @@
+Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
+================================================================================
+
+Ruby on Rails と PostgreSQL を連携させる
+--------------------------------------------------------------------------------
+
+
+### 目次
+
+1. はじめに
+2. PostgreSQL のインストールと設定
+3. Ruby on Rails のデータベース設定
+
+
+### はじめに
+
+ここでは Mac OS X 上に PostgreSQL 8.4 をインストールする方法と，
+Ruby on Rails から PostgreSQL を利用するための設定方法を学んでいく．
+
+
+### PostgreSQL のインストールと設定
+
+1. PostgreSQL のインストール
+
+        $ sudo port install postgresql84 postgresql84-server
+        $ sudo mkdir -p /opt/local/var/db/postgresql84/defaultdb
+        $ sudo chown postgres:postgres /opt/local/var/db/postgresql84/defaultdb
+        $ sudo su postgres -c '/opt/local/lib/postgresql84/bin/initdb -D /opt/local/var/db/postgresql84/defaultdb'
+
+2. データベースの作成
+
+        $ sudo su postgres
+        $ whoami
+        postgres
+        $ createdb mydb -E UTF8
+        $ exit
+
+3. パスの設定
+
+        $ vi .zshrc
+>       export PATH=/opt/local/lib/postgresql84/bin:$PATH
+
+4. データベースへ接続
+
+        $ psql mydb -U postgres
+
+
+### Ruby on Rails のデータベース設定
+
