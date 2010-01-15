@@ -9,14 +9,12 @@ Ruby on Rails から PostgreSQL を使う
 
 1. はじめに
 2. PostgreSQL のインストールと設定
-3. Ruby on Rails のデータベース設定
+3. Ruby on Rails の設定
 
 
 ### はじめに
 
-ここでは Mac OS X 上に PostgreSQL 8.4 をインストールする方法と，
-Ruby on Rails から PostgreSQL を利用するための設定方法を学んでいく．
-
+ここでは Ruby on Rails から PostgreSQL を使用する手順について学んでいく
 
 ### PostgreSQL のインストールと設定
 
@@ -45,5 +43,8 @@ Ruby on Rails から PostgreSQL を利用するための設定方法を学んで
         $ psql mydb -U postgres
 
 
-### Ruby on Rails のデータベース設定
+### Ruby on Rails の設定
 
+1. PostgreSQL 用のライブラリをインストール
+
+        $ sudo gem 

@@ -22,9 +22,190 @@
 
 <ol>
 <li>はじめに</li>
+<li>rails コマンドから始まる Web アプリケーション開発</li>
+<li>作ったアプリケーションを動かしてみよう</li>
+<li>Rails のルールの説明</li>
+<li>デバッグの仕方</li>
 </ol>
 
 <h3>はじめに</h3>
+
+<p>ここでは，Ruby on Rails を用いて簡単な Web アプリケーションを作成する．</p>
+
+<h3>rails コマンドから始まる Web アプリケーション開発</h3>
+
+<p>音楽用 CD 管理をする Web アプリケーションを作ってみよう</p>
+
+<ol>
+<li><p>rails コマンドでプロジェクトを作成する</p>
+
+<pre><code>$ rails cd_stock
+$ cd cd_stock
+</code></pre></li>
+<li><p>データベース設計</p>
+
+<p>テーブル名: <em>genres</em> (音楽ジャンル情報を保存する)</p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>カラム名</th>
+  <th>型</th>
+  <th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>id</td>
+  <td>Integer</td>
+  <td>ID <em>主キー，自動インクリメント</em></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>name</td>
+  <td>String</td>
+  <td>ジャンル名</td>
+</tr>
+</tbody>
+</table>
+
+<p>テーブル名: <em>cds</em> (CD 情報を保存する)</p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>カラム名</th>
+  <th>型</th>
+  <th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>id</td>
+  <td>Integer</td>
+  <td>ID <em>主キー，自動インクリメント</em></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>artist</td>
+  <td>String</td>
+  <td>アーティスト名</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>title</td>
+  <td>String</td>
+  <td>CD タイトル</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>genre_id</td>
+  <td>Integer</td>
+  <td>ジャンル <em>genres テーブルと関連付けられる</em></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>year</td>
+  <td>Integer</td>
+  <td>発売年</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>label</td>
+  <td>string</td>
+  <td>発売元レーベル名</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>asin</td>
+  <td>string</td>
+  <td>Amazon の ID</td>
+</tr>
+</tbody>
+</table>
+
+<p>テーブル構造の関連図</p>
+
+<p><img src="images/tables.png" alt="テーブル構造の関連図" title="ERD" /></p></li>
+<li><p>テーブルの情報を参考に，プログラムを作成する</p>
+
+<pre><code>$ ruby script/generate scaffold Genre name:string
+$ ruby script/generate scaffold Cd artist:string title:string genre_id:integer year:integer label:string asin:string
+</code></pre></li>
+<li><p>データベースにテーブルを作成する</p>
+
+<pre><code>$ rake db:migrate
+</code></pre></li>
+</ol>
+
+<h3>作ったアプリケーションを実行してみよう</h3>
+
+<p>作ったアプリケーションを実行して，データの登録などを行ってみよう</p>
+
+<ol>
+<li><p>Web サーバを起動する</p>
+
+<pre><code>$ ruby script/server
+</code></pre></li>
+<li><p>ブラウザからアクセスする</p>
+
+<ul>
+<li><a href="http://localhost:3000/cds">http://localhost:3000/cds</a></li>
+<li><a href="http://localhost:3000/genres">http://localhost:3000/genres</a></li>
+</ul></li>
+</ol>
+
+<h3>Ruby on Rails の規約の説明</h3>
+
+<p>Ruby on Rails には多くの規約(ルール)がある</p>
+
+<ul>
+<li>テーブルの定義には一定の規則性が必要</li>
+<li>そのルールに従って URL アクセスパス等が決まる</li>
+</ul>
+
+<p>【参考リンク】</p>
+
+<ul>
+<li><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20070626/275943/?P=3">Part2　Rubyに学ぶ「Ruby on Railsの正体」：ITpro</a></li>
+</ul>
+
+<h3>デバッグの仕方</h3>
+
+<p>Ruby on Rails でのデバッグはどのようにすれば良いのか</p>
+
+<ol>
+<li><p>サーバをデバッグモードで再起動する</p>
+
+<p>サーバを停止させるには，Web サーバのコンソール画面で <code>Ctrl - c</code> を押す</p>
+
+<p>サーバが停止したら，-u オプションを付けて再起動する</p>
+
+<pre><code>$ ruby script/server -u
+</code></pre></li>
+<li><p>ブレークポイントを書く</p>
+
+<p>ソース中で処理を止めたい所に <em>debugger</em> と記述する</p></li>
+</ol>
+
+<blockquote>
+<pre><code>   1 class CdsController &lt; ApplicationController
+   2   # GET /cds
+   3   # GET /cds.xml
+   4   def index
+   5     @cds = Cd.find(:all)
+   6     debugger # ブレークポイント debugger 設置
+   7     respond_to do |format|
+   8       format.html # index.html.erb
+   9       format.xml  { render :xml =&gt; @cds }
+  10     end
+  11   end
+</code></pre>
+</blockquote>
 
             <!-- Auto generated end -->
 

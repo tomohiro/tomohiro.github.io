@@ -22,9 +22,55 @@
 
 <ol>
 <li>はじめに</li>
+<li>MacPorts のインストールと設定</li>
+<li>Ruby のインストール</li>
 </ol>
 
 <h3>はじめに</h3>
+
+<p>ここでは Mac OS X 上に Ruby on Rails の環境を構築する手順について学んでいく</p>
+
+<h3>MacPorts のインストールと設定</h3>
+
+<ol>
+<li><p>MacPorts のインストール</p>
+
+<p><a href="http://www.macports.org/install.php">The MacPorts Project -- Download &amp; Installation</a></p></li>
+<li><p>パスの確認・設定</p>
+
+<pre><code>$ more .profile
+</code></pre>
+
+<blockquote>
+<pre><code>  PATH=/opt/local/bin:/opt/local/sbin:$PATH
+</code></pre>
+</blockquote></li>
+<li><p>MacPorts の使用方法</p>
+
+<p><a href="http://macwiki.sourceforge.jp/wiki/index.php/MacPorts">MacWiki - MacPorts</a></p></li>
+</ol>
+
+<h3>Ruby のインストール</h3>
+
+<ol>
+<li><p>Ruby のインストール</p>
+
+<pre><code>$ sudo port install ruby
+</code></pre></li>
+<li><p>RubyGems のインストール</p>
+
+<pre><code>$ sudo port install rb-rubygems
+</code></pre></li>
+</ol>
+
+<h3>Ruby on Rails のインストール</h3>
+
+<ol>
+<li><p>Ruby on Rails のインストール</p>
+
+<pre><code>$ sudo gem install rails ruby-debug
+</code></pre></li>
+</ol>
 
             <!-- Auto generated end -->
 

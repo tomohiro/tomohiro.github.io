@@ -14,7 +14,7 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 7. [Ruby on Rails 演習](exercise.html)
 8. [Ruby on Rails でプラグインを利用してみる](rails_plugin.html)
 
-### 参考 Web サイト
+### 関連 Web サイト
 
-* [Ruby on Rails](http://www.rubyonrails.org/)
-* [Rails Framework Documentaiton](http://api.rubyonrails.org/)
+* [Ruby on Rails - 公式サイト](http://www.rubyonrails.org/)
+* [Rails Framework Documentaiton - 公式 API リファレンス](http://api.rubyonrails.org/)
