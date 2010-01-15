@@ -8,7 +8,7 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 1. [Web アプリケーションとは](how_to_webapplication.html)
 2. [Ruby on Rails の紹介](introduction_of_ruby_on_rails.html)
 3. [Ruby on Rails のインストール - Mac OS X](installation_of_ruby_on_rails_for_osx.html)
-4. [Ruby on Rails と PostgreSQL を連携する](ruby_on_rails_database_configuration.html)
+4. [Ruby on Rails から PostgreSQL を使う](ruby_on_rails_database_configuration.html)
 5. [簡単な Web アプリケーションを作ってみる](create_easy_webapplication.html)
 6. [MVC とは何か - Ruby on Rails の MVC アーキテクチャ](how_to_mvc.html)
 7. [Ruby on Rails 演習](exercise.html)

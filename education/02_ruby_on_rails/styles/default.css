@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 250%;
+    font-size: 240%;
     margin: 30px 0 40px 0;
 }
 
@@ -79,6 +79,7 @@ code {
     border: 1px solid #d3d3d3;
     border-radius: 0.5em;
     -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
     background-color: #f5f5f5;
     font-family: Consolas, Monaco, "Courier New", monospace;
     letter-spacing: 1px;
@@ -90,6 +91,7 @@ pre {
     border: 1px solid #d3d3d3;
     border-radius: 0.4em;
     -moz-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
     background-color: #f5f5f5;
 }
 
@@ -124,6 +126,7 @@ blockquote {
     margin-top: 1em;
     border-radius: 0.4em;
     -moz-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
     background-color: #ccc;
 }
 
