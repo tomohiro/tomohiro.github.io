@@ -22,8 +22,10 @@
 
 <ol>
 <li>はじめに</li>
-<li>歴史/哲学</li>
-<li>特徴 / 世の中に与えた影響</li>
+<li>Ruby on Rails とは</li>
+<li>哲学</li>
+<li>特徴</li>
+<li>世の中に与えた影響</li>
 <li>構成</li>
 </ol>
 
@@ -43,6 +45,137 @@ Railsの公式なパッケージはRubyのライブラリやアプリケーシ�
 
 <p>-- via <a href="http://ja.wikipedia.org/wiki/Ruby_on_Rails">Ruby on Rails</a></p>
 </blockquote>
+
+<h3>哲学</h3>
+
+<p>Railsの基本理念は「同じことを繰り返さない」(DRY:Don't Repeat Yourself)と
+「設定よりも規約」(CoC:Convention over Configuration)である。</p>
+
+<p>「同じことを繰り返さない」というのは、定義などの作業は一回だけですませろとの意味である。
+Railsはフルスタックのフレームワークであり、コンポーネントの統合は手動での設定を必要とせず自動で行われる。</p>
+
+<p>例えばRuby on Railsに組み込みのORMライブラリであるActiveRecordではクラス定義において、
+データベースから読み取るべき属性名等を指定する必要はない。
+ActiveRecordはRDBMSの表定義から自動的にその情報を取得する。
+従ってプログラムとRDBMSの両方にそれを定義するというような無駄な作業を行う必要はない。</p>
+
+<p><em>「設定よりも規約」とは、標準的な設定は決まったルールに従い、共通でない部分の設定のみを行うようにするべき、ということである。</em></p>
+
+<p>【参考リンク】</p>
+
+<ul>
+<li><a href="http://gihyo.jp/dev/serial/01/alpha-geek/0004">小飼弾のアルファギークに逢いたい♥：#2　Ruby on Rails作者 David Heinemeier Hansson（前編）　RubyでRailsを書いたわけ</a></li>
+<li><a href="http://gihyo.jp/dev/serial/01/alpha-geek/0005">小飼弾のアルファギークに逢いたい♥：#2　Ruby on Rails作者 David Heinemeier Hansson（中編）　37signalsってどんな会社？</a></li>
+<li><a href="http://gihyo.jp/dev/serial/01/alpha-geek/0006">小飼弾のアルファギークに逢いたい♥：#2　Ruby on Rails作者 David Heinemeier Hansson（後編）　「アーキテクト」って言葉を使ったら負け</a></li>
+<li><a href="http://itpro.nikkeibp.co.jp/article/NEWS/20060620/241346/">「美しいコードを書けるからRubyを選んだ」---Ruby on Rails作者 David Heinemeier Hansson氏：ITpro</a></li>
+<li><a href="http://capsctrl.que.jp/kdmsnr/wiki/transl/?AnInterviewWithDHH">翻訳 - Ruby on Rails: David Heinemeier Hanssonへのインタビュー</a></li>
+</ul>
+
+<h3>特徴</h3>
+
+<dl>
+<dt><h4>設定よりも規約（Convention over Configuration）</h4></dt>
+<dd>
+<p>Ruby on Rails では冗長な XML による設定ファイルの代わりに，
+命名規則とファイル配置を規約として徹底します。これにより，劇的に設定項目を削減します。</p>
+</dd>
+
+<dt><h4>根本的に異なるデータベース戦略</h4></dt>
+<dd>
+<p>Rails ではプログラムがデータベースの構造を調査し，それに基づいた機能をアプリケーションに適用します。</p>
+</dd>
+
+<dt><h4>気の利いたデフォルト値の全面展開</h4></dt>
+<dd>
+<p>Ruby はデフォルト値を設定する機能が充実しています。
+Rails を使った開発では，共通パラメータを設定する必要はほとんどありません。
+しかも，デフォルト値は必要に応じて自由に変更できます。</p>
+</dd>
+
+<dt><h4>迅速なフィードバックループ</h4></dt>
+<dd>
+<p>Rails での開発では，1行変更したら，ブラウザを再読み込みするだけで変更内容を確認できます。
+Java での開発ではたいていの場合に特別なビルドやデプロイ手順が必要になるのとは対照的です。
+毎日何度も繰り返す作業を5分短縮することの効果は過小評価されがちですが，見過ごせないものです。</p>
+</dd>
+
+<dt><h4>Ajax</h4></dt>
+<dd>
+<p>Rails は Ajax を利用したアプリケーション構築コストを節減します。
+Ajax を使うと，Web アプリケーションをよりインタラクティブにできます。
+ユーザに流れるような操作感と，印象に残る使い勝手を提供できます。</p>
+</dd>
+</dl>
+
+<h3>世の中に与えた影響</h3>
+
+<p>設定ファイルを書くことで柔軟さを確保してきた今までの開発手法を DHH は "古い考え方" と言い，
+あたかも敷かれたレールを走る（規約に沿った）ような開発手法のほうが良いということを Ruby on Rails で提唱した。
+世の中の多くのデベロッパーはこの考え方に賛同し，Ruby 以外でも Rails のような考え方を採用したフレームワークが生まれている。</p>
+
+<h4>Ruby on Rails の影響を受けたフレームワーク</h4>
+
+<table>
+<thead>
+<tr>
+  <th>言語</th>
+  <th>フレームワーク</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Python</td>
+  <td>Django，Fanery，Subway，TurboGears</td>
+</tr>
+<tr>
+  <td>Perl</td>
+  <td>Catalyst</td>
+</tr>
+<tr>
+  <td>JavaScript</td>
+  <td>TrimJunction</td>
+</tr>
+<tr>
+  <td>PHP</td>
+  <td>CakePHP，symfony，Seagull，PHP on TRAX</td>
+</tr>
+<tr>
+  <td>.NET</td>
+  <td>MonoRail</td>
+</tr>
+<tr>
+  <td>Java</td>
+  <td>Wicket，Sails，Trails, Teeda(Seasar2)</td>
+</tr>
+<tr>
+  <td>Smalltalk</td>
+  <td>Seaside</td>
+</tr>
+</tbody>
+</table>
+
+<h3>構成</h3>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/keyword/ActionPack">ActionPack</a>
+<ul>
+<li><a href="http://d.hatena.ne.jp/keyword/ActionController">ActionController</a></li>
+<li><a href="http://d.hatena.ne.jp/keyword/ActionView">ActionView</a></li>
+</ul></li>
+<li><a href="http://d.hatena.ne.jp/keyword/ActiveRecord">ActiveRecord</a>（<a href="http://ja.wikipedia.org/wiki/Active_Record">ActiveRecord パターン</a>）</li>
+<li><a href="http://d.hatena.ne.jp/keyword/ActiveSupport">ActiveSupport</a></li>
+<li><a href="http://d.hatena.ne.jp/keyword/ActionMailer">ActionMailer</a></li>
+<li><a href="http://d.hatena.ne.jp/keyword/ActionWebService">ActiveWebService</a></li>
+<li><a href="http://d.hatena.ne.jp/keyword/railties">railties</a></li>
+</ul>
+
+<p><img src="images/rails_system.gif" alt="構成図" title="" /></p>
+
+<p>【参考リンク】</p>
+
+<ul>
+<li><a href="http://blog.poqu.org/2008/01/17/rails-2/">非エンジニアにRails2.0を説明する -2 | poqu.log</a></li>
+</ul>
 
             <!-- Auto generated end -->
 

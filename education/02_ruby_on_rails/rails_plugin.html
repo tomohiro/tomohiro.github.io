@@ -22,9 +22,43 @@
 
 <ol>
 <li>はじめに</li>
+<li><em>ext_scaffold</em> のインストール</li>
+<li><em>ext_scaffold</em> でサンプルシステムを開発してみる</li>
 </ol>
 
 <h3>はじめに</h3>
+
+<p>Ruby on Rails には豊富なプラグインがあり，それらを導入することで開発をスムーズに進めることができる。
+ここでは <em>ext_scaffold</em> というプラグインをインストールしてプラグインの利用方法を学ぶ</p>
+
+<h3>ext_scaffold のインストール</h3>
+
+<h4>サンプルプロジェクトを作成する</h4>
+
+<ol>
+<li><p>新しいプロジェクトを作成</p>
+
+<pre><code>$ rails plugin_test
+</code></pre></li>
+</ol>
+
+<h3>プラグインをダウンロードしてインストールする</h3>
+
+<ol>
+<li><p>Ext JS のダウンロード</p>
+
+<pre><code>$ cd plugin_test/public/
+$ mkdir ext
+$ cd ext
+$ wget "http://www.extjs.com/deploy/ext-3.1.0.zip"
+$ unzip ext-3.1.0.zip
+</code></pre></li>
+<li><p><em>ext_scaffold</em> のダウンロード/インストール</p>
+
+<pre><code>$ cd plugin_test
+$ ./script/plugin install http://rug-b.rubyforge.org/svn/ext_scaffold
+</code></pre></li>
+</ol>
 
             <!-- Auto generated end -->
 

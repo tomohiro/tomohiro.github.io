@@ -8,6 +8,37 @@ Ruby on Rails でプラグインを利用してみる
 ### 目次
 
 1. はじめに
+2. *ext_scaffold* のインストール
+3. *ext_scaffold* でサンプルシステムを開発してみる
 
 
 ### はじめに
+
+Ruby on Rails には豊富なプラグインがあり，それらを導入することで開発をスムーズに進めることができる。
+ここでは *ext_scaffold* というプラグインをインストールしてプラグインの利用方法を学ぶ
+
+
+### ext_scaffold のインストール
+
+#### サンプルプロジェクトを作成する
+
+1. 新しいプロジェクトを作成
+
+        $ rails plugin_test
+
+### プラグインをダウンロードしてインストールする
+
+1. Ext JS のダウンロード
+
+        $ cd plugin_test/public/
+        $ mkdir ext
+        $ cd ext
+        $ wget "http://www.extjs.com/deploy/ext-3.1.0.zip"
+        $ unzip ext-3.1.0.zip
+
+2. *ext_scaffold* のダウンロード/インストール
+
+        $ cd plugin_test
+        $ ./script/plugin install http://rug-b.rubyforge.org/svn/ext_scaffold
+
+

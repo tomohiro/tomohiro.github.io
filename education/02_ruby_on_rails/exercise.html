@@ -22,9 +22,42 @@
 
 <ol>
 <li>はじめに</li>
+<li>開発</li>
+<li>データベースモデリングと雛形作成</li>
 </ol>
 
 <h3>はじめに</h3>
+
+<p>部署と社員の情報を管理するアプリケーションを作る</p>
+
+<h3>開発</h3>
+
+<p>下記の要求を満たす Web アプリケーションを作成しよう</p>
+
+<ul>
+<li>社員は複数の部署に所属できること</li>
+<li>部署の詳細画面でその部署に所属している社員の一覧が見えること</li>
+<li>部署一覧画面と社員一覧画面をハイパーリンクでつなげる</li>
+</ul>
+
+<h3>データベースモデリングと雛形作成</h3>
+
+<ol>
+<li>部署と社員の関係を表す ERD</li>
+</ol>
+
+<p><img src="images/erd.png" alt="ERD" title="" /></p>
+
+<ol>
+<li><p>scipt/generate コマンドの使い方</p>
+
+<p>使い方は --help オプションを使用して調べることができる</p>
+
+<pre><code>$ ./script/generate --help
+$ ./script/generate scaffold --help
+$ ./script/generate migration --help
+</code></pre></li>
+</ol>
 
             <!-- Auto generated end -->
 

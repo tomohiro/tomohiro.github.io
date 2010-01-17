@@ -24,7 +24,7 @@
 <li>はじめに</li>
 <li>rails コマンドから始まる Web アプリケーション開発</li>
 <li>作ったアプリケーションを動かしてみよう</li>
-<li>Rails のルールの説明</li>
+<li>Ruby on Rails の規約の説明</li>
 <li>デバッグの仕方</li>
 </ol>
 
@@ -154,9 +154,18 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
 <li><p>ブラウザからアクセスする</p>
 
 <ul>
-<li><a href="http://localhost:3000/cds">http://localhost:3000/cds</a></li>
 <li><a href="http://localhost:3000/genres">http://localhost:3000/genres</a></li>
+<li><a href="http://localhost:3000/cds">http://localhost:3000/cds</a></li>
 </ul></li>
+<li><p>ジャンルを登録してテーブルにデータ入っているかを確かめる</p>
+
+<pre><code>$ pgsql -U postgres cd_stock_development
+=# SELECT * FROM genres;
+</code></pre></li>
+<li><p>CD を登録してテーブルにデータ入っているかを確かめる</p>
+
+<pre><code>=# SELECT * FROM cds;
+</code></pre></li>
 </ol>
 
 <h3>Ruby on Rails の規約の説明</h3>
@@ -189,23 +198,34 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
 </code></pre></li>
 <li><p>ブレークポイントを書く</p>
 
-<p>ソース中で処理を止めたい所に <em>debugger</em> と記述する</p></li>
-</ol>
+<p>ソース中で処理を止めたい所に <em>debugger</em> と記述する</p>
 
 <blockquote>
-<pre><code>   1 class CdsController &lt; ApplicationController
-   2   # GET /cds
-   3   # GET /cds.xml
-   4   def index
-   5     @cds = Cd.find(:all)
-   6     debugger # ブレークポイント debugger 設置
-   7     respond_to do |format|
-   8       format.html # index.html.erb
-   9       format.xml  { render :xml =&gt; @cds }
-  10     end
-  11   end
+<pre><code> 1 class CdsController &lt; ApplicationController
+ 2   # GET /cds
+ 3   # GET /cds.xml
+ 4   def index
+ 5     @cds = Cd.find(:all)
+ 6     debugger # ブレークポイント debugger 設置
+ 7     respond_to do |format|
+ 8       format.html # index.html.erb
+ 9       format.xml  { render :xml =&gt; @cds }
+10     end
+11   end
 </code></pre>
-</blockquote>
+</blockquote></li>
+<li><p>その状態でアプリケーションを操作してみる</p>
+
+<p>操作すると，ブレークポイントを設置した箇所で処理が止まり，Mongrel サーバの
+コンソールの中でインタプリタが動かせるようになっている。</p>
+
+<ul>
+<li>画面に変数やメソッドの実行結果を表示するには，<em>p</em> または <em>pp</em> を使う</li>
+<li><code>l</code> でソースの中で現在どの処理が実行中なのか教えてくれる</li>
+<li><code>n</code> でステップ実行(1行ずつ実行するということ）</li>
+<li><code>c</code> で処理再開</li>
+</ul></li>
+</ol>
 
             <!-- Auto generated end -->
 

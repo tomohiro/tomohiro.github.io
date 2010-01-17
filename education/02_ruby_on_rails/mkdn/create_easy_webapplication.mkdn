@@ -10,7 +10,7 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 1. はじめに
 2. rails コマンドから始まる Web アプリケーション開発
 3. 作ったアプリケーションを動かしてみよう
-4. Rails のルールの説明
+4. Ruby on Rails の規約の説明
 5. デバッグの仕方
 
 ### はじめに
@@ -74,8 +74,17 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 
 2. ブラウザからアクセスする
 
-    * <http://localhost:3000/cds>
     * <http://localhost:3000/genres>
+    * <http://localhost:3000/cds>
+
+3. ジャンルを登録してテーブルにデータ入っているかを確かめる
+
+        $ pgsql -U postgres cd_stock_development
+        =# SELECT * FROM genres;
+
+4. CD を登録してテーブルにデータ入っているかを確かめる
+
+        =# SELECT * FROM cds;
 
 
 ### Ruby on Rails の規約の説明
@@ -105,16 +114,26 @@ Ruby on Rails でのデバッグはどのようにすれば良いのか
 2. ブレークポイントを書く
 
     ソース中で処理を止めたい所に *debugger* と記述する
+>      1 class CdsController < ApplicationController
+>      2   # GET /cds
+>      3   # GET /cds.xml
+>      4   def index
+>      5     @cds = Cd.find(:all)
+>      6     debugger # ブレークポイント debugger 設置
+>      7     respond_to do |format|
+>      8       format.html # index.html.erb
+>      9       format.xml  { render :xml => @cds }
+>     10     end
+>     11   end
 
->        1 class CdsController < ApplicationController
-         2   # GET /cds
-         3   # GET /cds.xml
-         4   def index
-         5     @cds = Cd.find(:all)
-         6     debugger # ブレークポイント debugger 設置
-         7     respond_to do |format|
-         8       format.html # index.html.erb
-         9       format.xml  { render :xml => @cds }
-        10     end
-        11   end
+3. その状態でアプリケーションを操作してみる
+
+    操作すると，ブレークポイントを設置した箇所で処理が止まり，Mongrel サーバの
+    コンソールの中でインタプリタが動かせるようになっている。
+
+    * 画面に変数やメソッドの実行結果を表示するには，*p* または *pp* を使う
+    * `l` でソースの中で現在どの処理が実行中なのか教えてくれる
+    * `n` でステップ実行(1行ずつ実行するということ）
+    * `c` で処理再開
+
 
