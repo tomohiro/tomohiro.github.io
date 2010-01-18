@@ -40,12 +40,11 @@ Ruby on Rails のインストール - Mac OS X
 
 2. RubyGems のインストール
 
-        $ sudo port install rb-rubygems
+        $ sudo port install rb-rubygems sqlite3
 
 
 ### Ruby on Rails のインストール
 
 1. Ruby on Rails のインストール
 
-        $ sudo gem install rails ruby-debug
-
+        $ sudo gem install rails ruby-debug sqlite3-ruby

@@ -39,8 +39,16 @@
 <ol>
 <li><p>rails コマンドでプロジェクトを作成する</p>
 
-<pre><code>$ rails cd_stock
+<pre><code>$ rails cd_stock --database=postgresql
 $ cd cd_stock
+</code></pre></li>
+<li><p>データベースを作成する</p>
+
+<pre><code>$ sudo su postgres
+$ createdb cd_stock_developemnt -E UTF8
+$ createdb cd_stock_test -E UTF8
+$ createdb cd_stock_production -E UTF8
+$ exit
 </code></pre></li>
 <li><p>データベース設計</p>
 
@@ -136,6 +144,23 @@ $ cd cd_stock
 <pre><code>$ ruby script/generate scaffold Genre name:string
 $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer year:integer label:string asin:string
 </code></pre></li>
+<li><p>データベース接続のための設定を行う</p>
+
+<pre><code>$ vi config/environment.rb
+</code></pre>
+
+<blockquote>
+<pre><code>  config.gem "postgres"  # 追加する
+</code></pre>
+</blockquote>
+
+<pre><code>$ vi config/database.yml
+</code></pre>
+
+<blockquote>
+<pre><code>  username: postgres  # 変更する
+</code></pre>
+</blockquote></li>
 <li><p>データベースにテーブルを作成する</p>
 
 <pre><code>$ rake db:migrate

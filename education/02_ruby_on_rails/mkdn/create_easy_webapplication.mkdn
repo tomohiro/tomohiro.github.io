@@ -24,10 +24,19 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 
 1. rails コマンドでプロジェクトを作成する
 
-        $ rails cd_stock
+        $ rails cd_stock --database=postgresql
         $ cd cd_stock
 
-2. データベース設計
+2. データベースを作成する
+
+        $ sudo su postgres
+        $ createdb cd_stock_developemnt -E UTF8
+        $ createdb cd_stock_test -E UTF8
+        $ createdb cd_stock_production -E UTF8
+        $ exit
+
+
+3. データベース設計
 
     テーブル名: *genres* (音楽ジャンル情報を保存する)
 
@@ -54,12 +63,22 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 
     ![テーブル構造の関連図](images/tables.png "ERD")
 
-3. テーブルの情報を参考に，プログラムを作成する
+4. テーブルの情報を参考に，プログラムを作成する
 
         $ ruby script/generate scaffold Genre name:string
         $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer year:integer label:string asin:string
 
-4. データベースにテーブルを作成する
+5. データベース接続のための設定を行う
+
+        $ vi config/environment.rb
+>       config.gem "postgres"  # 追加する
+
+
+        $ vi config/database.yml
+>       username: postgres  # 変更する
+
+
+6. データベースにテーブルを作成する
 
         $ rake db:migrate
 

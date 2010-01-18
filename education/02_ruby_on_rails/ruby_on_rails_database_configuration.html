@@ -40,7 +40,7 @@ $ sudo mkdir -p /opt/local/var/db/postgresql84/defaultdb
 $ sudo chown postgres:postgres /opt/local/var/db/postgresql84/defaultdb
 $ sudo su postgres -c '/opt/local/lib/postgresql84/bin/initdb -D /opt/local/var/db/postgresql84/defaultdb'
 </code></pre></li>
-<li><p>データベースの作成</p>
+<li><p>テストデータベースの作成</p>
 
 <pre><code>$ sudo su postgres
 $ whoami
@@ -57,18 +57,18 @@ $ exit
 <pre><code>  export PATH=/opt/local/lib/postgresql84/bin:$PATH
 </code></pre>
 </blockquote></li>
-<li><p>データベースへ接続</p>
+<li><p>テストデータベースへ接続</p>
 
 <pre><code>$ psql mydb -U postgres
 </code></pre></li>
 </ol>
 
-<h3>Ruby on Rails の設定</h3>
+<h3>Ruby on Rails の PostgreSQL ライブラリをインストール</h3>
 
 <ol>
 <li><p>PostgreSQL 用のライブラリをインストール</p>
 
-<pre><code>$ sudo gem
+<pre><code>$ sudo gem install postgres -- --with-opt-lib=/opt/local/lib/postgresql84/ --with-opt-include=/opt/local/include/postgresql84
 </code></pre></li>
 </ol>
 

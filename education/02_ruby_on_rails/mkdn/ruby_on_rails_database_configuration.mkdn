@@ -25,7 +25,7 @@ Ruby on Rails から PostgreSQL を使う
         $ sudo chown postgres:postgres /opt/local/var/db/postgresql84/defaultdb
         $ sudo su postgres -c '/opt/local/lib/postgresql84/bin/initdb -D /opt/local/var/db/postgresql84/defaultdb'
 
-2. データベースの作成
+2. テストデータベースの作成
 
         $ sudo su postgres
         $ whoami
@@ -38,13 +38,13 @@ Ruby on Rails から PostgreSQL を使う
         $ vi .zshrc
 >       export PATH=/opt/local/lib/postgresql84/bin:$PATH
 
-4. データベースへ接続
+4. テストデータベースへ接続
 
         $ psql mydb -U postgres
 
 
-### Ruby on Rails の設定
+### Ruby on Rails の PostgreSQL ライブラリをインストール
 
 1. PostgreSQL 用のライブラリをインストール
 
-        $ sudo gem 
+        $ sudo gem install postgres -- --with-opt-lib=/opt/local/lib/postgresql84/ --with-opt-include=/opt/local/include/postgresql84
