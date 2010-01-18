@@ -78,7 +78,12 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 >       username: postgres  # 変更する
 
 
-6. データベースにテーブルを作成する
+6. 必要な RubyGems をインストールする
+
+        $ sudo rake gems:install
+*PostgreSQL 用の Gems も自動的にインストールされるので前もってインストールしておかなくても良い*
+
+7. データベースにテーブルを作成する
 
         $ rake db:migrate
 

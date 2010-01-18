@@ -161,6 +161,12 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
 <pre><code>  username: postgres  # 変更する
 </code></pre>
 </blockquote></li>
+<li><p>必要な RubyGems をインストールする</p>
+
+<pre><code>$ sudo rake gems:install
+</code></pre>
+
+<p><em>PostgreSQL 用の Gems も自動的にインストールされるので前もってインストールしておかなくても良い</em></p></li>
 <li><p>データベースにテーブルを作成する</p>
 
 <pre><code>$ rake db:migrate

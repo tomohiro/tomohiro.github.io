@@ -9,7 +9,7 @@ Ruby on Rails から PostgreSQL を使う
 
 1. はじめに
 2. PostgreSQL のインストールと設定
-3. Ruby on Rails の設定
+3. Ruby on Rails の PostgreSQL ライブラリをインストール
 
 
 ### はじめに
