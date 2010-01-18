@@ -44,12 +44,20 @@ $ cd cd_stock
 </code></pre></li>
 <li><p>データベースを作成する</p>
 
+<ul>
+<li><p>rake コマンドで作成する</p>
+
+<pre><code>$ rake db:create:all
+</code></pre></li>
+<li><p>PostgreSQL の createdb コマンドで作成する</p>
+
 <pre><code>$ sudo su postgres
 $ createdb cd_stock_developemnt -E UTF8
 $ createdb cd_stock_test -E UTF8
 $ createdb cd_stock_production -E UTF8
 $ exit
 </code></pre></li>
+</ul></li>
 <li><p>データベース設計</p>
 
 <p>テーブル名: <em>genres</em> (音楽ジャンル情報を保存する)</p>

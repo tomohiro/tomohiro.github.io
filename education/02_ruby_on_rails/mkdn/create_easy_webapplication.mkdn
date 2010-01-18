@@ -29,11 +29,17 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 
 2. データベースを作成する
 
-        $ sudo su postgres
-        $ createdb cd_stock_developemnt -E UTF8
-        $ createdb cd_stock_test -E UTF8
-        $ createdb cd_stock_production -E UTF8
-        $ exit
+    * rake コマンドで作成する
+
+            $ rake db:create:all
+
+    * PostgreSQL の createdb コマンドで作成する
+
+            $ sudo su postgres
+            $ createdb cd_stock_developemnt -E UTF8
+            $ createdb cd_stock_test -E UTF8
+            $ createdb cd_stock_production -E UTF8
+            $ exit
 
 
 3. データベース設計
