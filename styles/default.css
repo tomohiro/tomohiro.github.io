@@ -2,7 +2,7 @@ body {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    font-family: Times, sans-serif, serif;
+    font-family: Times, serif;
 }
 
 h1 {
@@ -23,10 +23,10 @@ h3 {
 p {
     font-size: small;
 }
-a:link, a:hover, a:visited {
+
+a {
     text-decoration: none;
-    color: #6d6d6d;
-}
-a:hover {
-    text-decoration: underline;
+    border-bottom: 1px dotted;
+    letter-spacing: 0.5px;
+    color: #06b;
 }
