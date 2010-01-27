@@ -1,0 +1,57 @@
+Technical Information
+================================================================================
+
+1. Markdown から HTML / PDF への変換について
+--------------------------------------------------------------------------------
+
+### First
+
+Markdown 記法で書かれたプレーンテキストを有効活用するために HTML 化，また
+生成された HTML から PDF を作成するために必要なツールについて調査した．
+
+現状では，Markdown から HTML への変換ツールは存在するが，PDF へ変換する
+ツールを見つけることはできなかった．
+
+従って Markdown から PDF へ変換するには Markdown → HTML → P といった
+順序を踏むのが今のところ良いと思う
+
+### Installation
+
+1. Markdown to HTML
+
+    公式サイトからスクリプトをダウンロードするか，パッケージマネージャから
+    インストールする方法がある
+
+    1. Markdown.pl を公式サイトからダウンロードする
+
+        [Daring Fireball: Markdown](http://daringfireball.net/projects/markdown/ "Daring Fireball: Markdown")
+
+        [gist: 263886 - 公式の Markdown.pl をダウンロードしてパッチを当てるスクリプト- GitHub](http://gist.github.com/263886 "gist: 263886 - 公式の Markdown.pl をダウンロードしてパッチを当てるスクリプト- GitHub")
+
+            $ mv Markdown.pl $HOME/bin/markdown
+            $ chmod +x bin/markdown
+            $ rehash
+
+    2. aptitude からインストールする(for Linux)
+
+            $ sudo aptitude install markdown
+
+2. HTML to PDF
+
+    wkhtmltopdf または wkpdf のどちらかを利用する
+
+    1. wkhtmltopdf を使用する
+
+        [wkhtmltopdf - Project Hosting on Google Code](http://code.google.com/p/wkhtmltopdf/ "wkhtmltopdf")
+
+            $ sudo aptitude install wkhtmltopdf
+
+    2. RubyGems の wkpdf を使用する
+
+        [wkpdf — a command line HTML to PDF converter for Mac OS X](http://plessl.github.com/wkpdf/ "wkpdf")
+
+            $ sudo gem update --system
+            $ sudo gem install gemcutter
+            $ sudo gem tumble
+            $ sudo gem install wkpdf
+            $ sudo gem update wkpdf
