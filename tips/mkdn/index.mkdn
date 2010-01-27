@@ -1,1 +1,1 @@
-http://tomohiro.github.com
+<http://tomohiro.github.com>
