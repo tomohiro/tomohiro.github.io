@@ -12,8 +12,8 @@ Markdown 記法で書かれたプレーンテキストを有効活用するた�
 現状では，Markdown から HTML への変換ツールは存在するが，PDF へ変換する
 ツールを見つけることはできなかった．
 
-従って Markdown から PDF へ変換するには Markdown → HTML → P といった
-順序を踏むのが今のところ良いと思う
+従って Markdown から PDF へ変換するには Markdown → HTML → PDF といった
+順序を踏むのが今のところ良いと思う．
 
 ### Installation
 
