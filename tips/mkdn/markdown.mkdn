@@ -37,8 +37,8 @@ Markdown の記法を試すには下記のサービスを使用すると良い�
 
 1. Markdown to HTML
 
-    公式サイトからスクリプトをダウンロードするか，パッケージマネージャから
-    インストールする方法がある
+    公式サイトからスクリプトをダウンロードして使用する．
+    apt が使用できる Linux の場合はパッケージマネージャからインストールすることも可能．
 
     1. Markdown.pl を公式サイトからダウンロードする
 
@@ -50,21 +50,21 @@ Markdown の記法を試すには下記のサービスを使用すると良い�
             $ chmod +x bin/markdown
             $ rehash
 
-    2. aptitude からインストールする(for Linux)
+    2. [Linux] aptitude を使用してインストールする
 
             $ sudo aptitude install markdown
 
 2. HTML to PDF
 
-    wkhtmltopdf または wkpdf のどちらかを利用する
+    OS によって wkhtmltopdf または wkpdf のどちらかを利用する．
 
-    1. wkhtmltopdf を使用する
+    1. [Linux] wkhtmltopdf を使用する
 
         [wkhtmltopdf - Project Hosting on Google Code](http://code.google.com/p/wkhtmltopdf/ "wkhtmltopdf")
 
             $ sudo aptitude install wkhtmltopdf
 
-    2. RubyGems の wkpdf を使用する
+    2. [Mac OS X] RubyGems の wkpdf を使用する
 
         [wkpdf — a command line HTML to PDF converter for Mac OS X](http://plessl.github.com/wkpdf/ "wkpdf")
 
