@@ -65,18 +65,27 @@ h1 {
     margin-right: auto;
     padding-top: 20px;
     width: 800px;
+    height: 300px;
     text-align: center;
 }
 
 #twitter {
     float: left;
     padding-right: 20px;
+    padding-bottom: 10px;
+    height: 100%;
     border-right: 1px dotted #ccc;
-    width: 260px;
+}
+
+#flickr {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    height: 100%;
+    border-right: 1px dotted #ccc;
 }
 
 #services {
-    width: 260px;
     float: left;
 }
 
