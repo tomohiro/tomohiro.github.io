@@ -16,6 +16,13 @@ Markdown 記法で書かれたプレーンテキストを有効活用するた�
 順序を踏むのが今のところ良いと思う．
 
 
+#### 2010.2.10 追記
+_pandoc_ という Haskell で作られたツールで Markdown から直接 PDF が
+生成できるようだ
+
+- [pandoc](http://johnmacfarlane.net/pandoc/)
+- [MOONGIFT: » Markdown/HTML/LaTexを相互変換「Pandoc」:オープンソースを毎日紹介](http://www.moongift.jp/2007/12/pandoc/)
+
 ### How to Markdown
 
 > Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz
