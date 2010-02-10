@@ -7,56 +7,109 @@
         <title>Tomohiro.GitHub - are u coding? -</title>
         <link rel="stylesheet" type="text/css" href="styles/default.css" />
         <link rel="stylesheet" type="text/css" href="styles/design.css" /> 
+        <link rel="me" type="text/html" href="http://www.google.com/profiles/tomohiro.t"/> 
     </head>
     <body>
         <div id="header">
             <h1>tomohiro.github.com</h1>
-            <p id="description">Coding is not crime. Not coding is crime.</p>
         </div>
 
         <div id="main">
+            <div id="contents">
+                <h2>Education</h2>
+                <ol>
+                    <li><a href="education/01_ruby_basics/index.html" title="Ruby 基礎" ref="nofollow">Ruby 基礎</a></li>
+                    <li><a href="education/02_ruby_on_rails/index.html" title="Ruby on Rails 基礎" ref="nofollow">Ruby on Rails 基礎</a></li>
+                </ol>
+                <h2>HACK - (HAGO ACK) 社内勉強会 - </h2>
+                <ol>
+                    <li><a href="hack/01_git-howto/index.html" title="Git" rel="nofollow">Git</a> by <a href="http://twitter.com/libkinjo">@libkinjo</a></li>
+                    <li><a href="hack/02_w3m-local-cgi/index.html" title="w3m local cgi" rel="nofollow">w3m local cgi</a> by <a href="http://twitter.com/DOT_shinoburc">@DOT_shinoburc</a></li>
+                    <li><a href="http://gongo.github.com/s5/hago-github.html" title="GitHub" rel="nofollow">GitHub</a> by <a href="http://twitter.com/gongoZ">@gongoZ</a></li>
+                </ol>
+                <h2>Technical Information</h2>
+                <ol>
+                    <li><a href="tips/markdown.html" title="Markdown から HTML / PDF への変換について" rel="nofollow">Markdown から HTML / PDF への変換について</a></li>
+                </ol>
+            </div>
 
-            <h2>Education</h2>
-            <ol>
-                <li><a href="education/01_ruby_basics/index.html" title="Ruby 基礎" ref="nofollow">Ruby 基礎</a></li>
-                <li><a href="education/02_ruby_on_rails/index.html" title="Ruby on Rails 基礎" ref="nofollow">Ruby on Rails 基礎</a></li>
-            </ol>
-            <h2>HACK - (HAGO ACK) 社内勉強会 - </h2>
-            <ol>
-                <li><a href="hack/01_git-howto/index.html" title="Git" rel="nofollow">Git</a> by <a href="http://twitter.com/libkinjo">@libkinjo</a></li>
-                <li><a href="hack/02_w3m-local-cgi/index.html" title="w3m local cgi" rel="nofollow">w3m local cgi</a> by <a href="http://twitter.com/DOT_shinoburc">@DOT_shinoburc</a></li>
-                <li><a href="http://gongo.github.com/s5/hago-github.html" title="GitHub" rel="nofollow">GitHub</a> by <a href="http://twitter.com/gongoZ">@gongoZ</a></li>
-            </ol>
-            <h2>Technical Information</h2>
-            <ol>
-                <li><a href="tips/markdown.html" title="Markdown から HTML / PDF への変換について" rel="nofollow">Markdown から HTML / PDF への変換について</a></li>
-            </ol>
-        </div>
+            <div id="container">
+                <h2>My Activities</h2>
+                <h3>About Me</h3>
+                <ul>
+                    <li><a href="http://www.google.com/profiles/tomohiro.t" title="Google Profile">Google Profile</a></li>
+                    <li><a href="http://keireki.jp/Tomohiro" title="ケイレキ.jp">キイレキ.jp</a></li>
+                </ul>
+                <h3>gist.github</h3>
+                <ul>
+                    <li><a href="http://gist.github.com/Tomohiro" title="My Gists">My Gists</a></li>
+                </ul>
 
-        <div id="container">
-            <h2>My Activities</h2>
-            <h3>gist.github</h3>
-            <ul>
-                <li><a href="http://gist.github.com/Tomohiro" title="My Gists">My Gists</a></li>
-            </ul>
-
-            <h3>Public Repositories</h3>
-            <ul class="end">
-                <li><a href="http://github.com/Tomohiro/citrus-plugins" title="citrus-plugins">citrus-plugins</a></li>
-                <li><a href="http://github.com/Tomohiro/tiarra-bot" title="tiarra-bot">tiarra-bot</a></li>
-                <li><a href="http://github.com/Tomohiro/dotfiles" title="dotfiles">dotfiles</a></li>
-            </ul>
+                <h3>Public Repositories</h3>
+                <ul class="end">
+                    <li><a href="http://github.com/Tomohiro/citrus-plugins" title="citrus-plugins">citrus-plugins</a></li>
+                    <li><a href="http://github.com/Tomohiro/tiarra-bot" title="tiarra-bot">tiarra-bot</a></li>
+                    <li><a href="http://github.com/Tomohiro/dotfiles" title="dotfiles">dotfiles</a></li>
+                </ul>
+            </div>
         </div>
 
         <div id="footer">
-            <ul>
-                <li><a href="http://tomohiro.weblog.com" title="Weblog">Weblog</a></li>
-                <li><a href="http://twitter.com/Tomohiro" title="Twitter">Twitter</a></li>
-                <li><a href="http://tomohiro.tumblr.com" title="Tumblr.">Tumblr</a></li>
-                <li><a href="http://tomohiro.posterous.com" title="Posterous">Posterous</a></li>
-                <li><a href="http://b.hatena.ne.jp/Tomohiro" title="Bookmarks">Bookmarks</a></li>
-                <li><a href="http://booklog.jp/users/tomohiro.t" title="Bookmarks">Booklog</a></li>
-            </ul>
+            <div id="footer_container">
+                <div id="twitter">
+                    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+                    <script>
+                        new TWTR.Widget({
+                            version: 2,
+                            type: 'profile',
+                            rpp: 4,
+                            interval: 6000,
+                            width: 215,
+                            height: 300,
+                            theme: {
+                                shell: {
+                                    background: '#ffffff',
+                                    color: '#333333'
+                                },
+                                tweets: {
+                                    background: '#ffffff',
+                                    color: '#333333',
+                                    links: '#0067bb'
+                                }
+                            },
+                            features: {
+                                scrollbar: false,
+                                loop: false,
+                                live: false,
+                                hashtags: true,
+                                timestamp: true,
+                                avatars: false,
+                                behavior: 'all'
+                            }
+                        }).render().setUser('Tomohiro').start();
+                    </script>
+                </div>
+
+                <div id="services">
+                    <ul>
+                        <li><a href="mailto:tomohiro.t@gmail.com" title="Gmail"><img src="http://www.google.com/s2/favicons?domain=mail.google.com">Gmail</a></li>
+                        <li><a href="http://friendfeed.com/tomohiro" title="FriendFeed"><img src="http://www.google.com/s2/favicons?domain=friendfeed.com">FriendFeed</a></li>
+                        <li><a href="http://twitter.com/Tomohiro" title="Twitter"><img src="http://www.google.com/s2/favicons?domain=twitter.com">Twitter</a></li>
+                        <li><a href="http://tomohiro.tumblr.com" title="Tumblr."><img src="http://www.google.com/s2/favicons?domain=tumblr.com">Tumblr</a></li>
+                        <li><a href="http://tomohiro.posterous.com" title="Posterous"><img src="http://www.posterous.com/images/favicon.png">Posterous</a></li>
+                        <li><a href="http://www.facebook.com/tomohiro.taira" title="Facebook"><img src="http://www.google.com/s2/favicons?domain=facebook.com">Facebook</a></li>
+                        <li><a href="http://mixi.jp/show_friend.pl?id=578576" title="mixi"><img src="http://img.mixi.jp/img/basic/favicon.ico">mixi</a></li>
+                        <li><a href="http://www.flickr.com/photos/tomohiro/" title="Flickr"<img src="http://www.google.com/s2/favicons?domain=www.flickr.com">Flickr</a></li>
+                        <li><a href="http://www.githubc.com/Tomohiro" title="GitHub"<img src="http://www.google.com/s2/favicons?domain=www.github.com">GitHub</a></li>
+                        <li><a href="http://booklog.jp/users/tomohiro.t" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=booklog.jp">Booklog</a></li>
+                        <li><a href="http://b.hatena.ne.jp/Tomohiro" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=b.hatena.ne.jp">Bookmarks</a></li>
+                        <li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="copyright">2010 Tomohiro, TAIRA</div>
         </div>
 
         <div id="banners">

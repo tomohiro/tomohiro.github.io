@@ -20,6 +20,12 @@ h1 {
 }
 
 #main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+#contents {
     float: left;
     width: 600px;
 }
@@ -49,18 +55,45 @@ h1 {
 
 #footer {
     clear: both;
-    margin-top: 500px;
-    margin-bottom: 200px;
+    margin-top: 550px;
     border-top: solid 1px #ccc;
     font-size: small;
 }
 
-#footer ul {
-    clear: both;
+#footer_container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    width: 800px;
+    text-align: center;
 }
 
-#footer ul li {
-    float: left;    
-    padding-left: 20px;
+#twitter {
+    float: left;
+    padding-right: 20px;
+    border-right: 1px dotted #ccc;
+    width: 260px;
+}
+
+#services {
+    width: 260px;
+    float: left;
+}
+
+#services ul li {
     list-style: none;
+    text-align: left;
+    vertical-align: middle;
+}
+#services ul li img {
+    margin-right: 0.5em;
+}
+
+#copyright {
+    clear: both;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #ccc;
 }
