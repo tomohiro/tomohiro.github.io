@@ -151,7 +151,7 @@ via [ロト6 - Wikipedia](http://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%886)
     <script src="http://gist.github.com/226929.js?file=loto6.lua"></script>
 
 - [PHP](http://j.mp/IqwNk)
-    <script src="http://gist.github.com/226929.js?file=Loto6.pde"></script>
+    <script src="http://gist.github.com/226929.js?file=Loto6.php"></script>
 
 - [Perl](http://ja.wikipedia.org/wiki/Perl)
     <script src="http://gist.github.com/226929.js?file=loto6.pl"></script>
@@ -197,5 +197,6 @@ via [ロト6 - Wikipedia](http://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%886)
 
 - [Fisher-Yates shuffle - Wikipedia](http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 - [CbC, EmacsLisp by gongo](http://gist.github.com/229291)
+- [Hello worldプログラムの一覧](http://j.mp/9yBVq)
 
 [目次へ戻る](#index)
