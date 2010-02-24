@@ -9,19 +9,18 @@ body {
 h1 {
     margin-bottom: 0px;
     font-weight: normal;
-    color: #121621;
+    color: #1A1A1A;
 }
 
 h2 {
-    font-size: medium;
+    font-size: 200%;
     font-weight: normal;
-    font-style: italic;
+    color: #1A1A1A;
 }
 
 h3 {
     font-size: medium;
     font-weight: normal;
-    font-style: italic;
 }
 
 p {
