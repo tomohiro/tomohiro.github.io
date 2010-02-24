@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+    <head>
+        <title>2. Jeweler を使用した RubyGems の作成とリリース - Technical Information</title>
+        <link rel="stylesheet" type="text/css" media="screen, print" href="/styles/reset-min.css" />
+        <link rel="stylesheet" type="text/css" media="screen, print" href="/styles/fonts-min.css" />
+        <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 481px), print" href="/styles/m2h.css" />
+        <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="/styles/iphone.css" />
+        <!--[if IE]><link rel="stylesheet" type="text/css" media="screen, projection" href="/styles/m2h.css" /><![endif]-->
+        <meta name="viewport" content="width=320" />
+    </head>
+    <body>
+        <div id="container">
+
+            <!-- Auto generated start -->
+            <h1>Technical Information</h1>
+
+<h2>2. Jeweler を使用した RubyGems の作成とリリース</h2>
+
+<h3>First</h3>
+
+<p><a href="http://github.com/technicalpickles/jeweler">Jeweler</a> は <a href="http://ja.wikipedia.org/wiki/RubyGems">RubyGems</a>
+を簡単に作成するためのライブラリである．</p>
+
+<p>ここでは開発リポジトリに <a href="http://github.com">GitHub</a> を使用し，Jeweler を用いて
+<a href="http://rubygems.org">RubyGems.org</a> に自作の Gem パッケージをリリースする手順に
+ついて書く．</p>
+
+<h3>Bootstrap a new RubyGem project</h3>
+
+<p>jeweler を使用して Gem のプロジェクトを作成する手順</p>
+
+<p>あとで書く</p>
+
+<h3>Push RubyGems</h3>
+
+<p>RubyGems.org に登録する際の手順</p>
+
+<ol>
+<li><p>RubyGems.org に登録する</p>
+
+<p><a href="http://rubygems.org">RubyGems</a> にアクセスし，右上の "sign up" から
+アカウントの新規登録を行う</p></li>
+<li><p>API Key を取得する</p>
+
+<p><a href="http://rubygems.org/profile">Profile</a> にアクセスして，画面の指示に
+従い，<code>~/.gem/credentials</code> を作成する</p></li>
+<li><p>修正したソースコードを適宜 commit する</p>
+
+<pre><code>$ git commit -a -m 'commit message'
+</code></pre></li>
+<li><p>バージョンファイルを作成する</p>
+
+<pre><code>$ rake version:write
+</code></pre></li>
+<li><p>バージョンを上げる</p>
+
+<pre><code>$ rake version:bump:major              # Bump the gemspec by a major version.
+$ rake version:bump:minor              # Bump the gemspec by a minor version.
+$ rake version:bump:patch              # Bump the gemspec by a patch version.
+</code></pre></li>
+<li><p>gemspec を作成する</p>
+
+<pre><code>$ rake gemspec
+(in /home/tomohiro/Dropbox/Development/mitten)
+Generated: mitten.gemspec
+mitten.gemspec is valid.
+</code></pre></li>
+<li><p>Gem を build する</p>
+
+<pre><code>$ rake build
+(in /home/tomohiro/Dropbox/Development/mitten)
+Generated: mitten.gemspec
+mitten.gemspec is valid.
+WARNING: no rubyforge_project specified
+  Successfully built RubyGem
+  Name: mitten
+  Version: 0.0.1
+  File: mitten-0.0.1.gem
+</code></pre></li>
+<li><p>gemspec を add / commit する</p>
+
+<pre><code>$ git add mitten.gemspec
+$ git commit mitten.gemspec -m 'add gemspec'
+</code></pre></li>
+<li><p>master へ push する</p>
+
+<pre><code>$ git push mitten master
+</code></pre></li>
+<li><p>RubyGems.org へリリースする</p>
+
+<pre><code>$ rake gemcutter:release
+(in /home/tomohiro/Dropbox/Development/mitten)
+Generated: mitten.gemspec
+mitten.gemspec is valid.
+WARNING: no rubyforge_project specified
+  Successfully built RubyGem
+  Name: mitten
+  Version: 0.0.1
+  File: mitten-0.0.1.gem
+Executing "gem push ./pkg/mitten-0.0.1.gem":
+gem push ./pkg/mitten-0.0.1.gem
+Pushing gem to RubyGems.org...
+Successfully registered gem: mitten (0.0.1)
+</code></pre></li>
+</ol>
+
+<h3>Release cycle</h3>
+
+<p>一度 Jeweler を使用して作成されたプロジェクトを RubyGems として公開した後は，
+更新する際に下記の手順を踏むだけで良い</p>
+
+<ol>
+<li><p>修正したソースコードを適宜 commit する</p>
+
+<pre><code>$ git commit -a -m 'commit message'
+</code></pre></li>
+<li><p>バージョンを上げる</p>
+
+<pre><code>$ rake version:bump:major              # Bump the gemspec by a major version.
+$ rake version:bump:minor              # Bump the gemspec by a minor version.
+$ rake version:bump:patch              # Bump the gemspec by a patch version.
+</code></pre></li>
+<li><p>gemspec を作成する</p>
+
+<pre><code>$ rake gemspec
+(in /home/tomohiro/Dropbox/Development/mitten)
+Generated: mitten.gemspec
+mitten.gemspec is valid.
+</code></pre></li>
+<li><p>Gem を build する</p>
+
+<pre><code>$ rake build
+(in /home/tomohiro/Dropbox/Development/mitten)
+Generated: mitten.gemspec
+mitten.gemspec is valid.
+WARNING: no rubyforge_project specified
+  Successfully built RubyGem
+  Name: mitten
+  Version: 0.0.4
+  File: mitten-0.0.4.gem
+</code></pre></li>
+<li><p>gemspec を commit する</p>
+
+<pre><code>$ git commit mitten.gemspec -m 'update gemspec'
+</code></pre></li>
+<li><p>master へ push する</p>
+
+<pre><code>$ git push mitten master
+</code></pre></li>
+<li><p>RubyGems.org へリリースする</p>
+
+<pre><code>$ rake gemcutter:release
+(in /home/tomohiro/Dropbox/Development/mitten)
+Generated: mitten.gemspec
+mitten.gemspec is valid.
+WARNING: no rubyforge_project specified
+  Successfully built RubyGem
+  Name: mitten
+  Version: 0.0.4
+  File: mitten-0.0.4.gem
+Executing "gem push ./pkg/mitten-0.0.4.gem":
+gem push ./pkg/mitten-0.0.4.gem
+Pushing gem to RubyGems.org...
+Successfully registered gem: mitten (0.0.4)
+</code></pre></li>
+</ol>
+
+            <!-- Auto generated end -->
+
+            <div id="menu">
+                <ul>
+                    <li><a href="./index.html">トップ</a></li>
+                    <li><a href="http://tomohiro.github.com">visit Tomohiro.GitHub</a></li>
+                </ul>
+            </div>
+            <div id="footer">
+                <p>Copyright &#169; 2010 <a href="http://tomohiro.github.com">Tomohiro.GitHub</a> All rights reserved.</p>
+                <p>Generated by <a href="http://gist.github.com/276064" title="m2 - Markdown2HTML">m2 - Markdown2HTML</a></p>
+            </div>
+        </div>
+    </body>
+</html>
