@@ -13,11 +13,36 @@ Technical Information
 [RubyGems.org](http://rubygems.org) に自作の Gem パッケージをリリースする手順に
 ついて書く．
 
+### Install the Gem
+
+    $ sudo gem install jeweler
+
+
 ### Bootstrap a new RubyGem project
 
-jeweler を使用して Gem のプロジェクトを作成する手順
+1. プロジェクトを作る
 
-あとで書く
+        $ jeweler ProjectName --rspec --cucumber --create-repo
+
+    - `--rspec, --cucumber` でそれぞれの雛形を作成してくれる
+    - `--create-repo` で GitHub にリポジトリが登録される
+    - その他のオプションは `jeweler -h` で参照できる
+
+2. Rakefile を編集する
+
+        $ cd ProjectName
+        $ vi Rakefile
+
+    >      7     gem.name = "ProjectName"
+           8     gem.summary = %Q{TODO: one-line summary of your gem}
+           9     gem.description = %Q{TODO: longer description of your gem}
+          10     gem.email = "tomohiro.t+github@gmail.com"
+          11     gem.homepage = "http://github.com/Tomohiro/ProjectName"
+          12     gem.authors = ["Tomohiro, TAIRA"]
+
+3. Rake Task を確認する
+
+        $ rake -T
 
 ### Push RubyGems
 
