@@ -110,14 +110,12 @@ ol, ul {
     padding-left: 30px;
 }
 
-ol li {
-    padding: 3px;
-    list-style-type: decimal;
+ul li {
+    padding: 5px;
 }
 
-ul li {
-    list-style-type: circle;
-    padding: 5px;
+ol li {
+    padding: 3px;
 }
 
 dl dt {
