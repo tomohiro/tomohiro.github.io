@@ -48,3 +48,6 @@ Ruby on Rails から PostgreSQL を使う
 1. PostgreSQL 用のライブラリをインストール
 
         $ sudo gem install postgres -- --with-opt-lib=/opt/local/lib/postgresql84/ --with-opt-include=/opt/local/include/postgresql84
+
+
+%COMMENTS%

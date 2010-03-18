@@ -48,3 +48,6 @@ Ruby on Rails のインストール - Mac OS X
 1. Ruby on Rails のインストール
 
         $ sudo gem install rails ruby-debug sqlite3-ruby
+
+
+%COMMENTS%

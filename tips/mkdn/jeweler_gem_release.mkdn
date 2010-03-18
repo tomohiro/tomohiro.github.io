@@ -173,3 +173,6 @@ RubyGems.org に登録する際の手順
         gem push ./pkg/mitten-0.0.4.gem
         Pushing gem to RubyGems.org...
         Successfully registered gem: mitten (0.0.4)
+
+
+%COMMENTS%

@@ -39,3 +39,6 @@ Ruby on Rails 演習
         $ ./script/generate --help
         $ ./script/generate scaffold --help
         $ ./script/generate migration --help
+
+
+%COMMENTS%
