@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 body {
-    font-family: Times, 'Times New Roman', 'FreeSerif', serif;
+    font-family: Times, 'Times New Roman', Meiryo, 'メイリオ', 'FreeSerif', serif;
     text-align: center;
 }
 
