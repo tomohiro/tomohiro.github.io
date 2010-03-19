@@ -85,7 +85,7 @@ code {
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
     background-color: #f5f5f5;
-    font-family: Courier, Consolas, Monaco, 'FreeMono', monospace;
+    font-family: Consolas, Courier, Monaco, 'FreeMono', monospace;
     letter-spacing: 1px;
 }
 
