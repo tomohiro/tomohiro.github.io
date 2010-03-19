@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 body {
-    font-family: Times, 'Times New Roman', Meiryo, 'メイリオ', 'FreeSerif', serif;
+    font-family: Times, 'Times New Roman', 'メイリオ', 'FreeSerif', serif;
     text-align: center;
 }
 
@@ -16,11 +16,11 @@ body em {
 }
 
 h1, h3, h5 {
-    font-family: Times, 'Times New Roman', 'FreeSerif', sans-serif;
+    font-family: Times, 'Times New Roman', 'メイリオ', 'FreeSerif', sans-serif;
 }
 
 h2 {
-    font-family: Helvetica, Verdana, 'FreeSans', sans-serif;
+    font-family: Helvetica, Verdana, 'メイリオ', 'FreeSans', sans-serif;
 }
 
 h1 {
