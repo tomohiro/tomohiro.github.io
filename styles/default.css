@@ -2,8 +2,12 @@
 
 body {
     width: 100%;
-    font-family: Times, 'Times New Roman', 'メイリオ', 'FreeSerif', serif;
+    font-family: Times, 'Times New Roman', 'FreeSerif', serif;
     margin-bottom: 0px;
+}
+
+section, article, nav, header, footer, aside {
+    display: block;
 }
 
 h1 {

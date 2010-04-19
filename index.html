@@ -1,172 +1,197 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<!DOCTYPE html>
+<html>
     <head>
-        <meta name="google-site-verification" content="3dUa5Tz7mRFXONBSbTHg1MGcCIgvI9ib6jH7M1hGNrY" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta http-equiv="Content-Script-Type" content="text/javascript" />
-        <meta http-equiv="Content-Style-Type" content="text/css" />
-        <meta name="robots" content="nofollow" />
-        <link rel="me" type="text/html" href="http://www.google.com/profiles/tomohiro.t"/> 
-        <link rel="stylesheet" type="text/css" href="styles/default.css" />
-        <link rel="stylesheet" type="text/css" href="styles/design.css" /> 
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="scripts/google-analytics.js"></script>
-        <script type="text/javascript" src="scripts/posterous-entries.js"></script>
-        <script type="text/javascript" src="scripts/bookmark-list.js"></script>
+        <meta charset="UTF-8">
+        <meta name="google-site-verification" content="3dUa5Tz7mRFXONBSbTHg1MGcCIgvI9ib6jH7M1hGNrY">
+        <meta name="robots" content="nofollow">
+        <link rel="me" type="text/html" href="http://www.google.com/profiles/tomohiro.t">
+        <link rel="stylesheet" href="styles/default.css">
+        <link rel="stylesheet" href="styles/design.css"> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script src="scripts/google-analytics.js"></script>
+        <script src="scripts/posterous-entries.js"></script>
+        <script src="scripts/bookmark-list.js"></script>
         <title>Tomohiro.GitHub - are u coding? -</title>
     </head>
+
     <body>
-        <div id="header">
+        <header>
             <h1>tomohiro.github.com</h1>
-        </div>
+        </header>
 
-        <div id="main">
-            <div id="contents">
-                <h2>Posterous Entries</h2>
-                <ul id="posterous-entries"></ul>
-                <h2>Education</h2>
-                <ol>
-                    <li><a href="education/01_ruby_basics/index.html" title="Ruby 基礎" ref="nofollow">Ruby 基礎</a></li>
-                    <li><a href="education/02_ruby_on_rails/index.html" title="Ruby on Rails 基礎" ref="nofollow">Ruby on Rails 基礎</a></li>
-                </ol>
-                <h2>HACK - (HAGO ACK) - </h2>
-                <ol>
-                    <li><a href="hack/01_git-howto/index.html" title="Git" rel="nofollow">Git</a> by <a href="http://twitter.com/libkinjo">@libkinjo</a></li>
-                    <li><a href="hack/02_w3m-local-cgi/index.html" title="w3m local cgi" rel="nofollow">w3m local cgi</a> by <a href="http://twitter.com/DOT_shinoburc">@DOT_shinoburc</a></li>
-                    <li><a href="http://gongo.github.com/s5/hago-github.html" title="GitHub" rel="nofollow">GitHub</a> by <a href="http://twitter.com/gongoZ">@gongoZ</a></li>
-                    <li><a href="hack/04_code-golf/index.html" title="Code Golf" rel="nofollow">Code Golf</a> by <a href="http://twitter.com/Tomohiro">@Tomohiro</a></li>
-                </ol>
-                <h2>Technical Information</h2>
-                <ol>
-                    <li><a href="tips/markdown.html" title="Markdown から HTML / PDF への変換について" rel="nofollow">Markdown から HTML / PDF への変換について</a></li>
-                    <li><a href="tips/jeweler_gem_release.html" title="Jeweler を使用した RubyGems の作成とリリース" rel="nofollow">Jeweler を使用した RubyGems の作成とリリース</a></li>
-                </ol>
-            </div>
+        <div id="content">
+            <article>
+                <section>
+                    <h2>Posterous Entries</h2>
+                    <ul id="posterous-entries"></ul>
+                </section>
+                <section>
+                    <h2>Education</h2>
+                    <ol>
+                        <li><a href="education/01_ruby_basics/index.html" title="Ruby 基礎" ref="nofollow">Ruby 基礎</a></li>
+                        <li><a href="education/02_ruby_on_rails/index.html" title="Ruby on Rails 基礎" ref="nofollow">Ruby on Rails 基礎</a></li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>HACK - (HAGO ACK) - </h2>
+                    <ol>
+                        <li><a href="hack/01_git-howto/index.html" title="Git" rel="nofollow">Git</a> by <a href="http://twitter.com/libkinjo">@libkinjo</a></li>
+                        <li><a href="hack/02_w3m-local-cgi/index.html" title="w3m local cgi" rel="nofollow">w3m local cgi</a> by <a href="http://twitter.com/DOT_shinoburc">@DOT_shinoburc</a></li>
+                        <li><a href="http://gongo.github.com/s5/hago-github.html" title="GitHub" rel="nofollow">GitHub</a> by <a href="http://twitter.com/gongoZ">@gongoZ</a></li>
+                        <li><a href="hack/04_code-golf/index.html" title="Code Golf" rel="nofollow">Code Golf</a> by <a href="http://twitter.com/Tomohiro">@Tomohiro</a></li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>Technical Information</h2>
+                    <ol>
+                        <li><a href="tips/markdown.html" title="Markdown から HTML / PDF への変換について" rel="nofollow">Markdown から HTML / PDF への変換について</a></li>
+                        <li><a href="tips/jeweler_gem_release.html" title="Jeweler を使用した RubyGems の作成とリリース" rel="nofollow">Jeweler を使用した RubyGems の作成とリリース</a></li>
+                    </ol>
+                </section>
+            </article>
 
-            <div id="container">
+            <aside>
                 <h2>My Activities</h2>
-                <h3>About Me</h3>
-                <ul>
-                    <li><a href="http://www.google.com/profiles/tomohiro.t" title="Google Profile">Google Profile</a></li>
-                    <li><a href="http://keireki.jp/Tomohiro" title="ケイレキ.jp">ケイレキ.jp</a></li>
-                </ul>
-                <h3>gist.github</h3>
-                <ul>
-                    <li><a href="http://gist.github.com/Tomohiro" title="My Gists">My Gists</a></li>
-                </ul>
-                <h3>Public Repositories</h3>
-                <ul>
-                    <li><a href="http://github.com/Tomohiro/mitten" title="mitten">mitten</a></li>
-                    <li><a href="http://github.com/Tomohiro/citrus-plugins" title="citrus-plugins">citrus-plugins</a></li>
-                    <li><a href="http://github.com/Tomohiro/dotfiles" title="dotfiles">dotfiles</a></li>
-                </ul>
-                <h3>Twitter</h3>
-                <div id="twitter">
-                    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-                    <script>
-                        new TWTR.Widget({
-                            version: 2,
-                            type: 'profile',
-                            rpp: 4,
-                            interval: 6000,
-                            width: 215,
-                            height: 300,
-                            theme: {
-                                shell: {
-                                    background: '#ffffff',
-                                    color: '#333333'
-                                },
-                                tweets: {
-                                    background: '#ffffff',
-                                    color: '#333333',
-                                    links: '#0067bb'
-                                }
-                            },
-                            features: {
-                                scrollbar: false,
-                                loop: false,
-                                live: false,
-                                hashtags: true,
-                                timestamp: true,
-                                avatars: false,
-                                behavior: 'all'
-                            }
-                        }).render().setUser('Tomohiro').start();
-                    </script>
-                </div>
-            </div>
-        </div>
-
-        <div id="footer">
-            <div id="footer_container">
-                <div id="bookmark">
-                    <h2>Bookmarks</h2>
-                    <ul id="bookmark-list"></ul>
-                </div>
-                <div id="flickr">
-                    <h2>Flickr recent photos</h2>
-                    <!-- Start of Flickr Badge -->
-                    <style type="text/css">
-                        #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
-                        #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
-                        #flickr_icon_td {padding:0 5px 0 0 !important;}
-                        .flickr_badge_image {text-align:center !important;}
-                        .flickr_badge_image img {border: 1px solid black !important;}
-                        #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
-                        #flickr_badge_uber_wrapper a:hover,
-                        #flickr_badge_uber_wrapper a:link,
-                        #flickr_badge_uber_wrapper a:active,
-                        #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
-                        #flickr_badge_wrapper {background-color:#ffffff;}
-                        #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
-                    </style>
-                    <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
-                                    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user_set&user=39077333%40N00&set=72157623321306526&context=in%2Fset-72157623321306526%2F"></script>
-                                </table>
-                    </td></tr></table>
-                    <!-- End of Flickr Badge -->
-                    <!-- Start of Flickr Badge -->
-                    <style type="text/css">
-                        #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
-                        #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
-                        #flickr_icon_td {padding:0 5px 0 0 !important;}
-                        .flickr_badge_image {text-align:center !important;}
-                        .flickr_badge_image img {border: 1px solid black !important;}
-                        #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
-                        #flickr_badge_uber_wrapper a:hover,
-                        #flickr_badge_uber_wrapper a:link,
-                        #flickr_badge_uber_wrapper a:active,
-                        #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
-                        #flickr_badge_wrapper {background-color:#ffffff;}
-                        #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
-                    </style>
-                    <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
-                                    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user&user=39077333%40N00"></script>
-                                </table>
-                    </td></tr></table>
-                    <!-- End of Flickr Badge -->
-                </div>
-
-                <div id="services">
-                    <h2>Web Services</h2>
+                <section>
+                    <h3>About Me</h3>
                     <ul>
-                        <li><a href="mailto:tomohiro.t@gmail.com" title="Gmail"><img src="http://www.google.com/s2/favicons?domain=mail.google.com" />Gmail</a></li>
-                        <li><a href="http://friendfeed.com/tomohiro" title="FriendFeed"><img src="http://www.google.com/s2/favicons?domain=friendfeed.com" />FriendFeed</a></li>
-                        <li><a href="http://twitter.com/Tomohiro" title="Twitter"><img src="http://www.google.com/s2/favicons?domain=twitter.com" />Twitter</a></li>
-                        <li><a href="http://tomohiro.tumblr.com" title="Tumblr."><img src="http://www.google.com/s2/favicons?domain=tumblr.com" />Tumblr</a></li>
-                        <li><a href="http://tomohiro.posterous.com" title="Posterous"><img src="http://www.posterous.com/images/favicon.png" />Posterous</a></li>
-                        <li><a href="http://www.facebook.com/tomohiro.taira" title="Facebook"><img src="http://www.google.com/s2/favicons?domain=facebook.com" />Facebook</a></li>
-                        <li><a href="http://mixi.jp/show_friend.pl?id=578576" title="mixi"><img src="http://img.mixi.jp/img/basic/favicon.ico" />mixi</a></li>
-                        <li><a href="http://www.flickr.com/photos/tomohiro/" title="Flickr"><img src="http://www.google.com/s2/favicons?domain=www.flickr.com" />Flickr</a></li>
-                        <li><a href="http://www.githubc.com/Tomohiro" title="GitHub"><img src="http://www.google.com/s2/favicons?domain=www.github.com" />GitHub</a></li>
-                        <li><a href="http://booklog.jp/users/tomohiro.t" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=booklog.jp" />Booklog</a></li>
-                        <li><a href="http://b.hatena.ne.jp/Tomohiro" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=b.hatena.ne.jp" />Bookmarks</a></li>
+                        <li><a href="http://www.google.com/profiles/tomohiro.t" title="Google Profile">Google Profile</a></li>
+                        <li><a href="http://keireki.jp/Tomohiro" title="ケイレキ.jp">ケイレキ.jp</a></li>
                     </ul>
-                </div>
+                </section>
+                <section>
+                    <h3>gist.github</h3>
+                    <ul>
+                        <li><a href="http://gist.github.com/Tomohiro" title="My Gists">My Gists</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Public Repositories</h3>
+                    <ul>
+                        <li><a href="http://github.com/Tomohiro/mitten" title="mitten">mitten</a></li>
+                        <li><a href="http://github.com/Tomohiro/citrus-plugins" title="citrus-plugins">citrus-plugins</a></li>
+                        <li><a href="http://github.com/Tomohiro/dotfiles" title="dotfiles">dotfiles</a></li>
+                        <li><a href="http://github.com/Tomohiro/gae_twitter_okinawa" title="gae_twitter_okinawa">gae_twitter_okinawa</a></li>
+                        <li><a href="http://github.com/Tomohiro/umitter2" title="umitter2">umitter2</a></li>
+                        <li><a href="http://github.com/Tomohiro/sunsun_menu" title="sunsun_menu">sunsun_menu</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <div id="twitter">
+                        <h3>Twitter</h3>
+                        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+                        <script>
+                            new TWTR.Widget({
+                                version: 2,
+                                type: 'profile',
+                                rpp: 4,
+                                interval: 6000,
+                                width: 215,
+                                height: 300,
+                                theme: {
+                                    shell: {
+                                        background: '#ffffff',
+                                        color: '#333333'
+                                    },
+                                    tweets: {
+                                        background: '#ffffff',
+                                        color: '#333333',
+                                        links: '#0067bb'
+                                    }
+                                },
+                                features: {
+                                    scrollbar: false,
+                                    loop: false,
+                                    live: false,
+                                    hashtags: true,
+                                    timestamp: true,
+                                    avatars: false,
+                                    behavior: 'all'
+                                }
+                            }).render().setUser('Tomohiro').start();
+                        </script>
+                    </div>
+                </section>
+            </aside>
+        </div>
+
+        <footer>
+            <div id="footer_container">
+                <section>
+                    <div id="bookmark">
+                        <h2>Bookmarks</h2>
+                        <ul id="bookmark-list"></ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div id="flickr">
+                        <h2>Flickr recent photos</h2>
+                        <!-- Start of Flickr Badge -->
+                        <style type="text/css">
+                            #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
+                            #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
+                            #flickr_icon_td {padding:0 5px 0 0 !important;}
+                            .flickr_badge_image {text-align:center !important;}
+                            .flickr_badge_image img {border: 1px solid black !important;}
+                            #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
+                            #flickr_badge_uber_wrapper a:hover,
+                            #flickr_badge_uber_wrapper a:link,
+                            #flickr_badge_uber_wrapper a:active,
+                            #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+                            #flickr_badge_wrapper {background-color:#ffffff;}
+                            #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+                        </style>
+                        <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
+                                        <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user_set&user=39077333%40N00&set=72157623321306526&context=in%2Fset-72157623321306526%2F"></script>
+                                    </table>
+                        </td></tr></table>
+                        <!-- End of Flickr Badge -->
+                        <!-- Start of Flickr Badge -->
+                        <style type="text/css">
+                            #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
+                            #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
+                            #flickr_icon_td {padding:0 5px 0 0 !important;}
+                            .flickr_badge_image {text-align:center !important;}
+                            .flickr_badge_image img {border: 1px solid black !important;}
+                            #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
+                            #flickr_badge_uber_wrapper a:hover,
+                            #flickr_badge_uber_wrapper a:link,
+                            #flickr_badge_uber_wrapper a:active,
+                            #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+                            #flickr_badge_wrapper {background-color:#ffffff;}
+                            #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+                        </style>
+                        <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
+                                        <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user&user=39077333%40N00"></script>
+                                    </table>
+                        </td></tr></table>
+                        <!-- End of Flickr Badge -->
+                    </div>
+                </section>
+
+                <section>
+                    <div id="services">
+                        <h2>Web Services</h2>
+                        <ul>
+                            <li><a href="mailto:tomohiro.t@gmail.com" title="Gmail"><img src="http://www.google.com/s2/favicons?domain=mail.google.com" />Gmail</a></li>
+                            <li><a href="http://friendfeed.com/tomohiro" title="FriendFeed"><img src="http://www.google.com/s2/favicons?domain=friendfeed.com" />FriendFeed</a></li>
+                            <li><a href="http://twitter.com/Tomohiro" title="Twitter"><img src="http://www.google.com/s2/favicons?domain=twitter.com" />Twitter</a></li>
+                            <li><a href="http://tomohiro.tumblr.com" title="Tumblr."><img src="http://www.google.com/s2/favicons?domain=tumblr.com" />Tumblr</a></li>
+                            <li><a href="http://tomohiro.posterous.com" title="Posterous"><img src="http://www.posterous.com/images/favicon.png" />Posterous</a></li>
+                            <li><a href="http://www.facebook.com/tomohiro.taira" title="Facebook"><img src="http://www.google.com/s2/favicons?domain=facebook.com" />Facebook</a></li>
+                            <li><a href="http://mixi.jp/show_friend.pl?id=578576" title="mixi"><img src="http://img.mixi.jp/img/basic/favicon.ico" />mixi</a></li>
+                            <li><a href="http://www.flickr.com/photos/tomohiro/" title="Flickr"><img src="http://www.google.com/s2/favicons?domain=www.flickr.com" />Flickr</a></li>
+                            <li><a href="http://www.githubc.com/Tomohiro" title="GitHub"><img src="http://www.google.com/s2/favicons?domain=www.github.com" />GitHub</a></li>
+                            <li><a href="http://booklog.jp/users/tomohiro.t" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=booklog.jp" />Booklog</a></li>
+                            <li><a href="http://b.hatena.ne.jp/Tomohiro" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=b.hatena.ne.jp" />Bookmarks</a></li>
+                        </ul>
+                    </div>
+                </section>
             </div>
 
-            <div id="copyright">2010 Tomohiro, TAIRA</div>
-        </div>
+            <p id="copyright">2010 Tomohiro, TAIRA</p>
+        </footer>
 
         <div id="banners">
             <!-- GitHub Ribbon -->

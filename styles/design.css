@@ -5,52 +5,52 @@ h1 {
     width: 100%;
 }
 
-#header {
+header {
     margin-bottom: 30px;
     text-align: center;
 }
 
-#header h1 {
+header h1 {
     font-size: 500%;
 }
 
-#header p#description {
+header p#description {
     text-indent: 5em;
     text-align: left;
 }
 
-#main {
+#content {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
 }
 
-#contents {
+article {
     float: left;
     width: 580px;
     padding-bottom: 100px;
     padding-right: 20px;
 }
 
-#contents ul li {
+article ul li {
     list-style: circle;
 }
 
-#container {
+aside {
     float: left;
     width: 180px;
     padding: 2px;
 }
-#container h2 {
+aside h2 {
     width: 100%;
     text-align: center;
 }
 
-#container ul {
+aside ul {
     padding-bottom: 10px;
 }
 
-#container ul li {
+aside ul li {
     list-style: none;
     padding: 2px;
 }
@@ -60,11 +60,12 @@ h1 {
     padding-bottom: 10px;
 }
 
-#footer {
+footer {
     clear: both;
     margin-top: 550px;
     border-top: double #AAA;
     font-size: small;
+    text-align: center;
 }
 
 #footer_container {
@@ -73,11 +74,10 @@ h1 {
     padding-top: 20px;
     width: 800px;
     height: 300px;
-    text-align: center;
 }
 
 #footer_container h2 {
-    text-align: centerj
+    text-align: center;
 }
 
 #bookmark {
