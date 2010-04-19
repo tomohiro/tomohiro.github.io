@@ -76,117 +76,107 @@
                         <li><a href="http://github.com/Tomohiro/sunsun_menu" title="sunsun_menu">sunsun_menu</a></li>
                     </ul>
                 </section>
-                <section>
-                    <div id="twitter">
-                        <h3>Twitter</h3>
-                        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-                        <script>
-                            new TWTR.Widget({
-                                version: 2,
-                                type: 'profile',
-                                rpp: 4,
-                                interval: 6000,
-                                width: 215,
-                                height: 300,
-                                theme: {
-                                    shell: {
-                                        background: '#ffffff',
-                                        color: '#333333'
-                                    },
-                                    tweets: {
-                                        background: '#ffffff',
-                                        color: '#333333',
-                                        links: '#0067bb'
-                                    }
+                <section id="twitter">
+                    <h3>Twitter</h3>
+                    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+                    <script>
+                        new TWTR.Widget({
+                            version: 2,
+                            type: 'profile',
+                            rpp: 4,
+                            interval: 6000,
+                            width: 215,
+                            height: 300,
+                            theme: {
+                                shell: {
+                                    background: '#ffffff',
+                                    color: '#333333'
                                 },
-                                features: {
-                                    scrollbar: false,
-                                    loop: false,
-                                    live: false,
-                                    hashtags: true,
-                                    timestamp: true,
-                                    avatars: false,
-                                    behavior: 'all'
+                                tweets: {
+                                    background: '#ffffff',
+                                    color: '#333333',
+                                    links: '#0067bb'
                                 }
-                            }).render().setUser('Tomohiro').start();
-                        </script>
-                    </div>
+                            },
+                            features: {
+                                scrollbar: false,
+                                loop: false,
+                                live: false,
+                                hashtags: true,
+                                timestamp: true,
+                                avatars: false,
+                                behavior: 'all'
+                            }
+                        }).render().setUser('Tomohiro').start();
+                    </script>
                 </section>
             </aside>
         </div>
 
         <footer>
             <div id="footer_container">
-                <section>
-                    <div id="bookmark">
-                        <h2>Bookmarks</h2>
-                        <ul id="bookmark-list"></ul>
-                    </div>
+                <section id="bookmark">
+                    <h2>Bookmarks</h2>
+                    <ul id="bookmark-list"></ul>
                 </section>
-
-                <section>
-                    <div id="flickr">
-                        <h2>Flickr recent photos</h2>
-                        <!-- Start of Flickr Badge -->
-                        <style type="text/css">
-                            #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
-                            #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
-                            #flickr_icon_td {padding:0 5px 0 0 !important;}
-                            .flickr_badge_image {text-align:center !important;}
-                            .flickr_badge_image img {border: 1px solid black !important;}
-                            #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
-                            #flickr_badge_uber_wrapper a:hover,
-                            #flickr_badge_uber_wrapper a:link,
-                            #flickr_badge_uber_wrapper a:active,
-                            #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
-                            #flickr_badge_wrapper {background-color:#ffffff;}
-                            #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
-                        </style>
-                        <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
-                                        <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user_set&user=39077333%40N00&set=72157623321306526&context=in%2Fset-72157623321306526%2F"></script>
-                                    </table>
-                        </td></tr></table>
-                        <!-- End of Flickr Badge -->
-                        <!-- Start of Flickr Badge -->
-                        <style type="text/css">
-                            #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
-                            #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
-                            #flickr_icon_td {padding:0 5px 0 0 !important;}
-                            .flickr_badge_image {text-align:center !important;}
-                            .flickr_badge_image img {border: 1px solid black !important;}
-                            #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
-                            #flickr_badge_uber_wrapper a:hover,
-                            #flickr_badge_uber_wrapper a:link,
-                            #flickr_badge_uber_wrapper a:active,
-                            #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
-                            #flickr_badge_wrapper {background-color:#ffffff;}
-                            #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
-                        </style>
-                        <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
-                                        <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user&user=39077333%40N00"></script>
-                                    </table>
-                        </td></tr></table>
-                        <!-- End of Flickr Badge -->
-                    </div>
+                <section id="flickr">
+                    <h2>Flickr recent photos</h2>
+                    <!-- Start of Flickr Badge -->
+                    <style type="text/css">
+                        #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
+                        #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
+                        #flickr_icon_td {padding:0 5px 0 0 !important;}
+                        .flickr_badge_image {text-align:center !important;}
+                        .flickr_badge_image img {border: 1px solid black !important;}
+                        #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
+                        #flickr_badge_uber_wrapper a:hover,
+                        #flickr_badge_uber_wrapper a:link,
+                        #flickr_badge_uber_wrapper a:active,
+                        #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+                        #flickr_badge_wrapper {background-color:#ffffff;}
+                        #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+                    </style>
+                    <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
+                                    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user_set&user=39077333%40N00&set=72157623321306526&context=in%2Fset-72157623321306526%2F"></script>
+                                </table>
+                    </td></tr></table>
+                    <!-- End of Flickr Badge -->
+                    <!-- Start of Flickr Badge -->
+                    <style type="text/css">
+                        #flickr_badge_source_txt {padding:0; font: 11px Arial, Helvetica, Sans serif; color:#666666;}
+                        #flickr_badge_icon {display:block !important; margin:0 !important; border: 1px solid rgb(0, 0, 0) !important;}
+                        #flickr_icon_td {padding:0 5px 0 0 !important;}
+                        .flickr_badge_image {text-align:center !important;}
+                        .flickr_badge_image img {border: 1px solid black !important;}
+                        #flickr_www {display:block; padding:0 10px 0 10px !important; font: 11px Arial, Helvetica, Sans serif !important; color:#3993ff !important;}
+                        #flickr_badge_uber_wrapper a:hover,
+                        #flickr_badge_uber_wrapper a:link,
+                        #flickr_badge_uber_wrapper a:active,
+                        #flickr_badge_uber_wrapper a:visited {text-decoration:none !important; background:inherit !important;color:#3993ff;}
+                        #flickr_badge_wrapper {background-color:#ffffff;}
+                        #flickr_badge_source {padding:0 !important; font: 11px Arial, Helvetica, Sans serif !important; color:#666666 !important;}
+                    </style>
+                    <table id="flickr_badge_uber_wrapper" cellpadding="0" cellspacing="10" border="0"><tr><td><a href="http://www.flickr.com" id="flickr_www">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><table cellpadding="0" cellspacing="10" border="0" id="flickr_badge_wrapper">
+                                    <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=3&display=latest&size=t&layout=h&source=user&user=39077333%40N00"></script>
+                                </table>
+                    </td></tr></table>
+                    <!-- End of Flickr Badge -->
                 </section>
-
-                <section>
-                    <div id="services">
-                        <h2>Web Services</h2>
-                        <ul>
-                            <li><a href="mailto:tomohiro.t@gmail.com" title="Gmail"><img src="http://www.google.com/s2/favicons?domain=mail.google.com" />Gmail</a></li>
-                            <li><a href="http://friendfeed.com/tomohiro" title="FriendFeed"><img src="http://www.google.com/s2/favicons?domain=friendfeed.com" />FriendFeed</a></li>
-                            <li><a href="http://twitter.com/Tomohiro" title="Twitter"><img src="http://www.google.com/s2/favicons?domain=twitter.com" />Twitter</a></li>
-                            <li><a href="http://tomohiro.tumblr.com" title="Tumblr."><img src="http://www.google.com/s2/favicons?domain=tumblr.com" />Tumblr</a></li>
-                            <li><a href="http://tomohiro.posterous.com" title="Posterous"><img src="http://www.posterous.com/images/favicon.png" />Posterous</a></li>
-                            <li><a href="http://www.facebook.com/tomohiro.taira" title="Facebook"><img src="http://www.google.com/s2/favicons?domain=facebook.com" />Facebook</a></li>
-                            <li><a href="http://mixi.jp/show_friend.pl?id=578576" title="mixi"><img src="http://img.mixi.jp/img/basic/favicon.ico" />mixi</a></li>
-                            <li><a href="http://www.flickr.com/photos/tomohiro/" title="Flickr"><img src="http://www.google.com/s2/favicons?domain=www.flickr.com" />Flickr</a></li>
-                            <li><a href="http://www.githubc.com/Tomohiro" title="GitHub"><img src="http://www.google.com/s2/favicons?domain=www.github.com" />GitHub</a></li>
-                            <li><a href="http://booklog.jp/users/tomohiro.t" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=booklog.jp" />Booklog</a></li>
-                            <li><a href="http://b.hatena.ne.jp/Tomohiro" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=b.hatena.ne.jp" />Bookmarks</a></li>
-                        </ul>
-                    </div>
+                <section id="services">
+                    <h2>Web Services</h2>
+                    <ul>
+                        <li><a href="mailto:tomohiro.t@gmail.com" title="Gmail"><img src="http://www.google.com/s2/favicons?domain=mail.google.com" />Gmail</a></li>
+                        <li><a href="http://friendfeed.com/tomohiro" title="FriendFeed"><img src="http://www.google.com/s2/favicons?domain=friendfeed.com" />FriendFeed</a></li>
+                        <li><a href="http://twitter.com/Tomohiro" title="Twitter"><img src="http://www.google.com/s2/favicons?domain=twitter.com" />Twitter</a></li>
+                        <li><a href="http://tomohiro.tumblr.com" title="Tumblr."><img src="http://www.google.com/s2/favicons?domain=tumblr.com" />Tumblr</a></li>
+                        <li><a href="http://tomohiro.posterous.com" title="Posterous"><img src="http://www.posterous.com/images/favicon.png" />Posterous</a></li>
+                        <li><a href="http://www.facebook.com/tomohiro.taira" title="Facebook"><img src="http://www.google.com/s2/favicons?domain=facebook.com" />Facebook</a></li>
+                        <li><a href="http://mixi.jp/show_friend.pl?id=578576" title="mixi"><img src="http://img.mixi.jp/img/basic/favicon.ico" />mixi</a></li>
+                        <li><a href="http://www.flickr.com/photos/tomohiro/" title="Flickr"><img src="http://www.google.com/s2/favicons?domain=www.flickr.com" />Flickr</a></li>
+                        <li><a href="http://www.githubc.com/Tomohiro" title="GitHub"><img src="http://www.google.com/s2/favicons?domain=www.github.com" />GitHub</a></li>
+                        <li><a href="http://booklog.jp/users/tomohiro.t" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=booklog.jp" />Booklog</a></li>
+                        <li><a href="http://b.hatena.ne.jp/Tomohiro" title="Bookmarks"><img src="http://www.google.com/s2/favicons?domain=b.hatena.ne.jp" />Bookmarks</a></li>
+                    </ul>
                 </section>
             </div>
 
