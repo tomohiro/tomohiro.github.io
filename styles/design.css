@@ -1,22 +1,14 @@
-h1 {
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-}
-
 header {
     margin-bottom: 30px;
     text-align: center;
 }
 
 header h1 {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     font-size: 500%;
-}
-
-header p#description {
-    text-indent: 5em;
-    text-align: left;
 }
 
 #content {
@@ -32,6 +24,12 @@ article {
     padding-right: 20px;
 }
 
+article h1 {
+    font-size: 200%;
+    font-weight: normal;
+    color: #1A1A1A;
+}
+
 article ul li {
     list-style: circle;
 }
@@ -41,7 +39,8 @@ aside {
     width: 180px;
     padding: 2px;
 }
-aside h2 {
+
+aside h1 {
     width: 100%;
     text-align: center;
 }
@@ -60,6 +59,12 @@ aside ul li {
     padding-bottom: 10px;
 }
 
+aside section h1 {
+    text-align: left;
+    font-size: 100%;
+    font-weight: normal;
+}
+
 footer {
     clear: both;
     margin-top: 550px;
@@ -76,7 +81,7 @@ footer {
     height: 300px;
 }
 
-#footer_container h2 {
+#footer_container h1 {
     text-align: center;
 }
 
