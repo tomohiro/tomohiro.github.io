@@ -45,12 +45,12 @@
     font: 11px Arial, Helvetica, Sans serif !important;
     color: #666666 !important;
 }
-#flickr section {
+#flickr div {
     margin-bottom: 15px;
 }
-#flickr section a {
+#flickr div a {
     margin: 5px;
 }
-#flickr section img {
+#flickr div img {
     border: 1px solid #000;
 }

@@ -73,7 +73,7 @@ footer {
     text-align: center;
 }
 
-#footer_container {
+footer div#container {
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;
@@ -81,7 +81,7 @@ footer {
     height: 300px;
 }
 
-#footer_container h1 {
+footer div#container h1 {
     text-align: center;
 }
 
