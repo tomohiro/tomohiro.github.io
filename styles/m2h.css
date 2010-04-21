@@ -3,16 +3,17 @@
 body {
     font-family: Times, 'Times New Roman', 'メイリオ', 'FreeSerif', serif;
     text-align: center;
+    width: 800px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+header, nav, footer, article, section, aside {
+    display: block;
 }
 
 body em {
     font-weight: bold;
-}
-
-#container {
-    width: 800px;
-    text-align: left;
-    margin: 0 auto;
 }
 
 h1, h3, h5 {
@@ -156,6 +157,7 @@ blockquote pre code {
 table {
     margin-bottom: 2em;
 }
+
 tr, th, td {
     padding: 3px;
     border: 1px solid #ccc;
@@ -170,26 +172,26 @@ th {
     text-align: center;
 }
 
-#menu {
+nav {
     overflow: hidden;
     position: absolute;
     top: 0px;
     width: 800px;
 }
 
-#menu ul {
+nav ul {
     float: right;
     padding: 0;
     padding-top: 5px;
 }
 
-#menu li {
+nav li {
     display: block;
     float: left;
     padding: 0;
 }
 
-#menu li a {
+nav li a {
     display: block;
     padding: 10px;
     padding-top: 5px;
@@ -198,12 +200,12 @@ th {
     letter-spacing: 1px;
 }
 
-#menu li.current a {
+nav li.current a {
     border-top: 3px solid;
     padding-top: 2px;
 }
 
-#footer {
+footer {
     font-size: 95%;
     color: #999;
     margin: 50px 0;
@@ -212,6 +214,6 @@ th {
     text-align: center;
 }
 
-#footer p {
+footer p {
     padding: 5px 0;
 }
