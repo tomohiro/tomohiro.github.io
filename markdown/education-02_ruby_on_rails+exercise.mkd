@@ -41,4 +41,4 @@ Ruby on Rails 演習
         $ ./script/generate migration --help
 
 
-%COMMENTS%
+<div><%= @disqus %></div>

@@ -175,4 +175,4 @@ RubyGems.org に登録する際の手順
         Successfully registered gem: mitten (0.0.4)
 
 
-%COMMENTS%
+<div><%= @disqus %></div>

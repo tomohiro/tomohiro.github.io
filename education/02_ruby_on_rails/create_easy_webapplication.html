@@ -3,22 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=320">
-        <link rel="stylesheet" media="screen, print" href="/styles/reset-min.css">
-        <link rel="stylesheet" media="screen, print" href="/styles/fonts-min.css">
-        <link rel="stylesheet" media="screen and (min-device-width: 481px), print" href="/styles/m2h.css">
-        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="/styles/iphone.css">
-        <!--[if IE]><link rel="stylesheet" media="screen, projection" href="/styles/m2h.css"><![endif]-->
-        <!--[if lte IE 8]>
-        <script src="scripts/create-elements.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="scripts/google-analytics.js"></script>
-        <script src="scripts/disqus.js"></script>
+        <link rel="stylesheet" media="screen, print" href="../../styles/reset-min.css">
+        <link rel="stylesheet" media="screen, print" href="../../styles/fonts-min.css">
+        <link rel="stylesheet" media="screen and (min-device-width: 481px), print" href="../../styles/cg.css">
+        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../../styles/iphone.css">
+        <!--[if IE]><link rel="stylesheet" media="screen, projection" href="../../styles/cg.css"><![endif]-->
+        <!--[if lte IE 8]><script src="../../scripts/create-elements.js" type="text/javascript"></script><![endif]-->
         <title>簡単な Web アプリケーションを作ってみる - Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</title>
     </head>
     <body>
-            <article>
-            <!-- Auto generated start -->
-            <h1>Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Index</a></li>
+            </ul>
+        </nav>
+
+        <article>
+
+<!-- Auto generated start -->
+
+<h1>Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</h1>
 
 <h2>簡単な Web アプリケーションを作ってみる</h2>
 
@@ -32,6 +36,7 @@
 <li>デバッグの仕方</li>
 </ol>
 
+
 <h3>はじめに</h3>
 
 <p>ここでは，Ruby on Rails を用いて簡単な Web アプリケーションを作成する．</p>
@@ -43,29 +48,27 @@
 <ol>
 <li><p>rails コマンドでプロジェクトを作成する</p>
 
-<pre><code>$ rails cd_stock --database=postgresql
-$ cd cd_stock
+<pre><code> $ rails cd_stock --database=postgresql
+ $ cd cd_stock
 </code></pre></li>
 <li><p>データベース接続のための設定を行う</p>
 
-<pre><code>$ vi config/environment.rb
+<pre><code> $ vi config/environment.rb
 </code></pre>
 
-<blockquote>
-<pre><code>  config.gem "postgres"  # 追加する
-</code></pre>
-</blockquote>
+<blockquote><pre><code>  config.gem "postgres"  # 追加する
+</code></pre></blockquote>
 
-<pre><code>$ vi config/database.yml
+<pre><code>    $ vi config/database.yml
 </code></pre>
 
-<blockquote>
-<pre><code>  username: postgres  # 変更する
-</code></pre>
-</blockquote></li>
+<blockquote><pre><code>  username: postgres  # 変更する
+</code></pre></blockquote>
+
+<ol>
 <li><p>必要な RubyGems をインストールする</p>
 
-<pre><code>$ sudo rake gems:install
+<pre><code> $ sudo rake gems:install
 </code></pre>
 
 <p><em>PostgreSQL 用の Gems も自動的にインストールされるので前もってインストールしておかなくても良い</em></p></li>
@@ -74,116 +77,120 @@ $ cd cd_stock
 <ul>
 <li><p>rake コマンドで作成する</p>
 
-<pre><code>$ rake db:create:all
+<pre><code>  $ rake db:create:all
 </code></pre></li>
 <li><p>PostgreSQL の createdb コマンドで作成する</p>
 
-<pre><code>$ sudo su postgres
-$ createdb cd_stock_developemnt -E UTF8
-$ createdb cd_stock_test -E UTF8
-$ createdb cd_stock_production -E UTF8
-$ exit
+<pre><code>  $ sudo su postgres
+  $ createdb cd_stock_developemnt -E UTF8
+  $ createdb cd_stock_test -E UTF8
+  $ createdb cd_stock_production -E UTF8
+  $ exit
 </code></pre></li>
-</ul></li>
+</ul>
+</li>
 <li><p>データベース設計</p>
 
-<p>テーブル名: <em>genres</em> (音楽ジャンル情報を保存する)</p>
+<p> テーブル名: <em>genres</em> (音楽ジャンル情報を保存する)</p>
 
 <table>
 <thead>
 <tr>
-  <th></th>
-  <th>カラム名</th>
-  <th>型</th>
-  <th>説明</th>
+<th>  </th>
+<th>カラム名</th>
+<th>   型   </th>
+<th>                       説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>1</td>
-  <td>id</td>
-  <td>Integer</td>
-  <td>ID <em>主キー，自動インクリメント</em></td>
+<td> 1</td>
+<td>id      </td>
+<td>Integer </td>
+<td>ID <em>主キー，自動インクリメント</em></td>
 </tr>
 <tr>
-  <td>2</td>
-  <td>name</td>
-  <td>String</td>
-  <td>ジャンル名</td>
+<td> 2</td>
+<td>name    </td>
+<td>String  </td>
+<td>ジャンル名</td>
 </tr>
 </tbody>
 </table>
 
-<p>テーブル名: <em>cds</em> (CD 情報を保存する)</p>
+
+<p> テーブル名: <em>cds</em> (CD 情報を保存する)</p>
 
 <table>
 <thead>
 <tr>
-  <th></th>
-  <th>カラム名</th>
-  <th>型</th>
-  <th>説明</th>
+<th>  </th>
+<th>カラム名</th>
+<th>   型   </th>
+<th>                       説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>1</td>
-  <td>id</td>
-  <td>Integer</td>
-  <td>ID <em>主キー，自動インクリメント</em></td>
+<td> 1</td>
+<td>id      </td>
+<td>Integer </td>
+<td>ID <em>主キー，自動インクリメント</em></td>
 </tr>
 <tr>
-  <td>2</td>
-  <td>artist</td>
-  <td>String</td>
-  <td>アーティスト名</td>
+<td> 2</td>
+<td>artist  </td>
+<td>String  </td>
+<td>アーティスト名</td>
 </tr>
 <tr>
-  <td>3</td>
-  <td>title</td>
-  <td>String</td>
-  <td>CD タイトル</td>
+<td> 3</td>
+<td>title   </td>
+<td>String  </td>
+<td>CD タイトル</td>
 </tr>
 <tr>
-  <td>4</td>
-  <td>genre_id</td>
-  <td>Integer</td>
-  <td>ジャンル <em>genres テーブルと関連付けられる</em></td>
+<td> 4</td>
+<td>genre_id</td>
+<td>Integer </td>
+<td>ジャンル <em>genres テーブルと関連付けられる</em></td>
 </tr>
 <tr>
-  <td>5</td>
-  <td>year</td>
-  <td>Integer</td>
-  <td>発売年</td>
+<td> 5</td>
+<td>year    </td>
+<td>Integer </td>
+<td>発売年</td>
 </tr>
 <tr>
-  <td>6</td>
-  <td>label</td>
-  <td>string</td>
-  <td>発売元レーベル名</td>
+<td> 6</td>
+<td>label   </td>
+<td>string  </td>
+<td>発売元レーベル名</td>
 </tr>
 <tr>
-  <td>7</td>
-  <td>asin</td>
-  <td>string</td>
-  <td>Amazon の ID</td>
+<td> 7</td>
+<td>asin    </td>
+<td>string  </td>
+<td>Amazon の ID</td>
 </tr>
 </tbody>
 </table>
 
-<p>テーブル構造の関連図</p>
 
-<p><img src="images/tables.png" alt="テーブル構造の関連図" title="ERD" /></p></li>
+<p> テーブル構造の関連図</p>
+
+<p> <img src="images/tables.png" title="ERD" alt="テーブル構造の関連図" /></p></li>
 <li><p>テーブルの情報を参考に，プログラムを作成する</p>
 
-<pre><code>$ ruby script/generate scaffold Genre name:string
-$ ruby script/generate scaffold Cd artist:string title:string genre_id:integer year:integer label:string asin:string
+<pre><code> $ ruby script/generate scaffold Genre name:string
+ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer year:integer label:string asin:string
 </code></pre></li>
 <li><p>データベースにテーブルを作成する</p>
 
-<pre><code>$ rake db:migrate
+<pre><code> $ rake db:migrate
 </code></pre></li>
 </ol>
+
 
 <h3>作ったアプリケーションを実行してみよう</h3>
 
@@ -192,24 +199,26 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
 <ol>
 <li><p>Web サーバを起動する</p>
 
-<pre><code>$ ruby script/server
+<pre><code> $ ruby script/server
 </code></pre></li>
 <li><p>ブラウザからアクセスする</p>
 
 <ul>
 <li><a href="http://localhost:3000/genres">http://localhost:3000/genres</a></li>
 <li><a href="http://localhost:3000/cds">http://localhost:3000/cds</a></li>
-</ul></li>
+</ul>
+</li>
 <li><p>ジャンルを登録してテーブルにデータ入っているかを確かめる</p>
 
-<pre><code>$ pgsql -U postgres cd_stock_development
-=# SELECT * FROM genres;
+<pre><code> $ pgsql -U postgres cd_stock_development
+ =# SELECT * FROM genres;
 </code></pre></li>
 <li><p>CD を登録してテーブルにデータ入っているかを確かめる</p>
 
-<pre><code>=# SELECT * FROM cds;
+<pre><code> =# SELECT * FROM cds;
 </code></pre></li>
 </ol>
+
 
 <h3>Ruby on Rails の規約の説明</h3>
 
@@ -220,11 +229,13 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
 <li>そのルールに従って URL アクセスパス等が決まる</li>
 </ul>
 
+
 <p>【参考リンク】</p>
 
 <ul>
 <li><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20070626/275943/?P=3">Part2　Rubyに学ぶ「Ruby on Railsの正体」：ITpro</a></li>
 </ul>
+
 
 <h3>デバッグの仕方</h3>
 
@@ -233,18 +244,17 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
 <ol>
 <li><p>サーバをデバッグモードで再起動する</p>
 
-<p>サーバを停止させるには，Web サーバのコンソール画面で <code>Ctrl - c</code> を押す</p>
+<p> サーバを停止させるには，Web サーバのコンソール画面で <code>Ctrl - c</code> を押す</p>
 
-<p>サーバが停止したら，-u オプションを付けて再起動する</p>
+<p> サーバが停止したら，-u オプションを付けて再起動する</p>
 
-<pre><code>$ ruby script/server -u
+<pre><code> $ ruby script/server -u
 </code></pre></li>
 <li><p>ブレークポイントを書く</p>
 
-<p>ソース中で処理を止めたい所に <em>debugger</em> と記述する</p>
+<p> ソース中で処理を止めたい所に <em>debugger</em> と記述する</p>
 
-<blockquote>
-<pre><code> 1 class CdsController &lt; ApplicationController
+<blockquote><pre><code> 1 class CdsController &lt; ApplicationController
  2   # GET /cds
  3   # GET /cds.xml
  4   def index
@@ -255,21 +265,36 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
  9       format.xml  { render :xml =&gt; @cds }
 10     end
 11   end
-</code></pre>
-</blockquote></li>
+</code></pre></blockquote></li>
 <li><p>その状態でアプリケーションを操作してみる</p>
 
-<p>操作すると，ブレークポイントを設置した箇所で処理が止まり，Mongrel サーバの
-コンソールの中でインタプリタが動かせるようになっている。</p>
+<p> 操作すると，ブレークポイントを設置した箇所で処理が止まり，Mongrel サーバの
+ コンソールの中でインタプリタが動かせるようになっている。</p>
 
 <ul>
 <li>画面に変数やメソッドの実行結果を表示するには，<em>p</em> または <em>pp</em> を使う</li>
 <li><code>l</code> でソースの中で現在どの処理が実行中なのか教えてくれる</li>
 <li><code>n</code> でステップ実行(1行ずつ実行するということ）</li>
 <li><code>c</code> で処理再開</li>
-</ul></li>
+</ul>
+</li>
+</ol>
+</li>
 </ol>
 
+
+<div><script>
+(function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/tomohiro-github-com/get_num_replies.js' + query + '"></' + 'script>');
+})();
+</script>
 <section id="disqus_thread"></section>
 <script type="text/javascript">
   (function() {
@@ -280,21 +305,17 @@ $ ruby script/generate scaffold Cd artist:string title:string genre_id:integer y
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=tomohiro-github-com">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
 
-            <!-- Auto generated end -->
-            </article>
 
-            <nav id="menu">
-                <ul>
-                    <li><a href="./index.html">トップ</a></li>
-                    <li><a href="http://tomohiro.github.com">visit Tomohiro.GitHub</a></li>
-                </ul>
-            </nav>
+<!-- Auto generated end -->
 
-            <footer>
-                <p>Copyright &#169; 2010 <a href="http://tomohiro.github.com">Tomohiro.GitHub</a> All rights reserved.</p>
-                <p>Generated by <a href="http://gist.github.com/276064" title="m2 - Markdown2HTML">m2 - Markdown2HTML</a></p>
-            </footer>
+        </article>
+
+        <footer>
+            <p>Copyright &#169; 2010 <a href="mailto:tomohiro.t+github@gmail.com">Tomohiro</a> All rights reserved.</p>
+            <p>Powerd by <a href="http://github.com/Tomohiro/cg" title="cg - A Ruby based ContentsGenerator">cg - A Ruby based contents generator</a></p>
+        </footer>
     </body>
 </html>

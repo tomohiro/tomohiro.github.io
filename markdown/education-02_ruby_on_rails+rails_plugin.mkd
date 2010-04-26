@@ -42,4 +42,4 @@ Ruby on Rails には豊富なプラグインがあり，それらを導入する
         $ ./script/plugin install http://rug-b.rubyforge.org/svn/ext_scaffold
 
 
-%COMMENTS%
+<div><%= @disqus %></div>

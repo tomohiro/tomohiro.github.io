@@ -50,4 +50,4 @@ Ruby on Rails のインストール - Mac OS X
         $ sudo gem install rails ruby-debug sqlite3-ruby
 
 
-%COMMENTS%
+<div><%= @disqus %></div>

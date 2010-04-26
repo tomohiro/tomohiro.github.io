@@ -82,4 +82,4 @@ Markdown の記法を試すには下記のサービスを使用すると良い�
             $ sudo gem update wkpdf
 
 
-%COMMENTS%
+<div><%= @disqus %></div>

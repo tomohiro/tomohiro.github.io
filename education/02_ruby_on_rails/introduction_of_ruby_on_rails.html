@@ -3,22 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=320">
-        <link rel="stylesheet" media="screen, print" href="/styles/reset-min.css">
-        <link rel="stylesheet" media="screen, print" href="/styles/fonts-min.css">
-        <link rel="stylesheet" media="screen and (min-device-width: 481px), print" href="/styles/m2h.css">
-        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="/styles/iphone.css">
-        <!--[if IE]><link rel="stylesheet" media="screen, projection" href="/styles/m2h.css"><![endif]-->
-        <!--[if lte IE 8]>
-        <script src="scripts/create-elements.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="scripts/google-analytics.js"></script>
-        <script src="scripts/disqus.js"></script>
+        <link rel="stylesheet" media="screen, print" href="../../styles/reset-min.css">
+        <link rel="stylesheet" media="screen, print" href="../../styles/fonts-min.css">
+        <link rel="stylesheet" media="screen and (min-device-width: 481px), print" href="../../styles/cg.css">
+        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../../styles/iphone.css">
+        <!--[if IE]><link rel="stylesheet" media="screen, projection" href="../../styles/cg.css"><![endif]-->
+        <!--[if lte IE 8]><script src="../../scripts/create-elements.js" type="text/javascript"></script><![endif]-->
         <title>Ruby on Rails の紹介 - Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</title>
     </head>
     <body>
-            <article>
-            <!-- Auto generated start -->
-            <h1>Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Index</a></li>
+            </ul>
+        </nav>
+
+        <article>
+
+<!-- Auto generated start -->
+
+<h1>Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV</h1>
 
 <h2>Ruby on Rails の紹介</h2>
 
@@ -33,22 +37,21 @@
 <li>構成</li>
 </ol>
 
+
 <h3>はじめに</h3>
 
 <p>ここでは，Ruby on Rails とは何か？また，世の中に与えた影響，構成について簡単に学ぶ</p>
 
 <h3>Ruby on Rails とは</h3>
 
-<blockquote>
-  <p>"Ruby on Rails（ルビーオンレイルズ）はオープンソースのWebアプリケーションフレームワークである。
+<blockquote><p>"Ruby on Rails（ルビーオンレイルズ）はオープンソースのWebアプリケーションフレームワークである。
 RoRまたは単にRailsと呼ばれる。その名にも示されているようにRubyで書かれている。
 またModel View Controller(MVC)アーキテクチャに基づいて構築されている。</p>
 
-<p>実アプリケーションの開発を他のフレームワークより少ないコードで簡単に開発できるよう考慮し設計されている。 
+<p>実アプリケーションの開発を他のフレームワークより少ないコードで簡単に開発できるよう考慮し設計されている。
 Railsの公式なパッケージはRubyのライブラリやアプリケーションの流通ルートであるRubyGemsにより配布されている。"</p>
 
-<p>-- via <a href="http://ja.wikipedia.org/wiki/Ruby_on_Rails">Ruby on Rails</a></p>
-</blockquote>
+<p>-- via <a href="http://ja.wikipedia.org/wiki/Ruby_on_Rails">Ruby on Rails</a></p></blockquote>
 
 <h3>哲学</h3>
 
@@ -75,41 +78,35 @@ ActiveRecordはRDBMSの表定義から自動的にその情報を取得する。
 <li><a href="http://capsctrl.que.jp/kdmsnr/wiki/transl/?AnInterviewWithDHH">翻訳 - Ruby on Rails: David Heinemeier Hanssonへのインタビュー</a></li>
 </ul>
 
+
 <h3>特徴</h3>
 
-<dl>
-<dt><h4>設定よりも規約（Convention over Configuration）</h4></dt>
-<dd>
-<p>Ruby on Rails では冗長な XML による設定ファイルの代わりに，
+<h4>設定よりも規約（Convention over Configuration）</h4>
+
+<p>: Ruby on Rails では冗長な XML による設定ファイルの代わりに，
 命名規則とファイル配置を規約として徹底します。これにより，劇的に設定項目を削減します。</p>
-</dd>
 
-<dt><h4>根本的に異なるデータベース戦略</h4></dt>
-<dd>
-<p>Rails ではプログラムがデータベースの構造を調査し，それに基づいた機能をアプリケーションに適用します。</p>
-</dd>
+<h4>根本的に異なるデータベース戦略</h4>
 
-<dt><h4>気の利いたデフォルト値の全面展開</h4></dt>
-<dd>
-<p>Ruby はデフォルト値を設定する機能が充実しています。
+<p>: Rails ではプログラムがデータベースの構造を調査し，それに基づいた機能をアプリケーションに適用します。</p>
+
+<h4>気の利いたデフォルト値の全面展開</h4>
+
+<p>: Ruby はデフォルト値を設定する機能が充実しています。
 Rails を使った開発では，共通パラメータを設定する必要はほとんどありません。
 しかも，デフォルト値は必要に応じて自由に変更できます。</p>
-</dd>
 
-<dt><h4>迅速なフィードバックループ</h4></dt>
-<dd>
-<p>Rails での開発では，1行変更したら，ブラウザを再読み込みするだけで変更内容を確認できます。
+<h4>迅速なフィードバックループ</h4>
+
+<p>: Rails での開発では，1行変更したら，ブラウザを再読み込みするだけで変更内容を確認できます。
 Java での開発ではたいていの場合に特別なビルドやデプロイ手順が必要になるのとは対照的です。
 毎日何度も繰り返す作業を5分短縮することの効果は過小評価されがちですが，見過ごせないものです。</p>
-</dd>
 
-<dt><h4>Ajax</h4></dt>
-<dd>
-<p>Rails は Ajax を利用したアプリケーション構築コストを節減します。
+<h4>Ajax</h4>
+
+<p>: Rails は Ajax を利用したアプリケーション構築コストを節減します。
 Ajax を使うと，Web アプリケーションをよりインタラクティブにできます。
 ユーザに流れるような操作感と，印象に残る使い勝手を提供できます。</p>
-</dd>
-</dl>
 
 <h3>世の中に与えた影響</h3>
 
@@ -122,41 +119,42 @@ Ajax を使うと，Web アプリケーションをよりインタラクティ�
 <table>
 <thead>
 <tr>
-  <th>言語</th>
-  <th>フレームワーク</th>
+<th>言語      </th>
+<th> フレームワーク</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Python</td>
-  <td>Django，Fanery，Subway，TurboGears</td>
+<td>Python    </td>
+<td>Django，Fanery，Subway，TurboGears</td>
 </tr>
 <tr>
-  <td>Perl</td>
-  <td>Catalyst</td>
+<td>Perl      </td>
+<td>Catalyst</td>
 </tr>
 <tr>
-  <td>JavaScript</td>
-  <td>TrimJunction</td>
+<td>JavaScript</td>
+<td>TrimJunction</td>
 </tr>
 <tr>
-  <td>PHP</td>
-  <td>CakePHP，symfony，Seagull，PHP on TRAX</td>
+<td>PHP       </td>
+<td>CakePHP，symfony，Seagull，PHP on TRAX</td>
 </tr>
 <tr>
-  <td>.NET</td>
-  <td>MonoRail</td>
+<td>.NET      </td>
+<td>MonoRail</td>
 </tr>
 <tr>
-  <td>Java</td>
-  <td>Wicket，Sails，Trails, Teeda(Seasar2)</td>
+<td>Java      </td>
+<td>Wicket，Sails，Trails, Teeda(Seasar2)</td>
 </tr>
 <tr>
-  <td>Smalltalk</td>
-  <td>Seaside</td>
+<td>Smalltalk </td>
+<td>Seaside</td>
 </tr>
 </tbody>
 </table>
+
 
 <p>-- via <a href="http://www.oreilly.co.jp/books/9784873113203/">Java から Ruby へ</a></p>
 
@@ -164,10 +162,12 @@ Ajax を使うと，Web アプリケーションをよりインタラクティ�
 
 <ul>
 <li><a href="http://d.hatena.ne.jp/keyword/ActionPack">ActionPack</a>
+
 <ul>
 <li><a href="http://d.hatena.ne.jp/keyword/ActionController">ActionController</a></li>
 <li><a href="http://d.hatena.ne.jp/keyword/ActionView">ActionView</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="http://d.hatena.ne.jp/keyword/ActiveRecord">ActiveRecord</a>（<a href="http://ja.wikipedia.org/wiki/Active_Record">ActiveRecord パターン</a>）</li>
 <li><a href="http://d.hatena.ne.jp/keyword/ActiveSupport">ActiveSupport</a></li>
 <li><a href="http://d.hatena.ne.jp/keyword/ActionMailer">ActionMailer</a></li>
@@ -175,7 +175,8 @@ Ajax を使うと，Web アプリケーションをよりインタラクティ�
 <li><a href="http://d.hatena.ne.jp/keyword/railties">railties</a></li>
 </ul>
 
-<p><img src="images/rails_system.gif" alt="構成図" title="" /></p>
+
+<p><img src="images/rails_system.gif" alt="構成図" /></p>
 
 <p>【参考リンク】</p>
 
@@ -183,6 +184,19 @@ Ajax を使うと，Web アプリケーションをよりインタラクティ�
 <li><a href="http://blog.poqu.org/2008/01/17/rails-2/">非エンジニアにRails2.0を説明する -2 | poqu.log</a></li>
 </ul>
 
+
+<div><script>
+(function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        }
+    }
+    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/tomohiro-github-com/get_num_replies.js' + query + '"></' + 'script>');
+})();
+</script>
 <section id="disqus_thread"></section>
 <script type="text/javascript">
   (function() {
@@ -193,21 +207,17 @@ Ajax を使うと，Web アプリケーションをよりインタラクティ�
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=tomohiro-github-com">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
 
-            <!-- Auto generated end -->
-            </article>
 
-            <nav id="menu">
-                <ul>
-                    <li><a href="./index.html">トップ</a></li>
-                    <li><a href="http://tomohiro.github.com">visit Tomohiro.GitHub</a></li>
-                </ul>
-            </nav>
+<!-- Auto generated end -->
 
-            <footer>
-                <p>Copyright &#169; 2010 <a href="http://tomohiro.github.com">Tomohiro.GitHub</a> All rights reserved.</p>
-                <p>Generated by <a href="http://gist.github.com/276064" title="m2 - Markdown2HTML">m2 - Markdown2HTML</a></p>
-            </footer>
+        </article>
+
+        <footer>
+            <p>Copyright &#169; 2010 <a href="mailto:tomohiro.t+github@gmail.com">Tomohiro</a> All rights reserved.</p>
+            <p>Powerd by <a href="http://github.com/Tomohiro/cg" title="cg - A Ruby based ContentsGenerator">cg - A Ruby based contents generator</a></p>
+        </footer>
     </body>
 </html>

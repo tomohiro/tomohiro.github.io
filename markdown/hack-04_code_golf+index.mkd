@@ -202,4 +202,4 @@ via [ロト6 - Wikipedia](http://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%886)
 [目次へ戻る](#index)
 
 
-%COMMENTS%
+<div><%= @disqus %></div>
