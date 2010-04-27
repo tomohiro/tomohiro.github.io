@@ -3,7 +3,8 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 
 ![Ruby on Rails ロゴ](images/rails.png "Ruby on Rails")
 
-### 目次
+目次
+--------------------------------------------------------------------------------
 
 1. [Web アプリケーションとは](how_to_webapplication.html)
 2. [Ruby on Rails の紹介](introduction_of_ruby_on_rails.html)
@@ -14,7 +15,9 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 7. [MVC とは何か - Ruby on Rails の MVC アーキテクチャ](how_to_mvc.html)
 8. [Ruby on Rails 演習](exercise.html)
 
-### 関連 Web サイト
+
+関連 Web サイト
+--------------------------------------------------------------------------------
 
 * [Ruby on Rails - 公式サイト](http://www.rubyonrails.org/)
 * [Rails Framework Documentaiton - 公式 API リファレンス](http://api.rubyonrails.org/)

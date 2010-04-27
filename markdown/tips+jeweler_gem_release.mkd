@@ -1,7 +1,7 @@
-Technical Information
+Technical Information #2
 ================================================================================
 
-2. Jeweler を使用した RubyGems の作成とリリース
+Jeweler を使用した RubyGems の作成とリリース
 --------------------------------------------------------------------------------
 
 ### First
@@ -22,7 +22,7 @@ Technical Information
 
 1. プロジェクトを作る
 
-        $ jeweler ProjectName --rspec --cucumber --create-repo
+       $ jeweler ProjectName --rspec --cucumber --create-repo
 
     - `--rspec, --cucumber` でそれぞれの雛形を作成してくれる
     - `--create-repo` で GitHub にリポジトリが登録される
@@ -30,19 +30,20 @@ Technical Information
 
 2. Rakefile を編集する
 
-        $ cd ProjectName
-        $ vi Rakefile
+       $ cd ProjectName
+       $ vi Rakefile
 
     >      7     gem.name = "ProjectName"
-           8     gem.summary = %Q{TODO: one-line summary of your gem}
-           9     gem.description = %Q{TODO: longer description of your gem}
-          10     gem.email = "tomohiro.t+github@gmail.com"
-          11     gem.homepage = "http://github.com/Tomohiro/ProjectName"
-          12     gem.authors = ["Tomohiro, TAIRA"]
+        8     gem.summary = %Q{TODO: one-line summary of your gem}
+        9     gem.description = %Q{TODO: longer description of your gem}
+       10     gem.email = "tomohiro.t+github@gmail.com"
+       11     gem.homepage = "http://github.com/Tomohiro/ProjectName"
+       12     gem.authors = ["Tomohiro, TAIRA"]
 
 3. Rake Task を確認する
 
-        $ rake -T
+       $ rake -T
+
 
 ### Push RubyGems
 
@@ -60,45 +61,45 @@ RubyGems.org に登録する際の手順
 
 3. 修正したソースコードを適宜 commit する
 
-        $ git commit -a -m 'commit message'
+       $ git commit -a -m 'commit message'
 
 4. バージョンファイルを作成する
 
-        $ rake version:write
+       $ rake version:write
 
 5. バージョンを上げる
 
-        $ rake version:bump:major              # Bump the gemspec by a major version.
-        $ rake version:bump:minor              # Bump the gemspec by a minor version.
-        $ rake version:bump:patch              # Bump the gemspec by a patch version.
+       $ rake version:bump:major              # Bump the gemspec by a major version.
+       $ rake version:bump:minor              # Bump the gemspec by a minor version.
+       $ rake version:bump:patch              # Bump the gemspec by a patch version.
 
 6. gemspec を作成する
 
-        $ rake gemspec
-        (in /home/tomohiro/Dropbox/Development/mitten)
-        Generated: mitten.gemspec
-        mitten.gemspec is valid.
+       $ rake gemspec
+       (in /home/tomohiro/Dropbox/Development/mitten)
+       Generated: mitten.gemspec
+       mitten.gemspec is valid.
 
 7. Gem を build する
 
-        $ rake build
-        (in /home/tomohiro/Dropbox/Development/mitten)
-        Generated: mitten.gemspec
-        mitten.gemspec is valid.
-        WARNING: no rubyforge_project specified
-          Successfully built RubyGem
-          Name: mitten
-          Version: 0.0.1
-          File: mitten-0.0.1.gem
+       $ rake build
+       (in /home/tomohiro/Dropbox/Development/mitten)
+       Generated: mitten.gemspec
+       mitten.gemspec is valid.
+       WARNING: no rubyforge_project specified
+         Successfully built RubyGem
+         Name: mitten
+         Version: 0.0.1
+         File: mitten-0.0.1.gem
 
 8. gemspec を add / commit する
 
-        $ git add mitten.gemspec
-        $ git commit mitten.gemspec -m 'add gemspec'
+       $ git add mitten.gemspec
+       $ git commit mitten.gemspec -m 'add gemspec'
 
 9. master へ push する
 
-        $ git push mitten master
+       $ git push mitten master
 
 10. RubyGems.org へリリースする
 
@@ -116,6 +117,7 @@ RubyGems.org に登録する際の手順
         Pushing gem to RubyGems.org...
         Successfully registered gem: mitten (0.0.1)
 
+
 ### Release cycle
 
 一度 Jeweler を使用して作成されたプロジェクトを RubyGems として公開した後は，
@@ -123,56 +125,56 @@ RubyGems.org に登録する際の手順
 
 1. 修正したソースコードを適宜 commit する
 
-        $ git commit -a -m 'commit message'
+       $ git commit -a -m 'commit message'
 
 2. バージョンを上げる
 
-        $ rake version:bump:major              # Bump the gemspec by a major version.
-        $ rake version:bump:minor              # Bump the gemspec by a minor version.
-        $ rake version:bump:patch              # Bump the gemspec by a patch version.
+       $ rake version:bump:major              # Bump the gemspec by a major version.
+       $ rake version:bump:minor              # Bump the gemspec by a minor version.
+       $ rake version:bump:patch              # Bump the gemspec by a patch version.
 
 3. gemspec を作成する
 
-        $ rake gemspec
-        (in /home/tomohiro/Dropbox/Development/mitten)
-        Generated: mitten.gemspec
-        mitten.gemspec is valid.
+       $ rake gemspec
+       (in /home/tomohiro/Dropbox/Development/mitten)
+       Generated: mitten.gemspec
+       mitten.gemspec is valid.
 
 4. Gem を build する
 
-        $ rake build
-        (in /home/tomohiro/Dropbox/Development/mitten)
-        Generated: mitten.gemspec
-        mitten.gemspec is valid.
-        WARNING: no rubyforge_project specified
-          Successfully built RubyGem
-          Name: mitten
-          Version: 0.0.4
-          File: mitten-0.0.4.gem
+       $ rake build
+       (in /home/tomohiro/Dropbox/Development/mitten)
+       Generated: mitten.gemspec
+       mitten.gemspec is valid.
+       WARNING: no rubyforge_project specified
+         Successfully built RubyGem
+         Name: mitten
+         Version: 0.0.4
+         File: mitten-0.0.4.gem
 
 5. gemspec を commit する
 
-        $ git commit mitten.gemspec -m 'update gemspec'
+       $ git commit mitten.gemspec -m 'update gemspec'
 
 6. master へ push する
 
-        $ git push mitten master
+       $ git push mitten master
 
 7. RubyGems.org へリリースする
 
-        $ rake gemcutter:release
-        (in /home/tomohiro/Dropbox/Development/mitten)
-        Generated: mitten.gemspec
-        mitten.gemspec is valid.
-        WARNING: no rubyforge_project specified
-          Successfully built RubyGem
-          Name: mitten
-          Version: 0.0.4
-          File: mitten-0.0.4.gem
-        Executing "gem push ./pkg/mitten-0.0.4.gem":
-        gem push ./pkg/mitten-0.0.4.gem
-        Pushing gem to RubyGems.org...
-        Successfully registered gem: mitten (0.0.4)
+       $ rake gemcutter:release
+       (in /home/tomohiro/Dropbox/Development/mitten)
+       Generated: mitten.gemspec
+       mitten.gemspec is valid.
+       WARNING: no rubyforge_project specified
+         Successfully built RubyGem
+         Name: mitten
+         Version: 0.0.4
+         File: mitten-0.0.4.gem
+       Executing "gem push ./pkg/mitten-0.0.4.gem":
+       gem push ./pkg/mitten-0.0.4.gem
+       Pushing gem to RubyGems.org...
+       Successfully registered gem: mitten (0.0.4)
 
 
 <div><%= @disqus %></div>

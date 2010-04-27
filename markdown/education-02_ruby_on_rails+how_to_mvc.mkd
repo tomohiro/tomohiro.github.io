@@ -11,6 +11,7 @@ MVC とは何か - Ruby on Rails の MVC アーキテクチャ
 2. MVC とは何か
 3. Ruby on Rails の MVC アーキテクチャ
 
+
 ### はじめに
 
 ここでは，ソフトウェア開発をする上で重要な考え方のひとつ MVC アーキテクチャについて理解する
@@ -29,27 +30,27 @@ MVC とは何か - Ruby on Rails の MVC アーキテクチャ
 
 Rails上のMVCアーキテクチャは以下の通りである
 
-    Rails は
-    Model を担当する ActiveRecord
-    Controller と View を担当する ActionPack
-    というふたつのライブラリで構成されてる
+> Rails は
+Model を担当する ActiveRecord
+Controller と View を担当する ActionPack
+というふたつのライブラリで構成されてる
 
-#### Model
+### Model
 
-    データベース駆動のMVC WebアプリケーションではModelはRDBMSのテーブルを表すクラスを意味する。 
-    RailsではActive Recordを通じてModelクラスを扱う。
-    通常プログラマはActiveRecord::Baseクラスのサブクラスを作る必要がある。
-    そうすることでRDBMSのどのテーブルを使うべきか、どういったカラムを持つべきかを自動的に決定してくれる。
+> データベース駆動のMVC WebアプリケーションではModelはRDBMSのテーブルを表すクラスを意味する。 
+RailsではActive Recordを通じてModelクラスを扱う。
+通常プログラマはActiveRecord::Baseクラスのサブクラスを作る必要がある。
+そうすることでRDBMSのどのテーブルを使うべきか、どういったカラムを持つべきかを自動的に決定してくれる。
 
-#### View
+### View
 
-    MVCではViewは表示のためのロジックであり、コントローラクラスからのデータをどのように表示するかを規定している。
-    WebアプリケーションではHTML内に若干のコードを埋め込むことで実現される。
+> MVCではViewは表示のためのロジックであり、コントローラクラスからのデータをどのように表示するかを規定している。
+WebアプリケーションではHTML内に若干のコードを埋め込むことで実現される。
 
-#### Controller
+### Controller
 
-    MVCではControllerはRailsのAction Packには含まれるアプリケーションコントローラクラスによって扱われる。
-    WebベースMVCアプリケーションではWebブラウザを操作するユーザによりコントローラのメソッドが起動される。
+> MVCではControllerはRailsのAction Packには含まれるアプリケーションコントローラクラスによって扱われる。
+WebベースMVCアプリケーションではWebブラウザを操作するユーザによりコントローラのメソッドが起動される。
 
 
 <div><%= @disqus %></div>

@@ -1,8 +1,10 @@
-Technical Information
+Technical Information #1
 ================================================================================
 
-1. Markdown から HTML / PDF への変換について
+
+Markdown から HTML / PDF への変換について
 --------------------------------------------------------------------------------
+
 
 ### First
 
@@ -23,6 +25,7 @@ _pandoc_ という Haskell で作られたツールで Markdown から直接 PDF
 - [pandoc](http://johnmacfarlane.net/pandoc/)
 - [MOONGIFT: » Markdown/HTML/LaTexを相互変換「Pandoc」:オープンソースを毎日紹介](http://www.moongift.jp/2007/12/pandoc/)
 
+
 ### How to Markdown
 
 > Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz
@@ -39,6 +42,7 @@ _pandoc_ という Haskell で作られたツールで Markdown から直接 PDF
 Markdown の記法を試すには下記のサービスを使用すると良い．
 
 [Markdown Web Dingus](http://daringfireball.net/projects/markdown/dingus "Markdown Web Dingus")
+
 
 ### Installation
 
