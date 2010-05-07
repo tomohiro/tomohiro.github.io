@@ -1,0 +1,67 @@
+/*
+  IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
+*/
+
+blockquote pre code {
+    color: #f8f8f8;
+}
+
+blockquote pre {
+    background: #000;
+}
+
+blockquote pre .shebang, blockquote pre .comment, blockquote pre .template_comment, blockquote pre .javadoc {
+    color: #7c7c7c;
+}
+
+blockquote pre .keyword, blockquote pre .tag, blockquote pre .ruby .function .keyword {
+    color: #96CBFE;
+}
+
+blockquote pre .function .keyword, blockquote pre .sub .keyword, blockquote pre .method, blockquote pre .list .title {
+    color: #FFFFB6;
+}
+
+blockquote pre .string, blockquote pre .attribute .value, blockquote pre .cdata, blockquote pre .filter .argument, blockquote pre .attr_selector, blockquote pre .apache .cbracket, blockquote pre .date {
+    color: #A8FF60;
+}
+
+blockquote pre .subst {
+    color: #DAEFA3;
+}
+
+blockquote pre .regexp {
+    color: #E9C062;
+}
+
+blockquote pre .function .title, blockquote pre .sub .identifier, blockquote pre .pi, blockquote pre .decorator, blockquote pre .ini .title {
+    color: #FFFFB6;
+}
+
+blockquote pre .class .title, blockquote pre .smalltalk .class, blockquote pre .javadoctag, blockquote pre .phpdoc {
+    color: #FFFFB6;
+}
+
+blockquote pre .symbol, blockquote pre .number, blockquote pre .variable, blockquote pre .vbscript, blockquote pre .literal {
+    color: #C6C5FE;
+}
+
+blockquote pre .css .keyword {
+    color: #96CBFE;
+}
+
+blockquote pre .css .rule .keyword, blockquote pre .css .id {
+    color: #FFFFB6;
+}
+
+blockquote pre .css .class {
+    color: #FFF;
+}
+
+blockquote pre .hexcolor {
+    color: #C6C5FE;
+}
+
+blockquote pre .number {
+    color:#FF73FD;
+}

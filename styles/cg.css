@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 body {
-    font-family: Times, 'Times New Roman', 'メイリオ', 'FreeSerif', serif;
+    font-family: Times, 'Times New Roman', '繝｡繧､繝ｪ繧ｪ', 'FreeSerif', serif;
     text-align: center;
     width: 800px;
     text-align: left;
@@ -17,7 +17,7 @@ body em {
 }
 
 h1, h3, h5 {
-    font-family: Times, 'Times New Roman', 'メイリオ', 'FreeSerif', sans-serif;
+    font-family: Times, 'Times New Roman', '繝｡繧､繝ｪ繧ｪ', 'FreeSerif', sans-serif;
 }
 
 header {
@@ -45,7 +45,7 @@ h2 {
     font-size: 150%;
     line-height: 130%;
     border-bottom: 2px solid #000;
-    font-family: Helvetica, Verdana, 'メイリオ', 'FreeSans', sans-serif;
+    font-family: Helvetica, Verdana, '繝｡繧､繝ｪ繧ｪ', 'FreeSans', sans-serif;
 }
 
 h3 {

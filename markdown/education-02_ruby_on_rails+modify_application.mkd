@@ -55,16 +55,16 @@ Ruby on Rails 基礎 - 琉球大学大学院 情報工学実践IV
 
 5. テーブルの関連付けを行う
 
-    *CD モデルを変更*
+   *CD モデルを変更*
 
-        $ vi app/models/cd.rb
+       $ vi app/models/cd.rb
 >     1 class Cd < ActiveRecord::Base
 >     2   belongs_to :genre # 関連付けたいモデル genre を定義
 >     3 end
 
-    *ジャンルモデルを変更*
+   *ジャンルモデルを変更*
 
-        $ vi app/models/genre.rb
+    $ vi app/models/genre.rb
 >     1 class Genre < ActiveRecord::Base
 >     2   has_many :cds # 関連付けたいモデル cds を定義(複数形になっているので注意)
 >     3 end
