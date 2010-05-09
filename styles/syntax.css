@@ -2,66 +2,73 @@
   IR_Black style (c) Vasily Mikhailitchenko <vaskas@programica.ru>
 */
 
-blockquote pre code {
+li {
+    margin: 3px;
+}
+
+pre code {
+    font-weight: bold;
+    background: #000;
     color: #f8f8f8;
 }
 
-blockquote pre {
+pre {
+    border: none;
     background: #000;
 }
 
-blockquote pre .shebang, blockquote pre .comment, blockquote pre .template_comment, blockquote pre .javadoc {
+pre .shebang, pre .comment, pre .template_comment, pre .javadoc {
     color: #7c7c7c;
 }
 
-blockquote pre .keyword, blockquote pre .tag, blockquote pre .ruby .function .keyword {
+pre .keyword, pre .tag, pre .ruby .function .keyword {
     color: #96CBFE;
 }
 
-blockquote pre .function .keyword, blockquote pre .sub .keyword, blockquote pre .method, blockquote pre .list .title {
+pre .function .keyword, pre .sub .keyword, pre .method, pre .list .title {
     color: #FFFFB6;
 }
 
-blockquote pre .string, blockquote pre .attribute .value, blockquote pre .cdata, blockquote pre .filter .argument, blockquote pre .attr_selector, blockquote pre .apache .cbracket, blockquote pre .date {
+pre .string, pre .attribute .value, pre .cdata, pre .filter .argument, pre .attr_selector, pre .apache .cbracket, pre .date {
     color: #A8FF60;
 }
 
-blockquote pre .subst {
+pre .subst {
     color: #DAEFA3;
 }
 
-blockquote pre .regexp {
+pre .regexp {
     color: #E9C062;
 }
 
-blockquote pre .function .title, blockquote pre .sub .identifier, blockquote pre .pi, blockquote pre .decorator, blockquote pre .ini .title {
+pre .function .title, pre .sub .identifier, pre .pi, pre .decorator, pre .ini .title {
     color: #FFFFB6;
 }
 
-blockquote pre .class .title, blockquote pre .smalltalk .class, blockquote pre .javadoctag, blockquote pre .phpdoc {
+pre .class .title, pre .smalltalk .class, pre .javadoctag, pre .phpdoc {
     color: #FFFFB6;
 }
 
-blockquote pre .symbol, blockquote pre .number, blockquote pre .variable, blockquote pre .vbscript, blockquote pre .literal {
+pre .symbol, pre .number, pre .variable, pre .vbscript, pre .literal {
     color: #C6C5FE;
 }
 
-blockquote pre .css .keyword {
+pre .css .keyword {
     color: #96CBFE;
 }
 
-blockquote pre .css .rule .keyword, blockquote pre .css .id {
+pre .css .rule .keyword, pre .css .id {
     color: #FFFFB6;
 }
 
-blockquote pre .css .class {
+pre .css .class {
     color: #FFF;
 }
 
-blockquote pre .hexcolor {
+pre .hexcolor {
     color: #C6C5FE;
 }
 
-blockquote pre .number {
+pre .number {
     color:#FF73FD;
 }
