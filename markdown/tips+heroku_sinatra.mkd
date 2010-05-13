@@ -1,0 +1,158 @@
+Technical Information #3
+================================================================================
+
+
+Sinatra アプリケーションを Heroku にデプロイする
+--------------------------------------------------------------------------------
+
+
+### First
+
+[Heroku](http://heroku.com/) とは Ruby 版 PaaS サービスのことである．
+一般的には Ruby on Rails をデプロイできるサーバとして有名なようだが，Rack ベースの
+Web アプリケーションの動作もサポートしている．
+
+そこで今回は Sinatra のアプリケーションを Heroku にデプロイする．
+
+基本的に Heroku の [Quickstart Guide](http://docs.heroku.com/quickstart) を参考に
+進めて行く．
+
+
+### Install
+
+1. Heroku にアカウントを登録する
+
+    1. [Create a Heroku Account](http://heroku.com/signup) へアクセスする．
+    2. メールアドレスを入力すると *Confirmation email sent. Check your inbox* と表示
+       されるのでメールボックスをチェックし Confirmation メール本文中のリンクへアクセスする．
+    3. パスワードを登録してアカウント登録は完了．
+
+2. RubyGems で heroku をインストール
+
+       $ sudo gem install heroku
+
+    依存関係でいろいろインストールされます．
+
+       Successfully installed mime-types-1.16
+       Successfully installed rest-client-1.4.2
+       Successfully installed configuration-1.1.0
+       Successfully installed launchy-0.3.5
+       Successfully installed heroku-1.9.9
+       5 gems installed
+       Installing ri documentation for mime-types-1.16...
+       Installing ri documentation for rest-client-1.4.2...
+       Installing ri documentation for configuration-1.1.0...
+       Installing ri documentation for launchy-0.3.5...
+       Installing ri documentation for heroku-1.9.9...
+       Updating ri class cache with 3576 classes...
+       Installing RDoc documentation for mime-types-1.16...
+       Installing RDoc documentation for rest-client-1.4.2...
+       Installing RDoc documentation for configuration-1.1.0...
+       Installing RDoc documentation for launchy-0.3.5...
+       Installing RDoc documentation for heroku-1.9.9...
+
+
+### Deployment
+
+GitHub でアプリケーションのソースコードを管理しつつ Heroku にデプロイすることを目指す
+
+1. Sinatra アプリケーションを用意する
+
+    1. GitHub に新しいリポジトリ `heroku-example` を作成する．
+    2. ローカルにアプリケーションディレクトリを作成し GitHub に登録する．
+
+           $ mkdir heroku-example
+           $ cd heroku-example
+           $ git init
+           $ touch README
+           $ git add README
+           $ git commit -m 'first commit'
+           $ git remote add origin git@github.com:Tomohiro/heroku-example.git
+           $ git push origin master
+
+    3. Sinatra アプリケーションを開発して GitHub にプッシュしておく．
+
+        単純に Heroku へのデプロイメントを試したい場合は Sinatra の Heroku 用
+        [サンプルアプリケーション](http://github.com/sinatra/heroku-sinatra-app) をチェックアウトして登録してみても良いだろう．
+
+           $ vi app.rb
+
+        >     require 'sinatra'
+        >     get '/' do
+        >      'Fuck, World!'
+        >     end
+
+           $ vi config.ru
+
+        >     require 'app'
+        >     run Sinatra::Application
+
+           $ git add app.rb config.ru
+           $ git commit
+           $ git push origin master
+
+2. Heroku にアップロード
+
+    1. Heroku 上にアプリケーションを作成する．
+
+           $ heroku create [optional-app-name]
+
+        `heroku create` すると Email/Passowrd を聞かれるのであらかじめ Heroku に
+        登録したアカウントの情報を入力する．
+
+           Enter your Heroku credentials.
+           Email: tomohiro.t@gmail.com
+           Password: 
+           Uploading ssh public key /Users/Tomohiro/.ssh/id_rsa.pub
+           Creating freezing-samurai-98.... done
+           Created http://freezing-samurai-98.heroku.com/ | git@heroku.com:freezing-samurai-98.git
+           Git remote heroku added
+
+    2. アプリケーション名をリネームする
+
+        `heroku create` する際アプリケーション名を指定しなかった場合は自動で freezing-samurai-98 といった
+        アプリケーション名がつくようになる．変更したい場合は[My Apps](http://api.heroku.com/myapps) に
+        アクセスしてアプリケーションの*General Info* から名前を変更する．
+        アプリケーション名を変更しない場合は本項を飛ばしてもらって構わない．
+
+        [Heroku | Renaming apps](http://docs.heroku.com/renaming-apps#manually-updating-a-git-remote "Heroku | Renaming apps")
+
+           $ git remote rm heroku
+           $ git remote add heroku git@heroku.com:newname.git
+
+    3. Heroku にアプリケーションを push する
+
+           $ git push heroku master
+
+        登録に成功すると下記のように出力される．
+
+           Counting objects: 15, done.
+           Delta compression using up to 2 threads.
+           Compressing objects: 100% (12/12), done.
+           Writing objects: 100% (15/15), 2.81 KiB, done.
+           Total 15 (delta 1), reused 0 (delta 0)
+
+           -----> Heroku receiving push
+           -----> Sinatra app detected
+                  Compiled slug size is 4K
+           -----> Launching...... done
+                  http://twitter-okinawa.heroku.com deployed to Heroku
+
+           To git@heroku.com:twitter-okinawa.git
+            * [new branch]      master -> master
+
+    4. 登録したアプリケーションを開く
+
+           $ heroku open
+
+
+### 参考
+
+- [Heroku](http://heroku.com "Heroku")
+- [Heroku | Heroku Quickstart Guide](http://docs.heroku.com/quickstart "Heroku | Heroku Quickstart Guide")
+- [Heroku | Deploying Rack-based Apps](http://docs.heroku.com/rack "Heroku | Deploying Rack-based Apps")
+- [Sinatra](http://www.sinatrarb.com "Sinatra")
+- [Sinatra: README (Japanese)](http://www.sinatrarb.com/intro-jp.html "Sinatra: README (Japanese)")
+
+
+<div><%= @disqus %></div>
