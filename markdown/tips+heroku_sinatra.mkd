@@ -146,7 +146,7 @@ GitHub でアプリケーションのソースコードを管理しつつ Heroku
            $ heroku open
 
 
-### 参考
+### References
 
 - [Heroku](http://heroku.com "Heroku")
 - [Heroku | Heroku Quickstart Guide](http://docs.heroku.com/quickstart "Heroku | Heroku Quickstart Guide")
