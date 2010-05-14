@@ -1,0 +1,54 @@
+HACK 09 Java Kueche
+================================================================================
+
+
+Java Kueche 向けのネタ出し大会
+--------------------------------------------------------------------------------
+
+
+### Java Kueche #10
+
+- 日時：2010年6月12日（土）15:00-17:30
+- 場所：琉球大学 工学部1号館（予定）
+- 内容：最短5 分、最長 30 分を目安にプログラミングに関する自分が取り組んでいる技術ネタを発表
+- 締切：5月31日（月）必着
+
+
+### List
+
+- [@libkinjo](http://twitter.com/libkinjo)[[GitHub](http://github.com/kinjo)]
+
+    1. MozRepl
+    2. Rails3
+    3. [edcmd](http://github.com/kinjo/edcmd)
+    4. Emacs Server and Org protocol over SSH
+
+- [@Tomohiro](http://twitter.com/Tomohiro)[[GitHub](http://github.com/Tomohiro)]
+
+    1. [Jeweler and RubyGems](http://tomohiro.github.com/tips/jeweler_gem_release.html)
+    2. [Sinatra on Heroku](http://tomohiro.github.com/tips/heroku_sinatra.html)
+    3. Sintara on GAE
+    4. [Loto6](http://tomohiro.github.com/hack/04_code_golf/index.html)
+    5. G9 on cg
+
+- [@nefo_mi](http://twitter.com/nefo_mi)[[GitHub](http://github.com/mitsuhide)]
+
+    1. [Umitter (OAuth)](http://github.com/mitsuhide/umitter)
+    2. KVM
+
+- [@yono](http://twitter.com/yono) [[GitHub](http://github.com/yono)]
+
+    1. [yonobot](http://github.com/yono/py-yonobot) and [python-markovchains](http://github.com/yono/python-markovchains)
+    2. tornado on GAE
+    3. [Python 基礎](http://yono.github.com/python/python_basics)
+
+- [@gongoZ](http://twitter.com/gongoZ) [[GitHub](http://github.com/gongo)]
+
+    1. Cucumber 
+    2. G9
+
+ 
+### References
+
+- [Java Kuche - 沖縄Javaコミュニティ](http://www.java-kuche.org/ "Java Kuche - 沖縄Javaコミュニティ")
+- [Java Kuche - イベント案内](http://www.java-kuche.org/modules/eguide/event.php?eid=15 "Java Kuche - イベント案内")
