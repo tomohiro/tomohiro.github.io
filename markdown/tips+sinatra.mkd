@@ -85,3 +85,7 @@ RubyGems を利用してインストールを行う．
 - [haml](http://haml-lang.com/ "#haml")
 - [日本Hamlの会](http://haml.ursm.jp/ "日本Hamlの会")
 - [Shotgun](http://rtomayko.github.com/shotgun/ "Shotgun")
+
+
+<div><%= @disqus %></div>
+
