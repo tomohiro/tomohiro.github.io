@@ -1,0 +1,87 @@
+Technical Information #3
+================================================================================
+
+
+Sinatra ハンズオン
+--------------------------------------------------------------------------------
+
+
+### First
+
+[Sinatra]() とは Ruby で作られた軽量 Web アプリケーションフレームワークである．
+Ruby on Rails のようなフルスタックの Web アプリケーションフレームワークを使うほど
+ではない小規模の開発に向いている．
+
+
+### Install
+
+RubyGems を利用してインストールを行う．
+
+今回は Sinatra と組み合わせて [haml]() という HTML/XHTML を生成するためのマークアップ
+言語を利用するため，そのライブラリも併せてインストールする．
+
+    $ sudo gem install sinatra
+    $ sudo gem install haml
+
+
+### Hello, World
+
+1. アプリケーション用のディレクトリを作る
+
+       $ mkdir sinatra_sample
+       $ cd sinatra_sample
+
+2. アプリケーションを書く
+
+       $ vi app.rb
+
+    >     require 'rubygems'
+    >     require 'sinatra'
+    >     require 'haml'
+    >
+    >     set :haml, :format => :html5
+    >
+    >     get '/' do
+    >       @body = 'Fuck, World!'
+    >       haml :index
+    >     end
+
+3. テンプレートを書く
+
+       $ mkdir views
+       $ vi views/index.haml
+
+    >     !!!
+    >     %html
+    >       %head
+    >         %meta(charset='UTF-8')
+    >         %link(rel='stylesheet' media='screen' href='default.css')
+    >
+    >       %body
+    >         %p=@body
+
+4. アプリケーションを起動する
+
+       $ ruby app.rb
+
+    起動すると [http://localhost:4567](http://localhost:4567) にアクセスできるようになる．
+
+
+### Tips
+
+1. Shotgun を利用して開発効率を上げる
+
+    Sinatra ではコードを更新した場合，アプリケーションを再起動しないといけない．
+    [Shotgun]() を利用すると再起動せずに常に最新のコードを読み込んでくれるようになる．
+
+       $ sudo gem install shotgun
+       $ shotgun app.rb
+
+
+### References
+
+- [Sinatra](http://www.sinatrarb.com "Sinatra")
+- [Sinatra: README (Japanese)](http://www.sinatrarb.com/intro-jp.html "Sinatra: README (Japanese)")
+- [haml](http://haml-lang.com/ "#haml")
+- [日本Hamlの会](http://haml.ursm.jp/ "日本Hamlの会")
+- [Shotgun](http://rtomayko.github.com/shotgun/ "Shotgun")

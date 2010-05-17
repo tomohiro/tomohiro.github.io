@@ -1,4 +1,4 @@
-Technical Information #3
+Technical Information #4
 ================================================================================
 
 
@@ -8,7 +8,7 @@ Sinatra アプリケーションを Heroku にデプロイする
 
 ### First
 
-[Heroku](http://heroku.com/) とは Ruby 版 PaaS サービスのことである．
+[Heroku]() とは Ruby 版 PaaS サービスのことである．
 一般的には Ruby on Rails をデプロイできるサーバとして有名なようだが，Rack ベースの
 Web アプリケーションの動作もサポートしている．
 

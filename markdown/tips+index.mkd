@@ -5,6 +5,7 @@ Technical Information
 Index
 --------------------------------------------------------------------------------
 
-1. [Markdown から HTML / PDF への変換について](markdown.html)
-2. [Jeweler を使用した RubyGems の作成とリリース](jeweler_gem_release.html)
-3. [Sinatra アプリケーションを Heroku にデプロイする](heroku_sinatra.html)
+- [Markdown から HTML / PDF への変換について](markdown.html)
+- [Jeweler を使用した RubyGems の作成とリリース](jeweler_gem_release.html)
+- [Sinatra ハンズオン](sinatra.html)
+- [Sinatra アプリケーションを Heroku にデプロイする](heroku_sinatra.html)

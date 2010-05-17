@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=320">
+        <link rel="stylesheet" media="screen, print" href="../styles/reset-min.css">
+        <link rel="stylesheet" media="screen, print" href="../styles/fonts-min.css">
+        <link rel="stylesheet" media="screen and (min-device-width: 481px), print" href="../styles/cg.css">
+        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../styles/iphone.css">
+        <link rel="stylesheet" media="screen, print" href="../styles/syntax.css">
+        <!--[if IE]><link rel="stylesheet" media="screen, projection" href="../styles/cg.css"><![endif]-->
+        <!--[if lte IE 8]><script src="../scripts/create-elements.js" type="text/javascript"></script><![endif]-->
+        <script type="text/javascript" src="../scripts/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad('html','css','ruby','bash');</script>
+        <title>Technical Information #3 - tomohiro.github.com</title>
+    </head>
+    <body>
+        <header>
+          <h1><a href="http://tomohiro.github.com">tomohiro.github.com</a></h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Index</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <article>
+
+<!-- Auto generated start -->
+
+<h1>Technical Information #3</h1>
+
+<h2>Sinatra ハンズオン</h2>
+
+<h3>First</h3>
+
+<p><a href="">Sinatra</a> とは Ruby で作られた軽量 Web アプリケーションフレームワークである．
+Ruby on Rails のようなフルスタックの Web アプリケーションフレームワークを使うほど
+ではない小規模の開発に向いている．</p>
+
+<h3>Install</h3>
+
+<p>RubyGems を利用してインストールを行う．</p>
+
+<p>今回は Sinatra と組み合わせて <a href="">haml</a> という HTML/XHTML を生成するためのマークアップ
+言語を利用するため，そのライブラリも併せてインストールする．</p>
+
+<pre><code>$ sudo gem install sinatra
+$ sudo gem install haml
+</code></pre>
+
+<h3>Hello, World</h3>
+
+<ol>
+<li><p>アプリケーション用のディレクトリを作る</p>
+
+<pre><code>$ mkdir sinatra_sample
+$ cd sinatra_sample
+</code></pre></li>
+<li><p>アプリケーションを書く</p>
+
+<pre><code>$ vi app.rb
+</code></pre>
+
+<blockquote><pre><code>require 'rubygems'
+require 'sinatra'
+require 'haml'
+
+set :haml, :format =&gt; :html5
+
+get '/' do
+  @body = 'Fuck, World!'
+  haml :index
+end
+</code></pre></blockquote></li>
+<li><p>テンプレートを書く</p>
+
+<pre><code>$ mkdir views
+$ vi views/index.haml
+</code></pre>
+
+<blockquote><pre><code>!!!
+%html
+  %head
+    %meta(charset='UTF-8')
+    %link(rel='stylesheet' media='screen' href='default.css')
+
+  %body
+    %p=@body
+</code></pre></blockquote></li>
+<li><p>アプリケーションを起動する</p>
+
+<pre><code>$ ruby app.rb
+</code></pre>
+
+<p> 起動すると <a href="http://localhost:4567">http://localhost:4567</a> にアクセスできるようになる．</p></li>
+</ol>
+
+
+<h3>Tips</h3>
+
+<ol>
+<li><p>Shotgun を利用して開発効率を上げる</p>
+
+<p> Sinatra ではコードを更新した場合，アプリケーションを再起動しないといけない．
+ <a href="">Shotgun</a> を利用すると再起動せずに常に最新のコードを読み込んでくれるようになる．</p>
+
+<pre><code>$ sudo gem install shotgun
+$ shotgun app.rb
+</code></pre></li>
+</ol>
+
+
+<h3>References</h3>
+
+<ul>
+<li><a href="http://www.sinatrarb.com" title="Sinatra">Sinatra</a></li>
+<li><a href="http://www.sinatrarb.com/intro-jp.html" title="Sinatra: README (Japanese)">Sinatra: README (Japanese)</a></li>
+<li><a href="http://haml-lang.com/" title="#haml">haml</a></li>
+<li><a href="http://haml.ursm.jp/" title="日本Hamlの会">日本Hamlの会</a></li>
+<li><a href="http://rtomayko.github.com/shotgun/" title="Shotgun">Shotgun</a></li>
+</ul>
+
+
+
+<!-- Auto generated end -->
+
+            </article>
+        </section>
+
+        <footer>
+            <p>Copyright &#169; 2010 <a href="mailto:tomohiro.t@gmail.com">Tomohiro</a> All rights reserved.</p>
+            <p>Powered by <a href="http://rubygems.org/gems/cg" title="cg - A Ruby based contents generator">cg - A Ruby based contents generator</a></p>
+        </footer>
+    </body>
+</html>
