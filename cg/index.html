@@ -38,11 +38,10 @@
 
 <p>cg は CLI 上で動作させることに特化した HTML コンテンツジェネレータです．</p>
 
-<p>Markdown 記法で記述されたテキストファイルを HTML コードに変換し，用意されたテンプレート
-に埋め込んで静的 HTML ファイルを含んだ Web サイトを構築します．</p>
+<p>Markdown 記法で記述されたテキストファイルを HTML コードに変換し，用意されたテンプレートに埋め込んで静的
+HTML ファイルを含んだ Web サイトを構築します．</p>
 
-<p>Vim/Emacs 等，CLI 上でよく使用されるエディタを普段から愛用している人は便利に使用
-できるでしょう．</p>
+<p>Vim/Emacs 等，CLI 上でよく使用されるエディタを普段から愛用している人は便利に使用できるでしょう．</p>
 
 <h3>インストール</h3>
 
@@ -60,6 +59,14 @@ Successfully installed erubis-2.6.5
 Successfully installed rdiscount-1.6.3.2
 Successfully installed cg-0.0.6
 5 gems installed
+</code></pre></blockquote>
+
+<p>インストールされた cg のバージョンは下記のように確認できます．</p>
+
+<pre><code>$ cg version
+</code></pre>
+
+<blockquote><pre><code>cg 0.0.7
 </code></pre></blockquote>
 
 <h3>プロジェクトの作成</h3>
@@ -155,11 +162,11 @@ Rebuild Success.  Fri Jun 04 13:39:39 +0900 2010
 <h3>基本コマンド</h3>
 
 <ol>
-<li><p>プロジェクト作成</p>
+<li><p>プロジェクト作成 - <code>cg scratch</code></p>
 
 <pre><code>$ cg scratch cg.example.com
 </code></pre></li>
-<li><p>Web ページの生成</p>
+<li><p>Web ページの生成 - <code>cg convert</code></p>
 
 <pre><code>$ cd cg.example.com
 $ cg convert index.mkd
@@ -167,7 +174,7 @@ $ cg convert index.mkd
 
 <blockquote><pre><code>index.mkd =&gt; /home/tomohiro/cg.example.com/index.html
 </code></pre></blockquote></li>
-<li><p>サイト全体の再構成</p>
+<li><p>サイト全体の再構成 - <code>cg rebuild</code></p>
 
 <p> <code>cg rebuild</code> コマンドは <code>markdown</code> ディレクトリ以下にある Markdown ファイル全てに <code>cg convert</code> を実行します．</p>
 
@@ -180,7 +187,7 @@ markdown/index.mkd =&gt; /tmp/test.example.com/index.html
 markdown/hello.mkd =&gt; /tmp/test.example.com/hello.html
 Rebuild Success.  Fri Jun 04 15:23:49 +0900 2010
 </code></pre></blockquote></li>
-<li><p>再構築して必要なファイルだけを圧縮ファイルにする</p>
+<li><p>再構築して必要なファイルだけを圧縮ファイルにする - <code>cg rebuild packing</code></p>
 
 <p> プロジェクトディレクトリを公開ディレクトリに置きたくない人もいることでしょう．</p>
 
@@ -229,26 +236,31 @@ markdown
 public.tar.gz
 .git
 </code></pre></blockquote></li>
-<li><p>cg サーバ起動</p>
+<li><p>cg サーバ起動 - <code>cg server</code></p>
 
 <pre><code>$ cg server
 </code></pre>
 
-<p> cg サーバを起動すると <a href="http://localhost:9292">http://localhost:9292</a> のアドレスでアクセスできるようになります．</p></li>
+<p> cg サーバを起動すると <a href="http://localhost:9292">http://localhost:9292</a> のアドレスでアクセスできるようになります．</p>
+
+<p> <code>-h</code> でホスト，<code>-p</code> でポートを指定できます．</p>
+
+<pre><code>$ cg server -h xx.xx.xx.xx -p 8080
+</code></pre></li>
 </ol>
 
 
-<h3>cg Tips / 応用</h3>
+<h3>応用(Tips)</h3>
 
 <h4>Tips 1. ディレクトリ構成を分けたい場合</h4>
 
 <p>プロジェクトディレクトリ直下ではなくその下にディレクトリを分けて Web ページを管理したい場合は，
-Markdown ファイルの名前をルールに従って記述することができます．</p>
+Markdown ファイルの名前をルールに従って記述してください．</p>
 
 <p>例</p>
 
 <ul>
-<li><p><em>foo/index.html</em> を作りたい場合は <em>foo+index.mkd</em> というふうにディレクトリ名とページの名前を <em>+(プラス)</em> でつなぎます．</p>
+<li><p><em>foo/index.html</em> を作りたい場合は <em>foo+index.mkd</em> のようににディレクトリ名とページの名前を <em>+(プラス)</em> でつなぎます．</p>
 
 <pre><code>$ cg convert cg.example.com/markdown/foo+index.mkd
 </code></pre>
@@ -257,7 +269,7 @@ Markdown ファイルの名前をルールに従って記述することがで�
 </code></pre></blockquote>
 
 <p>  ブラウザからは <em>http://localhost:9292/foo/index.html</em> にアクセスできます．</p></li>
-<li><p><em>foo/bar/hello.html</em> のようにディレクトリの階層を深くしたい場合には <em>foo-bar+hello.mkd</em> のようにディレクトリ名を<em>-(ハイフン)</em> でつなぎます．</p>
+<li><p><em>foo/bar/hello.html</em> のように階層を深くしたい場合には <em>foo-bar+hello.mkd</em> のようにディレクトリ名を<em>-(ハイフン)</em> でつなぎます．</p>
 
 <pre><code>$ cg convert cg.example.com/markdown/foo-bar+hello.mkd
 </code></pre>
