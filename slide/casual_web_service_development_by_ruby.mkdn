@@ -1,16 +1,30 @@
+# Casual Web Service Development by _Ruby_
+## Tomohiro, TAIRA
+
 !SLIDE
 
-# Casual Web Service Development by _Ruby_
+# Tomohiro, TAIRA
+
+- 名前: 平良 知広
+- 会社: 株式会社オーシーシー
+- 職業: プログラマ(PHP の Web アプリケーション開発)
+- 備考: プロの PHPer です
+
+- Twitter [http://twitter.com/Tomohiro](http://twitter.com/Tomohiro)
+- GitHub [http://github.com/Tomohiro](http://github.com/Tomohiro)
+- Web [http://tomohiro.github.com](http://tomohiro.github.com)
 
 !SLIDE
 
 # Web Application
 
-Lightweight Language
+!SLIDE
+
+# Lightweight Language
 
 !SLIDE
 
-# Lightweight Language Trend
+# Lightweight Language GoogleTrend
 
 ![Google Trend](/images/slide/trend.png)
 
@@ -20,13 +34,13 @@ Lightweight Language
 <span style="color: orange;">Python ■</span>
 <span style="color: green;">Perl ■</span>
 
-PHP is No.1 !!! (Not include  Java :-P) 
+## PHP is No.1 !!!
 
 !SLIDE
 
 # PHP e.g.
 
-Hello, World!
+## Hello, World!
 
 @@@ php
 <?php
@@ -38,7 +52,7 @@ echo 'Hello, World!';
 
 # PHP e.g.
 
-HTTP Request
+## HTTP Request
 
 @@@ php
 <?php
@@ -50,29 +64,54 @@ var_dump($\_GET);
 
 !SLIDE
 
-# PHP Future
+# Future of PHP
 
-## PHP 6
+## PHP <span style="color: red;">6</span>
 
 !SLIDE
 
-# PHP 6 is Dead
+# 2010-03-11
 
-## 2010-03-11
+!SLIDE
 
+# PHP 6 is Dead...
+
+[PHP6開発 UTF-16化を断念、5.3へロールバック](http://journal.mycom.co.jp/news/2010/03/17/053/index.html)
 !SLIDE
 
 # No Problem!
 
-## We have PHP 5.3
+!SLIDE
 
-> There are a few incompatibilities  and new features
+# We have PHP 5.3
+
+> PHP 5.3.0 offers a wide range of <span style="color: red;">new features</span>
+-----------------------------------------------------
 
 !SLIDE
 
 # PHP 5.3 New features
 
-> Support for *namespaces*  has been added. 
+## 無名関数 - closures
+
+### Bravo!!
+
+!SLIDE
+
+# PHP 5.3 New features
+
+## 遅延静的束縛 - Late Static Bindings 
+
+### Bravo!!
+
+!SLIDE
+
+# PHP 5.3 New features
+
+> Support for <span style="color: red;">namespaces</span>
+------------------------
+> 名前空間
+------------------------
 
 !SLIDE
 
@@ -80,13 +119,19 @@ var_dump($\_GET);
 
 @@@ php
 <?php
-namespace my\name; 
+namespace japan\okinawa; 
 ?>
 @@@
 
 !SLIDE
 
-（；ﾟ Дﾟ）
+# japan<span style="color: maroon;">\\</span>okinawa;
+
+!SLIDE
+
+# backslash?
+
+## （；ﾟ Дﾟ）
 
 !SLIDE
 
@@ -96,7 +141,10 @@ namespace my\name;
 
 # PHP 5.3 New features
 
-> Support for jump labels  (limited *goto*) has been added. 
+> Support for jump labels (limited <span style="color: red;">goto</span>)
+----------------------------------------
+> ジャンプラベル (制限付きgoto)
+----------------------------------------
 
 !SLIDE
 
@@ -105,25 +153,46 @@ namespace my\name;
 @@@ php
 <?php
 goto a;
-echo 'Foo';
+echo 'Java';
  
 a:
-echo 'Bar';
+echo 'Kueche';
 ?>
 @@@
 
 Result:
 
-> Bar
+> Kueche
 
 
 !SLIDE
 
-（；ﾟ Дﾟ）
+# goto?
+
+## （；ﾟ Дﾟ）
 
 !SLIDE
 
-# Oh, My God!
+# ...
+
+!SLIDE
+
+# Statistics
+
+- PHP: 5000
+- Perl: 3000
+- Python: 2000
+- Ruby: 1000
+
+!SLIDE
+
+# Google Code Search
+
+## lang:*regexp* <span style="color: red;">f*ck</span>
+
+!SLIDE
+
+# 以上，PHP の<del>すべらない</del>ぞっとする話
 
 !SLIDE
 
@@ -149,13 +218,23 @@ Result:
 
 # Web Application Framework for Ruby
 
-## Ruby on Rails by DHH
+!SLIDE
+
+# Ruby on Rails by DHH
+
+# ![Rails](/images/slide/rails.png) by ![DHH](http://farm3.static.flickr.com/2717/4441909186_b54da7400b.jpg)
 
 !SLIDE
 
 # But...
 
-## RoR vs Struts (not PHP)
+## Ruby on Rails vs Struts (not PHP)
+
+!SLIDE
+
+# Sinatra
+
+![Sinatra](http://www.sinatrarb.com/images/legend.gif)
 
 !SLIDE
 
@@ -167,19 +246,62 @@ Result:
 
 !SLIDE
 
-# Sinatra is DSL
+# Put this in your pipe (Coding)
+
+@@@ sh
+$ vi hi.rb
+@@@
 
 @@@ ruby
+require 'rubygems'
 require 'sinatra'
-
-get '/' do
-  'Hello, World!'
+get '/hi' do
+  "Hello World!"
 end
 @@@
 
 !SLIDE
 
-# Route
+# and smoke it (Install and Run)
+
+@@@ sh
+$ sudo gem install sinatra
+@@@
+
+@@@ sh
+
+$ ruby hi.rb
+== Sinatra has taken the stage ...
+>> Listening on 0.0.0.0:4567
+
+@@@
+
+!SLIDE
+
+# Access
+
+## http://localhost:4567
+
+!SLIDE
+
+# Futures
+
+- Rack middleware
+- URL matching pattern
+- Template 
+- Testing
+
+!SLIDE
+
+# Rack middleware?
+
+### Python <span style="color: red;">WSGI</span>
+### Ruby <span style="color: red;">Rack</span>
+### Perl <span style="color: red;">PSGI/Plack</span>
+
+!SLIDE
+
+# Routes
 
 @@@ ruby
 require 'sinatra'
@@ -195,21 +317,82 @@ end
 
 !SLIDE
 
-# Install
+# Routes Parameter e.g.
 
-@@@ sh
-$ sudo gem install sinatra
+@@@ ruby
+
+get '/hello/:name' do
+  # matches "GET /hello/foo" and "GET /hello/bar"
+  # params[:name] is 'foo' or 'bar'
+  "Hello #{params[:name]}!"
+end
+
 @@@
 
 !SLIDE
 
-# Heroku
+# Routes Wildcard e.g.
 
-## Heroku is Ruby PaaS
+@@@ ruby
+
+get '/say/\*/to/\*' do
+  # matches /say/hello/to/world
+  params[:splat] # => ["hello", "world"]
+end
+
+get '/download/\*.\*' do
+  # matches /download/path/to/file.xml
+  params[:splat] # => ["path/to/file", "xml"]
+end
+
+@@@
 
 !SLIDE
 
-# Heroku Install
+# Template
+
+- Haml
+- Erb
+- Builder
+- Sass
+
+!SLIDE
+
+# Testing
+
+@@@ ruby
+
+require 'rack/test'
+
+-- snip --
+
+def test\_default
+  get '/'
+  assert\_equal 'Hello World!', last\_response.body
+end
+
+@@@
+!SLIDE
+
+# Heroku
+
+## Heroku (pronounced her-OH-koo) is a cloud application platform for Ruby 
+
+!SLIDE
+
+# Deploying Rack-based Apps
+
+- Pure Rack Apps
+- <span style="color: red;">Sinatra</span>
+- Merb
+- Ramaze
+- Camping
+
+## and Rails 2.x, 3
+
+!SLIDE
+
+# Install
 
 ## Required Git
 
@@ -223,22 +406,39 @@ $ sudo gem install heroku
 # Create Application 
 
 @@@ sh
-$ heroku create [application-name]
+$ git init
+$ git commit -a -m 'first commit.'
+
+$ heroku create {application-name}
+=> http://{application-name}.heroku.com
 @@@
 
 !SLIDE
 
-# Deployment
+# Deploy
 
 @@@ sh
 $ git push heroku master
 @@@
 
+
 !SLIDE
 
-# Enjoy, Programming
+# Heroku e.g.
 
-## ;-)
+[沖縄映画一覧](http://okinawa-movie.heroku.com)
+
+[沖縄映画一覧 - GitHub](http://github.com/Tomohiro/okinawa_movie)
+
+!SLIDE
+
+# Resource
+
+- Heroku  (Platform)
+- Sinatra (Web Application Framework)
+- Sequel  (O/R Mapper)
+- SQLite3 (Database)
+- UiUIKit (iPhone UI Liberary)
 
 !SLIDE
 
@@ -248,3 +448,13 @@ $ git push heroku master
 - [Heroku](http://heroku.com)
 - [Sinatra ハンズオン](http://tomohiro.github.com/tips/sinatra.html)
 - [Heroku ハンズオン](http://tomohiro.github.com/tips/heroku_sinatra.html)
+
+!SLIDE
+
+# Enjoy, Programming!
+
+## ;-)
+
+!SLIDE
+
+# Questions?
