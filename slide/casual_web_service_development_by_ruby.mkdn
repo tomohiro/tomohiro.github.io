@@ -426,9 +426,9 @@ $ git push heroku master
 
 # Heroku e.g.
 
-[沖縄映画一覧](http://okinawa-movie.heroku.com)
+[沖縄映画一覧 - http://okinawa-movie.heroku.com](http://okinawa-movie.heroku.com)
 
-[沖縄映画一覧 - GitHub](http://github.com/Tomohiro/okinawa_movie)
+[沖縄映画一覧リポジトリ - GitHub](http://github.com/Tomohiro/okinawa_movie)
 
 !SLIDE
 
