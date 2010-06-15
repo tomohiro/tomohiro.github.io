@@ -79,7 +79,7 @@ GitHub でアプリケーションのソースコードを管理しつつ Heroku
 
         >     require 'sinatra'
         >     get '/' do
-        >      'Fuck, World!'
+        >      'Hello, World!'
         >     end
 
            $ vi config.ru

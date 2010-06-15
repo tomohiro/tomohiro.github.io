@@ -42,7 +42,7 @@ RubyGems を利用してインストールを行う．
     >     set :haml, :format => :html5
     >
     >     get '/' do
-    >       @body = 'Fuck, World!'
+    >       @body = 'Hello, World!'
     >       haml :index
     >     end
 
