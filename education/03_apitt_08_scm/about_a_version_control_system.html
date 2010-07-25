@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=320">
+        <link rel="stylesheet" media="screen, print" href="../../styles/reset-min.css">
+        <link rel="stylesheet" media="screen, print" href="../../styles/fonts-min.css">
+        <link rel="stylesheet" media="screen and (min-device-width: 481px), print" href="../../styles/cg.css">
+        <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="../../styles/iphone.css">
+        <link rel="stylesheet" media="screen, print" href="../../styles/syntax.css">
+        <!--[if IE]><link rel="stylesheet" media="screen, projection" href="../../styles/cg.css"><![endif]-->
+        <!--[if lte IE 8]><script src="../../scripts/create-elements.js" type="text/javascript"></script><![endif]-->
+        <script type="text/javascript" src="../../scripts/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad('html','css','ruby','bash');</script>
+        <title>ソフトウェア構成・変更管理 - 第8期 APITT システム開発コース - tomohiro.github.com</title>
+    </head>
+    <body>
+        <header>
+          <h1><a href="http://tomohiro.github.com">tomohiro.github.com</a></h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Index</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <article>
+
+<!-- Auto generated start -->
+
+<h1>ソフトウェア構成・変更管理 - 第8期 APITT システム開発コース</h1>
+
+<h2>バージョン管理システムについて</h2>
+
+<h3>バージョン管理システムとは</h3>
+
+<p><a href="http://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">バージョン管理システム</a></p>
+
+<h3>代表的なバージョン管理システム</h3>
+
+<ul>
+<li><a href="http://ja.wikipedia.org/wiki/Concurrent_Versions_System">CVS</a></li>
+<li><a href="http://ja.wikipedia.org/wiki/Microsoft_Visual_SourceSafe">VSS</a></li>
+<li><a href="http://ja.wikipedia.org/wiki/Subversion">Subversion</a> - <a href="http://ja.wikipedia.org/wiki/Git">Git</a></li>
+<li><a href="http://ja.wikipedia.org/wiki/Mercurial">Mercurial</a></li>
+<li><a href="http://ja.wikipedia.org/wiki/Perforce">Perforce</a></li>
+</ul>
+
+
+<h3>中央集中型と分散型の違い</h3>
+
+<h4>中央集中型バージョン管理システム</h4>
+
+<p><img src="images/Subversion.png" alt="中央集中型" /></p>
+
+<h4>分散型バージョン管理システム</h4>
+
+<p><img src="images/Git.png" alt="分散型" /></p>
+
+<h4>参考資料</h4>
+
+<ul>
+<li><a href="http://tcha.org/2010/intro-to-distributed-version-control-illustrated/">分散バージョン管理入門 (イラスト入り) - tcha.org</a></li>
+<li><a href="http://www.infoq.com/jp/articles/dvcs-guide">InfoQ: 分散バージョン管理システムの詳細なガイド</a></li>
+<li><a href="http://www.atmarkit.co.jp/fjava/rensai4/devtool03/devtool03_1.html">分散バージョン管理Git/Mercurial/Bazaar徹底比較</a></li>
+</ul>
+
+
+<h3>Linux のインストール</h3>
+
+<h4>Debian Lenny</h4>
+
+<h4>インストール手順</h4>
+
+<p><img src="images/0.png" alt="0.png" />
+<img src="images/1.png" alt="1.png" />
+<img src="images/2.png" alt="2.png" />
+<img src="images/3.png" alt="3.png" />
+<img src="images/4.png" alt="4.png" />
+<img src="images/5.png" alt="5.png" />
+<img src="images/6.png" alt="6.png" />
+<img src="images/7.png" alt="7.png" />
+<img src="images/8.png" alt="8.png" />
+<img src="images/9.png" alt="9.png" />
+<img src="images/10.png" alt="10.png" />
+<img src="images/11.png" alt="11.png" />
+<img src="images/12.png" alt="12.png" />
+<img src="images/13.png" alt="13.png" />
+<img src="images/14.png" alt="14.png" />
+<img src="images/15.png" alt="15.png" />
+<img src="images/16.png" alt="16.png" />
+<img src="images/17.png" alt="17.png" />
+<img src="images/18.png" alt="18.png" />
+<img src="images/19.png" alt="19.png" />
+<img src="images/20.png" alt="20.png" />
+<img src="images/21.png" alt="21.png" />
+<img src="images/22.png" alt="22.png" />
+<img src="images/23.png" alt="23.png" />
+<img src="images/24.png" alt="24.png" />
+<img src="images/25.png" alt="25.png" /></p>
+
+<h4>初期設定</h4>
+
+<p>ssh インストール</p>
+
+<pre><code>aptitude install openssh-server openssh-client
+</code></pre>
+
+<h3>Subversion のセットアップ</h3>
+
+<h4>Subversion とは</h4>
+
+<p><a href="http://ja.wikipedia.org/wiki/Subversion">Subversion - Wikipedia</a></p>
+
+<blockquote><p>Subversion（サブバージョン、サバージョン; SVN）はプログラムのソースコードなどを管理するバージョン管理システムの一つ。2009年11 月7日にApache Incubatorプロジェクトのひとつとなった。 ライセンスはApache Licenseに準じたものとなっている。</p></blockquote>
+
+<p>もっと詳しく学んでいくために，Subvesion の公式ドキュメントを日本語訳した下記の PDF をダウンロードして，Subversion について学んでいきましょう。</p>
+
+<p><a href="http://psyto.s26.xrea.com/misc/svnbook/" title="svnbook日本語訳のPDF版を作成してみました">svnbook日本語訳のPDF版を作成してみました</a></p>
+
+<ul>
+<li>第1章 導入</li>
+</ul>
+
+
+<h4>なぜ Subversion か</h4>
+
+<ul>
+<li>CVS の問題点が解決されている</li>
+<li>導入実績</li>
+<li>対応しているクライアントツールが多い</li>
+</ul>
+
+
+<h4>インストール手順</h4>
+
+<ul>
+<li><p>Subversion</p>
+
+<ol>
+<li><p>インストール</p>
+
+<pre><code>debian-taira:# aptitude install subversion
+</code></pre></li>
+<li><p>リポジトリを作成</p>
+
+<pre><code>debian-taira:# mkdir /var/lib/svn/
+debian-taira:# svnadmin create /var/lib/svn/apitt
+</code></pre></li>
+<li><p>svn のリポジトリを Apache で公開するための設定</p>
+
+<pre><code>debian-taira:~# chown -R www-data:www-data /var/lib/svn/apitt
+debian-taira:~# chmod -R 770 /var/lib/svn/apitt
+</code></pre></li>
+<li><p>チェックアウトのテスト</p>
+
+<pre><code>debian-taira:# svn co file:///var/lib/svn/apitt
+リビジョン 0 をチェックアウトしました。
+</code></pre></li>
+</ol>
+</li>
+<li><p>Apache2</p>
+
+<ol>
+<li><p>インストール</p>
+
+<pre><code>debian-taira:# aptitude install apache2
+debian-taira:# aptitude install libapache2-svn
+</code></pre></li>
+<li><p>認証して使用するためユーザを追加する</p>
+
+<pre><code>debian-taira:~# htpasswd -c /etc/apache2/dav_svn.passwd tomohiro
+New password: 
+Re-type new password: 
+Adding password for user tomohiro
+</code></pre></li>
+<li><p>Apache の svn モジュールの設定を有効にする</p>
+
+<pre><code>debian-taira:~# vi /etc/apache2/mods-available/dav_svn.conf
+
+&lt;Location /svn&gt;
+  DAV svn
+  SVNParentPath /var/lib/svn
+  AuthType Basic
+  AuthName "Subversion Repository"
+  AuthUserFile /etc/apache2/dav_svn.passwd
+  Require valid-user
+&lt;/Location&gt;
+</code></pre></li>
+<li><p>Apache を再起動する</p>
+
+<pre><code>debian-taira:~# /etc/init.d/apache2 restart
+Restarting web server: apache2 ... waiting .
+</code></pre></li>
+<li><p>ブラウザからアクセスできるかどうか試す</p>
+
+<p> http://ip-addres/svn/apitt</p></li>
+<li><p>HTTP 経由のチェックアウトを試す</p>
+
+<pre><code>debian-taira:~# svn co http://localhost/svn/apitt
+認証領域: &lt;http://localhost:80&gt; Subversion Repository
+'root' のパスワード:
+認証領域: &lt;http://localhost:80&gt; Subversion Repository
+ユーザ名: tomohiro
+'tomohiro' のパスワード:
+リビジョン 0 をチェックアウトしました。
+</code></pre></li>
+</ol>
+</li>
+</ul>
+
+
+<h4>参考資料</h4>
+
+<ul>
+<li><a href="http://svnbook.red-bean.com/en/1.5/svn.serverconfig.httpd.html" title="httpd, the Apache HTTP Server">httpd, the Apache HTTP Server</a></li>
+</ul>
+
+
+<h3>Subversion の使い方</h3>
+
+<ul>
+<li>第2章 基本概念</li>
+<li>第5章 リポジトリの管理</li>
+<li>第3章 同伴ツアー</li>
+<li>第4章 ブランチとマージ</li>
+</ul>
+
+
+<h4>参考資料</h4>
+
+<ul>
+<li><a href="http://code.google.com/p/svnbook/" title="svnbook - Project Hosting on Google Code">svnbook - Project Hosting on Google Code</a></li>
+<li><a href="http://www.caldron.jp/~nabetaro/svn/svnbook-1.4-final/" title="Subversion によるバージョン管理">Subversion によるバージョン管理</a></li>
+</ul>
+
+
+
+<!-- Auto generated end -->
+
+            </article>
+        </section>
+
+        <footer>
+            <p>Copyright &#169; 2010 <a href="mailto:tomohiro.t@gmail.com">Tomohiro</a> All rights reserved.</p>
+            <p>Powered by <a href="http://rubygems.org/gems/cg" title="cg - A Ruby based contents generator">cg - A Ruby based contents generator</a></p>
+        </footer>
+    </body>
+</html>

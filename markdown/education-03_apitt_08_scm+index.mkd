@@ -12,5 +12,8 @@
 
 1. [シラバス](syllabus.html)
 2. [小テスト](test.html)
-3. タイムスケジュール
-4. 講義資料
+3. [タイムスケジュール](time_schedule.html)
+4. [ソフトウェア開発と構成管理](software_development_and_software_configuration_management.html)
+5. [バージョン管理システムについて](about_a_version_control_system.html)
+6. [ソフトウェア構成管理システムについて](about_a_software_configuration_management_system.html)
+7. [Subversion と Redmine を連携させた変更管理技法を実践する](redmine_and_subversion.html)

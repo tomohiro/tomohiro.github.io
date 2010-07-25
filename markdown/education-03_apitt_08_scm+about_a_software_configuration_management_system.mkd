@@ -1,0 +1,42 @@
+ソフトウェア構成・変更管理 - 第8期 APITT システム開発コース
+================================================================================
+
+
+ソフトウェア構成管理システムについて
+--------------------------------------------------------------------------------
+
+
+### ソフトウェア構成管理とは
+
+- [バージョン管理を機能させるためにチームメンバーが持っておくべき構成管理という考え方](http://enterprisezine.jp/article/detail/936)
+- [作業管理とプロセス制御でプロセス駆動ソフトウェア構成管理を実践](http://enterprisezine.jp/article/detail/1376)
+- [ソフトウェア構成管理のカギを握るベースラインとビルド管理](http://enterprisezine.jp/article/detail/1512)
+- [プロジェクトメンバーが必ず押さえておくべきマナー～ブランチ戦略の基本](http://enterprisezine.jp/article/detail/2067)
+- [ソフトウェア構成管理 - Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E6%A7%8B%E6%88%90%E7%AE%A1%E7%90%86)
+
+
+### Redmine のセットアップ
+
+#### Redmine とは
+
+- [Redmine - Overview - Redmine](http://www.redmine.org/ "Redmine - Overview - Redmine")
+- [Redmine.JP | TOP](http://redmine.jp/ "Redmine.JP | TOP")
+
+#### Redmine のインストール
+
+- [Redmine.JP | インストール](http://redmine.jp/install/ "Redmine.JP | インストール")
+- [Redmine.JP | Redmineのインストール](http://redmine.jp/tech_note/install/ "Redmine.JP | Redmineのインストール")
+- [Redmine.JP | Apache上でRuby on Railsアプリケーションを動かす／Passenger(mod_rails for Apache)の利用](http://redmine.jp/tech_note/apache-passenger/ "Redmine.JP | Apache上でRuby on Railsアプリケーションを動かす／Passenger(mod_rails for Apache)の利用")
+
+
+### 管理技法実践
+
+#### Redmine の使い方
+
+- [Redmine.JP | Redmine Guide日本語訳](http://redmine.jp/guide/ "Redmine.JP | Redmine Guide日本語訳")
+
+#### 基本的機能を学ぶ
+
+1. メールの設定
+2. 管理者ガイド
+3. ユーザガイド
