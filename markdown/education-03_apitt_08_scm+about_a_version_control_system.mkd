@@ -21,7 +21,8 @@
 
 - [CVS](http://ja.wikipedia.org/wiki/Concurrent_Versions_System)
 - [VSS](http://ja.wikipedia.org/wiki/Microsoft_Visual_SourceSafe)
-- [Subversion](http://ja.wikipedia.org/wiki/Subversion) - [Git](http://ja.wikipedia.org/wiki/Git)
+- [Subversion](http://ja.wikipedia.org/wiki/Subversion)
+- [Git](http://ja.wikipedia.org/wiki/Git)
 - [Mercurial](http://ja.wikipedia.org/wiki/Mercurial)
 - [Perforce](http://ja.wikipedia.org/wiki/Perforce)
 
