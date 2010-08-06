@@ -119,10 +119,10 @@ end
 # Compiles to Java class
 
 @@@ sh
-$ duby hello\_world.mirah
--> HelloWorld/mirah.class
+$ duby hello.mirah
+-> Hello/mirah.class
 
-$ java HelloWorld/mirah.class
+$ java Hello/mirah.class
 Hello, World!
 @@@
 
@@ -131,8 +131,34 @@ Hello, World!
 # Generate Java source
 
 @@@ sh
-$ duby -j hello\_world.mirah
--> HelloWorld/mirah.java
+$ dubyc -j hello.mirah
+-> Hello/mirah.java
+@@@
+
+!SLIDE
+
+# Java source e.g.
+
+@@@ java
+package Hello;
+public class mirah extends java.lang.Object {
+  public static void main(java.lang.String[] argv) {
+   java.lang.System.out.println("Hello, World!");
+  }
+}
+@@@
+
+!SLIDE
+
+# Java source e.g.
+
+@@@ java
+public class Person extends java.lang.Object {
+  private  java.lang.String name;
+  public  Person(java.lang.String name) {
+   this.name = name;
+  }
+}
 @@@
 
 !SLIDE

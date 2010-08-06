@@ -18,7 +18,7 @@ body {
 
 pre {
   font-family: Courier;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 blockquote {
@@ -4994,10 +4994,10 @@ jQuery.extend( jQuery.easing,
         
           <div class="">
             <div id="slide-15" class="content">
-              <h1>Compiles to Java class</h1><div class="highlight sh code highlight"><pre><span class="nv">$ </span>duby hello_world.mirah
--&gt; HelloWorld/mirah.class
+              <h1>Compiles to Java class</h1><div class="highlight sh code highlight"><pre><span class="nv">$ </span>duby hello.mirah
+-&gt; Hello/mirah.class
 
-<span class="nv">$ </span>java HelloWorld/mirah.class
+<span class="nv">$ </span>java Hello/mirah.class
 Hello, World!
 </pre></div>
             </div>
@@ -5005,14 +5005,38 @@ Hello, World!
         
           <div class="">
             <div id="slide-16" class="content">
-              <h1>Generate Java source</h1><div class="highlight sh code highlight"><pre><span class="nv">$ </span>duby -j hello_world.mirah
--&gt; HelloWorld/mirah.java
+              <h1>Generate Java source</h1><div class="highlight sh code highlight"><pre><span class="nv">$ </span>dubyc -j hello.mirah
+-&gt; Hello/mirah.java
 </pre></div>
             </div>
           </div>
         
           <div class="">
             <div id="slide-17" class="content">
+              <h1>Java source e.g.</h1><div class="highlight java code highlight"><pre><span class="kn">package</span> <span class="n">Hello</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">mirah</span> <span class="kd">extends</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span><span class="o">[]</span> <span class="n">argv</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, World!"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+            </div>
+          </div>
+        
+          <div class="">
+            <div id="slide-18" class="content">
+              <h1>Java source e.g.</h1><div class="highlight java code highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="kd">extends</span> <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Object</span> <span class="o">{</span>
+  <span class="kd">private</span>  <span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">name</span><span class="o">;</span>
+  <span class="kd">public</span>  <span class="nf">Person</span><span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+   <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+            </div>
+          </div>
+        
+          <div class="">
+            <div id="slide-19" class="content">
               <h1>Required</h1><ul>
 <li>Java SDK</li>
 <li>JRuby 1.5.0 or higher.</li>
@@ -5022,14 +5046,14 @@ Hello, World!
           </div>
         
           <div class="">
-            <div id="slide-18" class="content">
+            <div id="slide-20" class="content">
               <h1>Install</h1><div class="highlight sh code highlight"><pre><span class="nv">$ </span>jruby -S gem install duby
 </pre></div>
             </div>
           </div>
         
           <div class="">
-            <div id="slide-19" class="content">
+            <div id="slide-21" class="content">
               <h1>Reference</h1><ul>
 <li><a href="http://www.mirah.org/" title="Mirah">Mirah</a></li>
 <li><a href="http://github.com/headius/mirah" title="headius's mirah at master - GitHub">headius's mirah at master - GitHub</a></li>
@@ -5039,13 +5063,13 @@ Hello, World!
           </div>
         
           <div class="">
-            <div id="slide-20" class="content">
+            <div id="slide-22" class="content">
               <h1>Enjoy, Programming!</h1><h2>;-)</h2>
             </div>
           </div>
         
           <div class="">
-            <div id="slide-21" class="content">
+            <div id="slide-23" class="content">
               <h1>Thanks, and Questions?</h1>
             </div>
           </div>
