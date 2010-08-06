@@ -105,17 +105,14 @@
 3 end
 </code></pre></blockquote>
 
-<p>   <em>ジャンルモデルを変更</em></p>
+<p> <em>ジャンルモデルを変更</em></p>
 
-<pre><code>$ vi app/models/genre.rb
-</code></pre>
+<p>  $ vi app/models/genre.rb</p>
 
 <blockquote><pre><code>1 class Genre &lt; ActiveRecord::Base
 2   has_many :cds # 関連付けたいモデル cds を定義(複数形になっているので注意)
 3 end
-</code></pre></blockquote>
-
-<ol>
+</code></pre></blockquote></li>
 <li><p>詳細参照画面を編集</p>
 
 <pre><code> $ vi app/views/cds/show.html.erb
@@ -181,8 +178,6 @@
 4   validates_presence_of :name, :message =&gt; 'は必須入力です。'
 5 end
 </code></pre></blockquote></li>
-</ol>
-</li>
 </ol>
 
 

@@ -1,0 +1,169 @@
+# Mirah
+## Tomohiro, TAIRA
+
+!SLIDE
+
+# Welcome to the <span style="color: red;">Java</span> World.
+## &nbsp;&nbsp;&nbsp;by Java Kueche 
+
+!SLIDE
+
+# Java x Ruby
+
+!SLIDE
+
+# Mirah
+
+!SLIDE
+
+# Mirah e.g.
+
+@@@ ruby
+puts 'Hello, World!'
+@@@
+
+!SLIDE
+
+# Ruby?
+
+!SLIDE
+
+# No.
+
+!SLIDE
+
+# JRuby?
+
+!SLIDE
+
+# No.
+
+!SLIDE
+
+# Mirah is <span style="color: red;">JVM</span> Lang. (Not Ruby)
+## &nbsp;&nbsp; by Charles Nutter(JRuby)
+
+!SLIDE
+
+# import Java Liberary
+
+@@@ ruby
+import java.util.ArrayList
+
+list = ArrayList.new
+sb = StringBuffer.new("Hello")
+sb.append(", world")
+list.add(sb)
+puts list
+@@@
+
+!SLIDE
+
+# Ruby Like Syntax
+
+@@@ ruby
+list = ArrayList.new
+list.add 'Orange'
+list.add 'Banana'
+list.each do |fruit|
+  puts fruit
+end
+@@@
+
+!SLIDE
+
+# Ruby Like Class
+
+@@@ ruby
+class Person
+  def initialize(name:string)
+   @name = name
+  end
+end
+person = Person.new 'kuda'
+@@@
+
+!SLIDE
+
+# Swing
+
+@@@ ruby
+import javax.swing.JFrame
+
+def self.run
+  frame = JFrame.new "Welcome to Mirah"
+  # snip
+  frame.show
+end
+run
+@@@
+
+!SLIDE
+
+# Ruby on Mirah on GAE
+
+@@@ ruby
+
+import com.google.appengine.api.datastore.Text
+import com.google.appengine.ext.duby.db.Model
+
+class Person < Model
+  property 'name', String
+end
+class MirahApp \< HttpServlet
+end
+@@@
+
+!SLIDE
+
+# Compiles to Java class
+
+@@@ sh
+$ duby hello\_world.mirah
+-> HelloWorld/mirah.class
+
+$ java HelloWorld/mirah.class
+Hello, World!
+@@@
+
+!SLIDE
+
+# Generate Java source
+
+@@@ sh
+$ duby -j hello\_world.mirah
+-> HelloWorld/mirah.java
+@@@
+
+!SLIDE
+
+# Required
+
+- Java SDK
+- JRuby 1.5.0 or higher.
+- BiteScript 0.0.5 or higher
+
+!SLIDE
+
+# Install
+
+@@@ sh 
+$ jruby -S gem install duby
+@@@
+
+!SLIDE
+
+# Reference
+
+- [Mirah](http://www.mirah.org/ "Mirah")
+- [headius's mirah at master - GitHub](http://github.com/headius/mirah "headius's mirah at master - GitHub")
+- [JRuby.org :: Downloads](http://jruby.org/download "JRuby.org :: Downloads")
+
+!SLIDE
+
+# Enjoy, Programming!
+## ;-)
+
+!SLIDE
+
+# Thanks, and Questions?
