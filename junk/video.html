@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 Video Player</title>
+<link  href="http://fonts.googleapis.com/css?family=Cabin+Sketch:bold" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style>
+body {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    width: 1080px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+h1 {
+    font-family: 'Cabin Sketch', Helvetica, sans-serif;
+    font-size: 3em;
+}
+video {
+    padding: 5px;
+    width: 720px;
+    border: 1px solid #ccc;
+}
+section#input_movie_source {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 720px; 
+}
+address {
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+}
+</style>
+<script>
+$(function () {
+    $('#watch').click(function() {
+        var video = '<video src="' + $('#uri').val() + '" controls></video>';
+        $('#movie_player').append(video);
+    });
+});
+</script>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Video Player</h1>
+        <p>Safari+ and Chrome+</p>
+    </header>
+
+    <section id="input_movie_source">
+        <input type="text" size="80" id="uri">
+        <input type="button" id="watch" value=" Watch ">
+    </section>
+
+    <section id="movie_player">
+    </section>
+
+    <footer>
+        <address><p>&copy; 2011 <a href="http://twitter.com/Tomohiro">@Tomohiro</a>, TAIRA</p></address>
+    </footer>
+</body>
+</html>
