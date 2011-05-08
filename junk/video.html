@@ -18,7 +18,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     width: 500px;
-    font-family: 'Six Caps', 'Times New Roman', serif;
+    font-family: 'Six Caps', Helvetica, sans-serif;
     font-size: 3em;
     text-align: left;
 }
@@ -40,6 +40,9 @@ section#input_movie_source {
     padding: 10px;
     width: 720px; 
 }
+section#input_movie_source p#eg{
+    color: Gray;
+}
 section#movie_player {
     padding: 20px;
 }
@@ -58,6 +61,13 @@ span.enable {
 }
 span.disable {
     color: Silver;
+}
+code {
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid Silver;
+    padding: 3px;
+    background-color: White;
 }
 </style>
 <script>
@@ -82,8 +92,9 @@ $(function () {
     </header>
 
     <section id="input_movie_source">
-        <input type="text" size="80" id="uri">
+        <input type="text" size="80" id="uri" value="http://">
         <input type="button" id="watch" value=" Watch ">
+        <p id="eg">e.g. <code>http://example.com/myvideo.m4v</code> or <code>file:///foo/bar/myvideo.mp4</code></p>
     </section>
 
     <section id="movie_player">
