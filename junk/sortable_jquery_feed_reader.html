@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sortable jQuery Feed Reader</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+        <script>
+        $(function () {
+            function getWidgets(exampleNr)
+            {
+                var widgets = [];
+                $(exampleNr).each(function(){
+                    widgets.push($(this).sortable('toArray').join(','));
+                });
+                return widgets.join(' | ');
+            }
+
+            $('div.widget').sortable({
+                connectWith: 'div.widget',
+                placeholder: 'placeholder',
+                update: function () {
+                    $('#layout_info').text(getWidgets('div.widget'));
+                }
+            });
+
+            function feedLoading(url, id, format) {
+                var format = format || 'rss';
+                var feeds = $('#' + id);
+
+                var load_feed_message = $('<p>').append('フィード読み込み中...');
+                feeds.append(load_feed_message);
+
+                $.getJSON('http://query.yahooapis.com/v1/public/yql?callback=?',
+                {
+                    q:      "SELECT title, link FROM " + format + " WHERE url = '" + url + "' limit 5",
+                    format: 'json'
+                }, function (data) {
+                    load_feed_message.remove();
+                    var items = [];
+                    if (data.query.results) {
+                        switch (format) {
+                            case 'atom':
+                              items = data.query.results.entry;
+                              break;
+                            case 'rss':
+                              items = data.query.results.item;
+                              break;
+                          }
+                    }
+                    if (items) {
+                        $.each(items,
+                            function (i, item) {
+                                $('<li>').append($('<a>').attr({
+                                    href: item.link.href || item.link
+                                }).append(item.title)).appendTo(feeds);
+                            });
+                    } else {
+                        feeds.append($('<p>').append('申し訳ありません。フィードの読み込みに失敗しました。'));
+                    }
+                });
+            }
+
+            feedLoading('http://log.tomohiro.me/atom.xml', 'myblog', 'atom');
+            feedLoading('http://b.hatena.ne.jp/entrylist/it?sort=hot&threshold=&mode=rss', 'hatena');
+            feedLoading('http://headlines.yahoo.co.jp/rss/san_c_spo.xml', 'sankei');
+            feedLoading('http://headlines.yahoo.co.jp/rss/itmedia_ep.xml', 'itmedia');
+            feedLoading('http://headlines.yahoo.co.jp/rss/piaeiga_c_ent.xml', 'pia');
+            feedLoading('http://headlines.yahoo.co.jp/rss/cnn_c_int.xml', 'cnn');
+            feedLoading('http://www.publickey1.jp/atom.xml', 'publickey', 'atom');
+        });
+        </script>
+        <style>
+        div.widget {
+            float: left;
+            margin-left: 30px;
+            margin-right: 30px;
+            width: 26%;
+            min-height: 10px;
+        }
+        div.widget > ul {
+            padding: 10px;
+            padding-left: 20px;
+            width: 100%;
+            min-height: 100px;
+            border: 1px solid Silver;
+            -moz-border-radius: 5px; -moz-box-shadow: 0 0 0.5em Silver;
+            background: Snow;
+            list-style: none;
+        }
+        div.widget > ul.placeholder {
+            background: MintCream;
+            border: 1px dashed Gray;
+        }
+        div.widget > ul li {
+            margin-top: 10px;
+        }
+        div.widget > ul li h3 {
+            text-align: center;
+        }
+        div.wide {
+            min-width: 90%;
+        }
+        div#layout_info {
+            clear: both;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Sortable jQuery Feed Reader</h1>
+
+        <div class="widget wide">
+            <ul id="myblog"><li><h3>log.tomohiro.me</h3></li></ul>
+        </div>
+
+        <div class="widget">
+            <ul id="sankei"><li><h3>産経新聞</h3></li></ul>
+            <ul id="itmedia"><li><h3>IT Media</h3></li></ul>
+        </div>
+
+        <div class="widget">
+            <ul id="hatena"><li><h3>はてなブックマーク</h3></li></ul>
+            <ul id="pia"><li><h3>ぴあ映画生活</h3></li></ul>
+        </div>
+
+        <div class="widget">
+            <ul id="cnn"><li><h3>CNN.co.jp</h3></li></ul>
+            <ul id="publickey"><li><h3>Publickey</h3></li></ul>
+        </div>
+
+        <div id="layout_info"></div>
+    </body>
+</html>
