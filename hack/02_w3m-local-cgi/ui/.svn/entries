@@ -1,67 +1,0 @@
-8
-
-dir
-190
-http://localhost/svn/presen/hack20091225/ui
-http://localhost/svn
-
-
-
-2009-12-23T17:15:50.491605Z
-189
-dot
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-946941df-b589-44c3-8e3f-bf8b9841ba22
-
-i18n
-dir
-
-test.html
-file
-
-
-
-
-2009-12-23T17:19:08.000000Z
-0bd2d6ec464657b2ba4b3f97d514c96b
-2009-12-23T17:15:50.491605Z
-189
-dot
-
-styles
-dir
-
-default
-dir
-
-LGPLv3.txt
-file
-
-
-
-
-2009-12-23T17:19:08.000000Z
-3a47e76afb58b31d0db3e27edf3d7029
-2009-12-23T17:15:50.491605Z
-189
-dot
-
-scripts
-dir
-
-src
-dir
-
