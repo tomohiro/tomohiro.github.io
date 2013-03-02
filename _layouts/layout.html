@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="ja"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="ja"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -10,10 +10,6 @@
     <meta name="description" content="{{ site.description }}">
     <link rel="alternate" type="application/rss+xml" href="/atom.xml">
     <link rel="me" type="text/html" href="http://www.google.com/profiles/tomohiro.t">
-
-    <!-- Set the viewport width to device width for mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="/stylesheets/app.css">
     <link rel="stylesheet" href="/stylesheets/syntax.css">
 </head>
@@ -22,7 +18,7 @@
     <header>
         <nav class="top-bar">
             <div class="row">
-                <ul class="left">
+                <ul>
                     <li class="name"><h1><a href="/">{{ site.title }} / {{ site.name }}</a></h1></li>
                     <li class="toggle-topbar"><a href="/"></a></li>
                 </ul>
