@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="ja"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="ja"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
 
 <head>
@@ -8,35 +7,40 @@
     <title>{% if page.title %}{{ page.title }} &ndash; {% endif %}{{ site.title }} / {{ site.name }}</title>
     <meta name="author" content="{{ site.name }}">
     <meta name="description" content="{{ site.description }}">
+    <meta name="viewport" context="width=device-width">
     <link rel="alternate" type="application/rss+xml" href="/atom.xml">
     <link rel="me" type="text/html" href="http://www.google.com/profiles/tomohiro.t">
-    <link rel="stylesheet" href="/stylesheets/app.css">
-    <link rel="stylesheet" href="/stylesheets/syntax.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/syntax.css">
 </head>
 
 <body>
     <header>
         <nav class="top-bar">
             <div class="row">
-                <ul>
-                    <li class="name"><h1><a href="/">{{ site.title }} / {{ site.name }}</a></h1></li>
-                    <li class="toggle-topbar"><a href="/"></a></li>
-                </ul>
-                <ul class="right">
-                    <li class="divider"></li>
-                    <li><a href="/posts">POSTS</a></li>
-                    <li class="divider"></li>
-                    <li><a href="/atom.xml">SUBSCRIBE</a></li>
-                    <li class="divider"></li>
-                    <li><a href="https://github.com/{{ site.github }}">GITHUB</a></li>
-                </ul>
+                <div class="small-10 small-centered columns">
+                    <ul class="title-area">
+                        <li class="name"><h1><a href="/">{{ site.title }} / {{ site.name }}</a></h1></li>
+                    </ul>
+                    <section class="top-bar-section">
+                        <ul class="right">
+                            <li class="divider"></li>
+                            <li><a href="/posts">POSTS</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/atom.xml">SUBSCRIBE</a></li>
+                            <li class="divider"></li>
+                            <li><a href="https://github.com/{{ site.github }}">GITHUB</a></li>
+                        </ul>
+                    </section>
+                </div>
             </div>
         </nav>
     </header>
 
     <div class="row">
-        <div id="container" class="eleven columns centered">
-            <article class="evelen columns centered">
+        <div id="container" class="small-11 small-centered columns">
+            <article>
             {{ content }}
             </article>
         </div>
