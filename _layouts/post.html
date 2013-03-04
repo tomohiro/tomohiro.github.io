@@ -2,7 +2,9 @@
 layout: layout
 ---
 
-<h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-<span id="date"><a href="/">Tomohiro</a> wrote this on {{ page.date | date: "%b %e, %Y" }}</span>
+<article id="post">
+    <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+    <span id="date"><a href="/">Tomohiro</a> wrote this on {{ page.date | date: "%b %e, %Y" }}</span>
 
-{{ content }}
+    {{ content }}
+</article>
