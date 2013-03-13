@@ -12,6 +12,6 @@ redcarpet:
   extensions: ['tables', 'autolink', 'no_intra_emphasis']
 pygments: true
 permalink: /posts/:title
-exclude: ['_scss', 'vendor', 'Gemfile', 'Gemfile.lock']
+exclude: ['_scss', '_coffee', 'vendor', 'Gemfile', 'Gemfile.lock']
 auto: true
 lsi: false
