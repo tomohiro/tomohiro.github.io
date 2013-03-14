@@ -12,6 +12,7 @@ Requirements
 - Jekyll
 - Compass
 - Zurb Foundation
+- CoffeeScript
 
 
 Editing
@@ -34,6 +35,12 @@ Compile SCSS stylesheets to CSS
 
 ```sh
 $ bundle exec compass compile
+```
+
+Compile CoffeeScript to JavaScript
+
+```sh
+$ coffee -b -o js _coffee/*
 ```
 
 
