@@ -13,5 +13,3 @@ redcarpet:
 pygments: true
 permalink: /posts/:title
 exclude: ['_scss', '_coffee', 'vendor', 'Gemfile', 'Gemfile.lock']
-auto: true
-lsi: false
