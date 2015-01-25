@@ -10,6 +10,6 @@ gravatar_url: https://gravatar.com/avatar/b26ba8ab9e0d6e3f92cbc7f8e320fc11
 markdown: redcarpet
 redcarpet:
   extensions: ['tables', 'autolink', 'no_intra_emphasis']
-pygments: true
+highlighter: true
 permalink: /posts/:title
 exclude: ['_scss', '_coffee', 'vendor', 'Gemfile', 'Gemfile.lock']
