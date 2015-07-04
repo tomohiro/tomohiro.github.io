@@ -1,5 +1,14 @@
-_site
-.bundle
-Gemfile.lock
-vendor
-.sass-cache
+# Bundler
+/.bundle
+/Gemfile.lock
+/vendor
+
+# Jekyll
+/_site
+
+# Foundation
+/.sass-cache
+/tmp
+/js/foundation
+/js/vendor
+/css/foundation
