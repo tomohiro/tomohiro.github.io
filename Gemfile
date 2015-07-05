@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'github-pages'
-gem 'zurb-foundation', '4.0.3'
+gem 'foundation'
 gem 'compass'
 gem 'foreman'
 
