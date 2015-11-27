@@ -47,7 +47,7 @@ $ coffee -b -o js _coffee/*
 LICENSE
 --------------------------------------------------------------------------------
 
-The following directories and their contents are Copyright Tomohiro TAIRA.
+The following directories and their contents are &copy; 2011 - 2015 Tomohiro TAIRA.
 You may not reuse anything therein without my permission:
 
 - _posts/
