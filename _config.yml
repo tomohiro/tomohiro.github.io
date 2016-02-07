@@ -8,4 +8,12 @@ gravatar_url: https://gravatar.com/avatar/b26ba8ab9e0d6e3f92cbc7f8e320fc11
 
 # Jekyll settings
 permalink: /posts/:title
-exclude: ['_scss', '_coffee', 'vendor', 'Gemfile', 'Gemfile.lock']
+exclude:
+  - _scss
+  - _coffee
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
