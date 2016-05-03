@@ -12,3 +12,6 @@
 /js/foundation
 /js/vendor
 /css/foundation
+
+# Node
+node_modules
