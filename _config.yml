@@ -19,3 +19,15 @@ exclude:
   - README.md
   - CNAME
   - robots.txt
+
+# Plugins
+#   Adding Jekyll plugins to a GitHub Pages site - User Documentation
+#   https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Jekyll Feed plugin configuration
+# https://github.com/jekyll/jekyll-feed
+feed:
+  path: atom.xml
