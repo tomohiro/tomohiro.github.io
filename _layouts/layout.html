@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} &ndash; {% endif %}{{ site.title }} / {{ site.name }}</title>
+    <title>{% if page.title %}{{ page.title }} &ndash; {% endif %}{{ site.title }} / {{ site.github.owner_name }}</title>
     <meta name="author" content="{{ site.name }}">
     <meta name="description" content="{{ site.description }}">
     <meta name="viewport" context="width=device-width">
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="small-10 small-centered columns">
                     <ul class="title-area">
-                        <li class="name"><h1><a href="/">{{ site.title }} / {{ site.owner_name }}</a></h1></li>
+                        <li class="name"><h1><a href="/">{{ site.title }} / {{ site.github.owner_name }}</a></h1></li>
                     </ul>
                     <section class="top-bar-section">
                         <ul class="right">
