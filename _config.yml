@@ -1,5 +1,6 @@
 # Site information
 title: DEVELOPER IN THE SHELL
+author: Tomohiro TAIRA
 
 # Jekyll settings
 permalink: /posts/:title
