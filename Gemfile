@@ -7,4 +7,5 @@ gem 'foreman'
 
 group :development do
   gem 'rake'
+  gem 'jekyll-github-metadata'
 end

@@ -2,4 +2,4 @@ layout node
 
 # Set the GitHub token for access to GitHub metadata
 # https://github.com/jekyll/github-metadata#authentication
-export JEKYLL_GITHUB_TOKEN="22b46f6267ac5e0b00f988f5827dcdccea3b169b"
+export JEKYLL_GITHUB_TOKEN=""

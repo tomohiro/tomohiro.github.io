@@ -22,6 +22,7 @@ exclude:
 gems:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-github-metadata
 
 # Jekyll Feed plugin configuration
 # https://github.com/jekyll/jekyll-feed
