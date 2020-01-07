@@ -1,8 +1,6 @@
 tomohiro.me
 ================================================================================
 
-[![Dependency Status](https://img.shields.io/gemnasium/Tomohiro/tomohiro.github.io.svg?style=flat-square)](https://gemnasium.com/Tomohiro/tomohiro.github.io)
-
 
 Requirements
 --------------------------------------------------------------------------------
